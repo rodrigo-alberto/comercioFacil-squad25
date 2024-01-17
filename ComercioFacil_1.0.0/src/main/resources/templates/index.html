@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head th:replace="~{fragments/head :: head('Comércio Fácil')}"></head>
+
+<body>
+
+    <!-- - header - -->
+    <header th:replace="~{fragments/header :: navbar}" ></header> 
+	<!-- End #header -->
+	
+	
+    <!-- #hero-section -->
+    <section id="hero-section" class="m-0 py-5">
+        <div class="text-center py-4 px-1">
+            <h1 class="hero-title fw-bold">Encontre o que deseja perto de você!</h1>
+            <p class="hero-subtitle fs-4 fw-medium">Seu produto ideal está mais próximo do que imagina</p>
+
+            <div class="d-flex flex-wrap justify-content-center align-items-center py-1">
+                <a href="" class="btn btn-primary mb-2 py-2 px-4">Comece agora</a>
+                <span class="hero-subtitle ms-3 mb-2">Acesse nosso mapa interativo</span>
+            </div>
+        </div>
+    </section> <!-- End #hero-section -->
+
+    <!-- - main - -->
+    <main class="container-fluid">
+
+        <!-- #home-section -->
+        <section id="home-section">
+            <div class="row mx-1">
+                <div class="col-lg-6 my-2 align-self-center">
+                    <div class="map-container text-center p-3">
+                        <img id="map" class="p-2 rounded" src="imgs/map.svg" alt="Mapa">
+                    </div>
+                </div>
+
+                <div class="col-lg-6 my-2 align-self-center">
+                    <div class="filters-container p-4">
+                        <div class="section-title py-1">
+                            <h3 class="fs-5 fw-semibold">Filtre e encontre o que procura:</h3>
+                            <p class="fs-6">Pesquise com parâmetros de categoria e preço</p>
+                        </div>
+
+                        <form action="" class="px-3">
+                            <div class="row">
+                                <div class="col mb-3 px-0">
+                                    <input type="text" class="form-control border border-0 py-2 filters-bg" placeholder="Busque pelo nome da feira" id="input-search">
+                                </div>
+                            </div>
+
+                            <div class="row filters-bg rounded p-3">
+                                <div class="col-sm-6 my-1 px-4">
+                                    <h4 class="fs-6 fw-semibold py-2">Categorias:</h4>
+
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="check-all" checked>
+                                        <label class="form-check-label" for="check-all">Todas as categorias</label>
+                                    </div>
+
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="check-clothes">
+                                        <label class="form-check-label" for="check-clothes">Roupas e vestuário</label>
+                                    </div>
+
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="check-electronics">
+                                        <label class="form-check-label" for="check-electronics">Eletrônicos</label>
+                                    </div>
+
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="check-utilities">
+                                        <label class="form-check-label" for="check-utilities">Utilidades</label>
+                                    </div>
+
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="check-vegetables">
+                                        <label class="form-check-label" for="check-vegetables">Hortaliças</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6 my-1 px-4">
+                                    <h4 class="fs-6 fw-semibold py-2">Preços:</h4>
+
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" value="" id="radio-medium"
+                                            name="price-radio">
+                                        <label class="form-check-label" for="radio-medium">Média do mercado</label>
+                                    </div>
+
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" value="" id="radio-bigger"
+                                            name="price-radio">
+                                        <label class="form-check-label" for="radio-bigger">Maiores preços</label>
+                                    </div>
+
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" value="" id="radio-smaller"
+                                            name="price-radio">
+                                        <label class="form-check-label" for="radio-smaller">Menores preços</label>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-primary mb-3 mt-4 py-2 px-3 fw-light">Aplicar filtros</button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div> <!-- End .filters-container -->
+                </div>
+            </div>
+        </section> <!-- End #home-section -->
+
+    </main> <!-- End .container-fluid -->
+
+
+    <!-- - footer - -->
+    <footer th:replace="~{fragments/footer :: footer}"></footer> 
+    <!-- - End #footer - -->
+
+
+    <!-- JS scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" 
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
