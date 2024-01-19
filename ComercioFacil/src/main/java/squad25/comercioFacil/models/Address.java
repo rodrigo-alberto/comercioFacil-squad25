@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
+import squad25.comercioFacil.enums.State;
 
 @Entity
 public abstract class Address {
@@ -15,7 +16,7 @@ public abstract class Address {
 	private Long idAddress;
 	
 	@Column(nullable = false)
-	private String state;
+	private State state;
 	
 	@Column(nullable = false)
 	private String city;
@@ -40,11 +41,11 @@ public abstract class Address {
 		this.idAddress = idAddress;
 	}
 
-	public String getState() {
+	public State getState() {
 		return state;
 	}
 
-	public void setState(String state) {
+	public void setState(State state) {
 		this.state = state;
 	}
 
