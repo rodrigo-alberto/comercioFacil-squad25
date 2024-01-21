@@ -11,6 +11,13 @@ public class NavigationController {
 		return "index";
 	}
 	
+//	@GetMapping("/")
+//	public String home(Model model) {
+//		model.addAttribute("alert", SystemAlert.USER_SECCESSFULLY_REGISTERED);
+//		
+//		return "index";
+//	}
+	
 	@GetMapping("/about")
     public String about() {
         return "about";
@@ -30,5 +37,4 @@ public class NavigationController {
 	public String testeSide() {
 		return "admin/testeSide";
 	}
-	
 }
