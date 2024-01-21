@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragments/head :: head('Sobre Nós')}"></head>
+
+<body>
+    <!-- - header - -->
+    <header th:replace="~{fragments/header :: navbar}" ></header> 
+    <div th:replace="~{fragments/header :: space}"></div> 
+	<!-- End #header -->
+
+    <!-- - main - -->
+    <main class="container">
+
+        <!-- #partners-section -->
+        <section id="partners-section">
+
+        </section> <!-- End #partners-section -->
+
+    </main> <!-- End .container -->
+    
+	<!-- - footer - -->
+    <footer th:replace="~{fragments/footer :: footer}"></footer> 
+    <!-- - End #footer - -->
+    
+    <!-- JS scripts -->
+    <script th:replace="~{fragments/scripts :: popper}">
+    </script>
+    <script th:replace="~{fragments/scripts :: bootstrap}">
+    </script>
+    
+    
+</body>
+
+</html>

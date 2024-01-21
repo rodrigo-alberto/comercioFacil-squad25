@@ -1,9 +1,9 @@
-document.addEventListener('DOMContentLoaded', function () {
-  var urlParams = new URLSearchParams(window.location.search);
-  var showAlert = urlParams.get('showAlert');
+const toastTrigger = document.getElementById('liveToastBtn')
+const toastLiveExample = document.getElementById('liveToast')
 
-  if (showAlert === 'true') {
-    var myToast = new bootstrap.Toast(document.getElementById('alertToast'));
-    myToast.show();
-  }
-});
+if (toastTrigger) {
+  const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
+  toastTrigger.addEventListener('click', () => {
+    toastBootstrap.show()
+  })
+}

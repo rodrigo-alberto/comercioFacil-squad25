@@ -6,7 +6,8 @@
 <body>
 
     <!-- - header - -->
-    <header th:replace="~{fragments/header :: navbar}" ></header> 
+    <header th:replace="~{fragments/header :: navbar}" ></header>
+    <div th:replace="~{fragments/header :: space}"></div> 
 	<!-- End #header -->
 	
 	
@@ -25,91 +26,516 @@
 
     <!-- - main - -->
     <main class="container-fluid">
-
+		
         <!-- #home-section -->
-        <section id="home-section">
-            <div class="row mx-1">
-                <div class="col-lg-6 my-2 align-self-center">
-                    <div class="map-container text-center p-3">
-                        <img id="map" class="p-2 rounded" src="imgs/map.svg" alt="Mapa">
-                    </div>
-                </div>
-
-                <div class="col-lg-6 my-2 align-self-center">
-                    <div class="filters-container p-4">
+        <section id="home-section ">
+			            
+				<div class="container map-filters mt-5">
+					
+					<div class="d-flex justify-content-center">
+                    <div class="filters-container p-4">						
                         <div class="section-title py-1">
-                            <h3 class="fs-5 fw-semibold">Filtre e encontre o que procura:</h3>
-                            <p class="fs-6">Pesquise com parâmetros de categoria e preço</p>
+							<div class="d-flex justify-content-center">
+                            	<h3 class="fs-5 fw-semibold">Filtre e encontre o que procura:</h3>
+							</div>
+							<div class="d-flex justify-content-center">
+                            	<p class="fs-6">Pesquise com parâmetros de categoria e preço</p>
+							</div>
                         </div>
 
-                        <form action="" class="px-3">
-                            <div class="row">
-                                <div class="col mb-3 px-0">
-                                    <input type="text" class="form-control border border-0 py-2 filters-bg" placeholder="Busque pelo nome da feira" id="input-search">
-                                </div>
+                        <form action="" class="px-3">							
+                            <div class="row mb-3 px-0 d-flex justify-content-between ">                                
+									<select class="col form-select form-select-lg mb-3 selects" aria-label="Large select example">
+  										<option hidden>Estados</option>
+  										<option value="1">One</option>
+  										<option value="2">Two</option>
+  										<option value="3">Three</option>
+									</select>
+									
+									<select class="col form-select form-select-lg mb-3 selects" aria-label="Large select example">
+  										<option hidden>Feira</option>
+  										<option value="1">One</option>
+  										<option value="2">Two</option>
+  										<option value="3">Three</option>
+									</select>
+									
+									                                
                             </div>
-
+							
                             <div class="row filters-bg rounded p-3">
-                                <div class="col-sm-6 my-1 px-4">
-                                    <h4 class="fs-6 fw-semibold py-2">Categorias:</h4>
-
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="check-all" checked>
-                                        <label class="form-check-label" for="check-all">Todas as categorias</label>
+                                
+									
+									<div class="d-flex justify-content-center">
+                                    	<h4 class="fs-6 fw-semibold py-2">Categorias:</h4>
+									</div>									
+									                            		
+									<div class="row">		
+																	
+                                    	<div class="form-check col mb-3">
+	                                        <input class="form-check-input" type="checkbox" value="" id="check-all" checked>
+                                        	<label class="form-check-label" for="check-all">Todas as categorias</label>
+                                    	</div>
+	
+                                    	<div class="form-check col mb-3">
+	                                        <input class="form-check-input" type="checkbox" value="" id="check-clothes">
+                                        	<label class="form-check-label" for="check-clothes">Roupas e vestuário</label>
+                                    	</div>
+	
+                                    	<div class="form-check col mb-3">
+	                                        <input class="form-check-input" type="checkbox" value="" id="check-electronics">
+                                        	<label class="form-check-label" for="check-electronics">Eletrônicos</label>
+                                    	</div>
+	
+                                    	<div class="form-check col mb-3">
+	                                        <input class="form-check-input" type="checkbox" value="" id="check-utilities">
+    	                                    	<label class="form-check-label" for="check-utilities">Utilidades</label>
+                                    	</div>
+	
+                                    	<div class="form-check col mb-3">
+	                                        <input class="form-check-input" type="checkbox" value="" id="check-vegetables">
+                                       		<label class="form-check-label" for="check-vegetables">Comestiveis</label>
+                                    	</div>
+                                    	
+                                    
                                     </div>
-
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="check-clothes">
-                                        <label class="form-check-label" for="check-clothes">Roupas e vestuário</label>
-                                    </div>
-
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="check-electronics">
-                                        <label class="form-check-label" for="check-electronics">Eletrônicos</label>
-                                    </div>
-
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="check-utilities">
-                                        <label class="form-check-label" for="check-utilities">Utilidades</label>
-                                    </div>
-
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="check-vegetables">
-                                        <label class="form-check-label" for="check-vegetables">Hortaliças</label>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-6 my-1 px-4">
-                                    <h4 class="fs-6 fw-semibold py-2">Preços:</h4>
-
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" value="" id="radio-medium"
-                                            name="price-radio">
-                                        <label class="form-check-label" for="radio-medium">Média do mercado</label>
-                                    </div>
-
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" value="" id="radio-bigger"
-                                            name="price-radio">
-                                        <label class="form-check-label" for="radio-bigger">Maiores preços</label>
-                                    </div>
-
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" value="" id="radio-smaller"
-                                            name="price-radio">
-                                        <label class="form-check-label" for="radio-smaller">Menores preços</label>
-                                    </div>
-
-                                    <button type="submit" class="btn btn-primary mb-3 mt-4 py-2 px-3 fw-light">Aplicar filtros</button>
-                                </div>
+                                    <div class="d-flex justify-content-center">
+                                    	<button type="submit" class="btn btn-primary mb-3 mt-4 py-2 px-3 fw-light">Aplicar filtros</button>
+                                    </div>                                                                    
                             </div>
                         </form>
-
-                    </div> <!-- End .filters-container -->
-                </div>
+                    </div> <!-- End .filters-container -->                    
+					</div>
+					
+					<div class="d-flex justify-content-center">
+						<div class="map-container p-3">
+                        	<img id="map" class="p-2 rounded" src="imgs/map.svg" alt="Mapa">
+                    	</div>
+					</div>
+                    
+    			</div>                    
+        
+    
+    <div class="page-wrapper chiller-theme">
+		<div class="container d-flex justify-content-center mt-5">
+			<h1 class="text-center">Lista das Roupas da feira selecionada</h1>
+		</div>
+	</div>
+	        
+    <div class="d-flex justify-content-center container-products">
+        <button onclick="slickPrev()" class="btnPassSlider bi bi-arrow-left-circle-fill fa-2x"></button>   
+             <!-- ^ Aqui vem o each-->
+        <div class="slider js-slider container">	
+								           
+            <div class="card col card-product mt-3 mb-3 ml-3">
+        		<div class="img-container">
+	        		<img src="https://http2.mlstatic.com/D_NQ_NP_943394-MLU72748616907_112023-O.webp" class="img-product img-fluid mt-2" alt="Imagem do produto">
+            	</div>                            
+                <div class="card-product-body">														
+					<div class="d-flex">
+						<span>R$</span><span class="" th:text="${#numbers.formatDecimal({seuValor * 1.1}, 0, 2)}"></span>
+					</div>	                    	  
+                	<div class="d-flex">                       	
+	            		<h3 class="fs-5 fw-semibold">R$</h3><h3 class="fs-5 fw-semibold" th:text="${#numbers.formatDecimal({seuValor * 1.0}, 1, 2)}"></h3>
+                	</div>                        	
+                	<a th:href="@{prodEnterprise}"> <p class="py-1" th:text="${nome}"></p> </a>                        								
+                	<div class="d-flex flex-wrap justify-content-between">
+	                	<a th:href="@{prodEnterprise}" class="btn btn-primary py-1 mb-1"><i class="bi bi-pencil-square"></i> Acessar Produto</a>                            	
+    	        	</div>                        	
+     			</div>                 	
             </div>
-        </section> <!-- End #home-section -->
+            <div class="card col card-product mt-3 mb-3 ml-3">
+        		<div class="img-container">
+	        		<img src="https://http2.mlstatic.com/D_NQ_NP_943394-MLU72748616907_112023-O.webp" class="img-product img-fluid mt-2" alt="Imagem do produto">
+            	</div>                            
+                <div class="card-product-body">														
+					<div class="d-flex">
+						<span>R$</span><span class="" th:text="${#numbers.formatDecimal({seuValor * 1.1}, 0, 2)}"></span>
+					</div>	                    	  
+                	<div class="d-flex">                       	
+	            		<h3 class="fs-5 fw-semibold">R$</h3><h3 class="fs-5 fw-semibold" th:text="${#numbers.formatDecimal({seuValor * 1.0}, 1, 2)}"></h3>
+                	</div>                        	
+                	<a th:href="@{prodEnterprise}"> <p class="py-1" th:text="${nome}"></p> </a>                        								
+                	<div class="d-flex flex-wrap justify-content-between">
+	                	<a th:href="@{prodEnterprise}" class="btn btn-primary py-1 mb-1"><i class="bi bi-pencil-square"></i> Acessar Produto</a>                            	
+    	        	</div>                        	
+     			</div>                 	
+            </div>
+            <div class="card col card-product mt-3 mb-3 ml-3">
+        		<div class="img-container">
+	        		<img src="https://http2.mlstatic.com/D_NQ_NP_943394-MLU72748616907_112023-O.webp" class="img-product img-fluid mt-2" alt="Imagem do produto">
+            	</div>                            
+                <div class="card-product-body">														
+					<div class="d-flex">
+						<span>R$</span><span class="" th:text="${#numbers.formatDecimal({seuValor * 1.1}, 0, 2)}"></span>
+					</div>	                    	  
+                	<div class="d-flex">                       	
+	            		<h3 class="fs-5 fw-semibold">R$</h3><h3 class="fs-5 fw-semibold" th:text="${#numbers.formatDecimal({seuValor * 1.0}, 1, 2)}"></h3>
+                	</div>                        	
+                	<a th:href="@{prodEnterprise}"> <p class="py-1" th:text="${nome}"></p> </a>                        								
+                	<div class="d-flex flex-wrap justify-content-between">
+	                	<a th:href="@{prodEnterprise}" class="btn btn-primary py-1 mb-1"><i class="bi bi-pencil-square"></i> Acessar Produto</a>                            	
+    	        	</div>                        	
+     			</div>                 	
+            </div>
+            <div class="card col card-product mt-3 mb-3 ml-3">
+        		<div class="img-container">
+	        		<img src="https://http2.mlstatic.com/D_NQ_NP_943394-MLU72748616907_112023-O.webp" class="img-product img-fluid mt-2" alt="Imagem do produto">
+            	</div>                            
+                <div class="card-product-body">														
+					<div class="d-flex">
+						<span>R$</span><span class="" th:text="${#numbers.formatDecimal({seuValor * 1.1}, 0, 2)}"></span>
+					</div>	                    	  
+                	<div class="d-flex">                       	
+	            		<h3 class="fs-5 fw-semibold">R$</h3><h3 class="fs-5 fw-semibold" th:text="${#numbers.formatDecimal({seuValor * 1.0}, 1, 2)}"></h3>
+                	</div>                        	
+                	<a th:href="@{prodEnterprise}"> <p class="py-1" th:text="${nome}"></p> </a>                        								
+                	<div class="d-flex flex-wrap justify-content-between">
+	                	<a th:href="@{prodEnterprise}" class="btn btn-primary py-1 mb-1"><i class="bi bi-pencil-square"></i> Acessar Produto</a>                            	
+    	        	</div>                        	
+     			</div>                 	
+            </div>
+            <div class="card col card-product mt-3 mb-3 ml-3">
+        		<div class="img-container">
+	        		<img src="https://http2.mlstatic.com/D_NQ_NP_943394-MLU72748616907_112023-O.webp" class="img-product img-fluid mt-2" alt="Imagem do produto">
+            	</div>                            
+                <div class="card-product-body">														
+					<div class="d-flex">
+						<span>R$</span><span class="" th:text="${#numbers.formatDecimal({seuValor * 1.1}, 0, 2)}"></span>
+					</div>	                    	  
+                	<div class="d-flex">                       	
+	            		<h3 class="fs-5 fw-semibold">R$</h3><h3 class="fs-5 fw-semibold" th:text="${#numbers.formatDecimal({seuValor * 1.0}, 1, 2)}"></h3>
+                	</div>                        	
+                	<a th:href="@{prodEnterprise}"> <p class="py-1" th:text="${nome}"></p> </a>                        								
+                	<div class="d-flex flex-wrap justify-content-between">
+	                	<a th:href="@{prodEnterprise}" class="btn btn-primary py-1 mb-1"><i class="bi bi-pencil-square"></i> Acessar Produto</a>                            	
+    	        	</div>                        	
+     			</div>                 	
+            </div>
+            <div class="card col card-product mt-3 mb-3 ml-3">
+        		<div class="img-container">
+	        		<img src="https://http2.mlstatic.com/D_NQ_NP_943394-MLU72748616907_112023-O.webp" class="img-product img-fluid mt-2" alt="Imagem do produto">
+            	</div>                            
+                <div class="card-product-body">														
+					<div class="d-flex">
+						<span>R$</span><span class="" th:text="${#numbers.formatDecimal({seuValor * 1.1}, 0, 2)}"></span>
+					</div>	                    	  
+                	<div class="d-flex">                       	
+	            		<h3 class="fs-5 fw-semibold">R$</h3><h3 class="fs-5 fw-semibold" th:text="${#numbers.formatDecimal({seuValor * 1.0}, 1, 2)}"></h3>
+                	</div>                        	
+                	<a th:href="@{prodEnterprise}"> <p class="py-1" th:text="${nome}"></p> </a>                        								
+                	<div class="d-flex flex-wrap justify-content-between">
+	                	<a th:href="@{prodEnterprise}" class="btn btn-primary py-1 mb-1"><i class="bi bi-pencil-square"></i> Acessar Produto</a>                            	
+    	        	</div>                        	
+     			</div>                 	
+            </div>   
+        </div>        
+        <button onclick="slickNext()" class="fa-lg bi bi-arrow-right-circle-fill btnPassSlider"></button>        
+    </div>
+						
+			
+	<div class="page-wrapper chiller-theme">
+		<div class="container d-flex justify-content-center mt-5">
+			<h1 class="text-center">Lista geral de Comestíveis da feira selecionada</h1>
+		</div>
+	</div>        
+    <div class="d-flex justify-content-center container-products">
+        <button onclick="slickPrev1()" class="btnPassSlider bi bi-arrow-left-circle-fill fa-2x"></button>   
+             <!-- ^ Aqui vem o each-->
+        <div class="slider js-slider1 container">
+			<div class="card col card-product mt-3 mb-3 ml-3">
 
+        		<div class="img-container">
+	        		<img src="https://http2.mlstatic.com/D_NQ_NP_943394-MLU72748616907_112023-O.webp" class="img-product img-fluid mt-2" alt="Imagem do produto">
+            	</div>                            
+                <div class="card-product-body">														
+					<div class="d-flex">
+						<span>R$</span><span class="" th:text="${#numbers.formatDecimal({seuValor * 1.1}, 0, 2)}"></span>
+					</div>	                    	  
+                	<div class="d-flex">                       	
+	            		<h3 class="fs-5 fw-semibold">R$</h3><h3 class="fs-5 fw-semibold" th:text="${#numbers.formatDecimal({seuValor * 1.0}, 1, 2)}"></h3>
+                	</div>                        	
+                	<a th:href="@{prodEnterprise}"> <p class="py-1" th:text="${nome}"></p> </a>                        								
+                	<div class="d-flex flex-wrap justify-content-between">
+	                	<a th:href="@{prodEnterprise}" class="btn btn-primary py-1 mb-1"><i class="bi bi-pencil-square"></i> Acessar Produto</a>                            	
+    	        	</div>                        	
+     			</div>                 	
+            </div>
+            <div class="card col card-product mt-3 mb-3 ml-3">
+        		<div class="img-container">
+	        		<img src="https://http2.mlstatic.com/D_NQ_NP_943394-MLU72748616907_112023-O.webp" class="img-product img-fluid mt-2" alt="Imagem do produto">
+            	</div>                            
+                <div class="card-product-body">														
+					<div class="d-flex">
+						<span>R$</span><span class="" th:text="${#numbers.formatDecimal({seuValor * 1.1}, 0, 2)}"></span>
+					</div>	                    	  
+                	<div class="d-flex">                       	
+	            		<h3 class="fs-5 fw-semibold">R$</h3><h3 class="fs-5 fw-semibold" th:text="${#numbers.formatDecimal({seuValor * 1.0}, 1, 2)}"></h3>
+                	</div>                        	
+                	<a th:href="@{prodEnterprise}"> <p class="py-1" th:text="${nome}"></p> </a>                        								
+                	<div class="d-flex flex-wrap justify-content-between">
+	                	<a th:href="@{prodEnterprise}" class="btn btn-primary py-1 mb-1"><i class="bi bi-pencil-square"></i> Acessar Produto</a>                            	
+    	        	</div>                        	
+     			</div>                 	
+            </div>
+            <div class="card col card-product mt-3 mb-3 ml-3">
+        		<div class="img-container">
+	        		<img src="https://http2.mlstatic.com/D_NQ_NP_943394-MLU72748616907_112023-O.webp" class="img-product img-fluid mt-2" alt="Imagem do produto">
+            	</div>                            
+                <div class="card-product-body">														
+					<div class="d-flex">
+						<span>R$</span><span class="" th:text="${#numbers.formatDecimal({seuValor * 1.1}, 0, 2)}"></span>
+					</div>	                    	  
+                	<div class="d-flex">                       	
+	            		<h3 class="fs-5 fw-semibold">R$</h3><h3 class="fs-5 fw-semibold" th:text="${#numbers.formatDecimal({seuValor * 1.0}, 1, 2)}"></h3>
+                	</div>                        	
+                	<a th:href="@{prodEnterprise}"> <p class="py-1" th:text="${nome}"></p> </a>                        								
+                	<div class="d-flex flex-wrap justify-content-between">
+	                	<a th:href="@{prodEnterprise}" class="btn btn-primary py-1 mb-1"><i class="bi bi-pencil-square"></i> Acessar Produto</a>                            	
+    	        	</div>                        	
+     			</div>                 	
+            </div>
+            <div class="card col card-product mt-3 mb-3 ml-3">
+        		<div class="img-container">
+	        		<img src="https://http2.mlstatic.com/D_NQ_NP_943394-MLU72748616907_112023-O.webp" class="img-product img-fluid mt-2" alt="Imagem do produto">
+            	</div>                            
+                <div class="card-product-body">														
+					<div class="d-flex">
+						<span>R$</span><span class="" th:text="${#numbers.formatDecimal({seuValor * 1.1}, 0, 2)}"></span>
+					</div>	                    	  
+                	<div class="d-flex">                       	
+	            		<h3 class="fs-5 fw-semibold">R$</h3><h3 class="fs-5 fw-semibold" th:text="${#numbers.formatDecimal({seuValor * 1.0}, 1, 2)}"></h3>
+                	</div>                        	
+                	<a th:href="@{prodEnterprise}"> <p class="py-1" th:text="${nome}"></p> </a>                        								
+                	<div class="d-flex flex-wrap justify-content-between">
+	                	<a th:href="@{prodEnterprise}" class="btn btn-primary py-1 mb-1"><i class="bi bi-pencil-square"></i> Acessar Produto</a>                            	
+    	        	</div>                        	
+     			</div>                 	
+            </div>
+            <div class="card col card-product mt-3 mb-3 ml-3">
+        		<div class="img-container">
+	        		<img src="https://http2.mlstatic.com/D_NQ_NP_943394-MLU72748616907_112023-O.webp" class="img-product img-fluid mt-2" alt="Imagem do produto">
+            	</div>                            
+                <div class="card-product-body">														
+					<div class="d-flex">
+						<span>R$</span><span class="" th:text="${#numbers.formatDecimal({seuValor * 1.1}, 0, 2)}"></span>
+					</div>	                    	  
+                	<div class="d-flex">                       	
+	            		<h3 class="fs-5 fw-semibold">R$</h3><h3 class="fs-5 fw-semibold" th:text="${#numbers.formatDecimal({seuValor * 1.0}, 1, 2)}"></h3>
+                	</div>                        	
+                	<a th:href="@{prodEnterprise}"> <p class="py-1" th:text="${nome}"></p> </a>                        								
+                	<div class="d-flex flex-wrap justify-content-between">
+	                	<a th:href="@{prodEnterprise}" class="btn btn-primary py-1 mb-1"><i class="bi bi-pencil-square"></i> Acessar Produto</a>                            	
+    	        	</div>                        	
+     			</div>                 	
+            </div>							                                    
+        </div>        
+        <button onclick="slickNext1()" class="fa-lg bi bi-arrow-right-circle-fill btnPassSlider"></button>        
+    </div>
+    
+    
+    <div class="page-wrapper chiller-theme">
+		
+		<div class="container d-flex justify-content-center mt-5">
+			<h1 class="text-center">Lista geral das Eletrônicos da feira selecionada</h1>
+		</div>
+	</div> 
+	       
+    <div class="d-flex justify-content-center container-products">
+        <button onclick="slickPrev()" class="btnPassSlider bi bi-arrow-left-circle-fill fa-2x"></button>   
+             <!-- ^ Aqui vem o each-->
+        <div class="slider js-slider container">
+			<div class="card col card-product mt-3 mb-3 ml-3">
+        		<div class="img-container">
+	        		<img src="https://http2.mlstatic.com/D_NQ_NP_943394-MLU72748616907_112023-O.webp" class="img-product img-fluid mt-2" alt="Imagem do produto">
+            	</div>                            
+                <div class="card-product-body">														
+					<div class="d-flex">
+						<span>R$</span><span class="" th:text="${#numbers.formatDecimal({seuValor * 1.1}, 0, 2)}"></span>
+					</div>	                    	  
+                	<div class="d-flex">                       	
+	            		<h3 class="fs-5 fw-semibold">R$</h3><h3 class="fs-5 fw-semibold" th:text="${#numbers.formatDecimal({seuValor * 1.0}, 1, 2)}"></h3>
+                	</div>                        	
+                	<a th:href="@{prodEnterprise}"> <p class="py-1" th:text="${nome}"></p> </a>                        								
+                	<div class="d-flex flex-wrap justify-content-between">
+	                	<a th:href="@{prodEnterprise}" class="btn btn-primary py-1 mb-1"><i class="bi bi-pencil-square"></i> Acessar Produto</a>                            	
+    	        	</div>                        	
+     			</div>                 	
+            </div>
+            <div class="card col card-product mt-3 mb-3 ml-3">
+        		<div class="img-container">
+	        		<img src="https://http2.mlstatic.com/D_NQ_NP_943394-MLU72748616907_112023-O.webp" class="img-product img-fluid mt-2" alt="Imagem do produto">
+            	</div>                            
+                <div class="card-product-body">														
+					<div class="d-flex">
+						<span>R$</span><span class="" th:text="${#numbers.formatDecimal({seuValor * 1.1}, 0, 2)}"></span>
+					</div>	                    	  
+                	<div class="d-flex">                       	
+	            		<h3 class="fs-5 fw-semibold">R$</h3><h3 class="fs-5 fw-semibold" th:text="${#numbers.formatDecimal({seuValor * 1.0}, 1, 2)}"></h3>
+                	</div>                        	
+                	<a th:href="@{prodEnterprise}"> <p class="py-1" th:text="${nome}"></p> </a>                        								
+                	<div class="d-flex flex-wrap justify-content-between">
+	                	<a th:href="@{prodEnterprise}" class="btn btn-primary py-1 mb-1"><i class="bi bi-pencil-square"></i> Acessar Produto</a>                            	
+    	        	</div>                        	
+     			</div>                 	
+            </div>
+            <div class="card col card-product mt-3 mb-3 ml-3">
+        		<div class="img-container">
+	        		<img src="https://http2.mlstatic.com/D_NQ_NP_943394-MLU72748616907_112023-O.webp" class="img-product img-fluid mt-2" alt="Imagem do produto">
+            	</div>                            
+                <div class="card-product-body">														
+					<div class="d-flex">
+						<span>R$</span><span class="" th:text="${#numbers.formatDecimal({seuValor * 1.1}, 0, 2)}"></span>
+					</div>	                    	  
+                	<div class="d-flex">                       	
+	            		<h3 class="fs-5 fw-semibold">R$</h3><h3 class="fs-5 fw-semibold" th:text="${#numbers.formatDecimal({seuValor * 1.0}, 1, 2)}"></h3>
+                	</div>                        	
+                	<a th:href="@{prodEnterprise}"> <p class="py-1" th:text="${nome}"></p> </a>                        								
+                	<div class="d-flex flex-wrap justify-content-between">
+	                	<a th:href="@{prodEnterprise}" class="btn btn-primary py-1 mb-1"><i class="bi bi-pencil-square"></i> Acessar Produto</a>                            	
+    	        	</div>                        	
+     			</div>                 	
+            </div>
+            <div class="card col card-product mt-3 mb-3 ml-3">
+        		<div class="img-container">
+	        		<img src="https://http2.mlstatic.com/D_NQ_NP_943394-MLU72748616907_112023-O.webp" class="img-product img-fluid mt-2" alt="Imagem do produto">
+            	</div>                            
+                <div class="card-product-body">														
+					<div class="d-flex">
+						<span>R$</span><span class="" th:text="${#numbers.formatDecimal({seuValor * 1.1}, 0, 2)}"></span>
+					</div>	                    	  
+                	<div class="d-flex">                       	
+	            		<h3 class="fs-5 fw-semibold">R$</h3><h3 class="fs-5 fw-semibold" th:text="${#numbers.formatDecimal({seuValor * 1.0}, 1, 2)}"></h3>
+                	</div>                        	
+                	<a th:href="@{prodEnterprise}"> <p class="py-1" th:text="${nome}"></p> </a>                        								
+                	<div class="d-flex flex-wrap justify-content-between">
+	                	<a th:href="@{prodEnterprise}" class="btn btn-primary py-1 mb-1"><i class="bi bi-pencil-square"></i> Acessar Produto</a>                            	
+    	        	</div>                        	
+     			</div>                 	
+            </div>
+            <div class="card col card-product mt-3 mb-3 ml-3">
+        		<div class="img-container">
+	        		<img src="https://http2.mlstatic.com/D_NQ_NP_943394-MLU72748616907_112023-O.webp" class="img-product img-fluid mt-2" alt="Imagem do produto">
+            	</div>                            
+                <div class="card-product-body">														
+					<div class="d-flex">
+						<span>R$</span><span class="" th:text="${#numbers.formatDecimal({seuValor * 1.1}, 0, 2)}"></span>
+					</div>	                    	  
+                	<div class="d-flex">                       	
+	            		<h3 class="fs-5 fw-semibold">R$</h3><h3 class="fs-5 fw-semibold" th:text="${#numbers.formatDecimal({seuValor * 1.0}, 1, 2)}"></h3>
+                	</div>                        	
+                	<a th:href="@{prodEnterprise}"> <p class="py-1" th:text="${nome}"></p> </a>                        								
+                	<div class="d-flex flex-wrap justify-content-between">
+	                	<a th:href="@{prodEnterprise}" class="btn btn-primary py-1 mb-1"><i class="bi bi-pencil-square"></i> Acessar Produto</a>                            	
+    	        	</div>                        	
+     			</div>                 	
+            </div>							                                    
+        </div>        
+        <button onclick="slickNext()" class="fa-lg bi bi-arrow-right-circle-fill btnPassSlider"></button>        
+    </div>
+    
+    <div class="page-wrapper chiller-theme">
+		
+		<div class="container d-flex justify-content-center mt-5">
+			<h1 class="text-center">Lista geral das Cosméticos da feira selecionada</h1>
+		</div>
+	</div>   
+	
+	     
+    <div class="d-flex justify-content-center container-products">
+        <button onclick="slickPrev1()" class="btnPassSlider bi bi-arrow-left-circle-fill fa-2x"></button>   
+             <!-- ^ Aqui vem o each-->
+        <div class="slider js-slider1 container">
+			<div class="card col card-product mt-3 mb-3 ml-3">
+        		<div class="img-container">
+	        		<img src="https://http2.mlstatic.com/D_NQ_NP_943394-MLU72748616907_112023-O.webp" class="img-product img-fluid mt-2" alt="Imagem do produto">
+            	</div>                            
+                <div class="card-product-body">														
+					<div class="d-flex">
+						<span>R$</span><span class="" th:text="${#numbers.formatDecimal({seuValor * 1.1}, 0, 2)}"></span>
+					</div>	                    	  
+                	<div class="d-flex">                       	
+	            		<h3 class="fs-5 fw-semibold">R$</h3><h3 class="fs-5 fw-semibold" th:text="${#numbers.formatDecimal({seuValor * 1.0}, 1, 2)}"></h3>
+                	</div>                        	
+                	<a th:href="@{prodEnterprise}"> <p class="py-1" th:text="${nome}"></p> </a>                        								
+                	<div class="d-flex flex-wrap justify-content-between">
+	                	<a th:href="@{prodEnterprise}" class="btn btn-primary py-1 mb-1"><i class="bi bi-pencil-square"></i> Acessar Produto</a>                            	
+    	        	</div>                        	
+     			</div>                 	
+            </div>
+            <div class="card col card-product mt-3 mb-3 ml-3">
+        		<div class="img-container">
+	        		<img src="https://http2.mlstatic.com/D_NQ_NP_943394-MLU72748616907_112023-O.webp" class="img-product img-fluid mt-2" alt="Imagem do produto">
+            	</div>                            
+                <div class="card-product-body">														
+					<div class="d-flex">
+						<span>R$</span><span class="" th:text="${#numbers.formatDecimal({seuValor * 1.1}, 0, 2)}"></span>
+					</div>	                    	  
+                	<div class="d-flex">                       	
+	            		<h3 class="fs-5 fw-semibold">R$</h3><h3 class="fs-5 fw-semibold" th:text="${#numbers.formatDecimal({seuValor * 1.0}, 1, 2)}"></h3>
+                	</div>                        	
+                	<a th:href="@{prodEnterprise}"> <p class="py-1" th:text="${nome}"></p> </a>                        								
+                	<div class="d-flex flex-wrap justify-content-between">
+	                	<a th:href="@{prodEnterprise}" class="btn btn-primary py-1 mb-1"><i class="bi bi-pencil-square"></i> Acessar Produto</a>                            	
+    	        	</div>                        	
+     			</div>                 	
+            </div>
+            <div class="card col card-product mt-3 mb-3 ml-3">
+        		<div class="img-container">
+	        		<img src="https://http2.mlstatic.com/D_NQ_NP_943394-MLU72748616907_112023-O.webp" class="img-product img-fluid mt-2" alt="Imagem do produto">
+            	</div>                            
+                <div class="card-product-body">														
+					<div class="d-flex">
+						<span>R$</span><span class="" th:text="${#numbers.formatDecimal({seuValor * 1.1}, 0, 2)}"></span>
+					</div>	                    	  
+                	<div class="d-flex">                       	
+	            		<h3 class="fs-5 fw-semibold">R$</h3><h3 class="fs-5 fw-semibold" th:text="${#numbers.formatDecimal({seuValor * 1.0}, 1, 2)}"></h3>
+                	</div>                        	
+                	<a th:href="@{prodEnterprise}"> <p class="py-1" th:text="${nome}"></p> </a>                        								
+                	<div class="d-flex flex-wrap justify-content-between">
+	                	<a th:href="@{prodEnterprise}" class="btn btn-primary py-1 mb-1"><i class="bi bi-pencil-square"></i> Acessar Produto</a>                            	
+    	        	</div>                        	
+     			</div>                 	
+            </div>
+            <div class="card col card-product mt-3 mb-3 ml-3">
+        		<div class="img-container">
+	        		<img src="https://http2.mlstatic.com/D_NQ_NP_943394-MLU72748616907_112023-O.webp" class="img-product img-fluid mt-2" alt="Imagem do produto">
+            	</div>                            
+                <div class="card-product-body">														
+					<div class="d-flex">
+						<span>R$</span><span class="" th:text="${#numbers.formatDecimal({seuValor * 1.1}, 0, 2)}"></span>
+					</div>	                    	  
+                	<div class="d-flex">                       	
+	            		<h3 class="fs-5 fw-semibold">R$</h3><h3 class="fs-5 fw-semibold" th:text="${#numbers.formatDecimal({seuValor * 1.0}, 1, 2)}"></h3>
+                	</div>                        	
+                	<a th:href="@{prodEnterprise}"> <p class="py-1" th:text="${nome}"></p> </a>                        								
+                	<div class="d-flex flex-wrap justify-content-between">
+	                	<a th:href="@{prodEnterprise}" class="btn btn-primary py-1 mb-1"><i class="bi bi-pencil-square"></i> Acessar Produto</a>                            	
+    	        	</div>                        	
+     			</div>                 	
+            </div>
+            <div class="card col card-product mt-3 mb-3 ml-3">
+        		<div class="img-container">
+	        		<img src="https://http2.mlstatic.com/D_NQ_NP_943394-MLU72748616907_112023-O.webp" class="img-product img-fluid mt-2" alt="Imagem do produto">
+            	</div>                            
+                <div class="card-product-body">														
+					<div class="d-flex">
+						<span>R$</span><span class="" th:text="${#numbers.formatDecimal({seuValor * 1.1}, 0, 2)}"></span>
+					</div>	                    	  
+                	<div class="d-flex">                       	
+	            		<h3 class="fs-5 fw-semibold">R$</h3><h3 class="fs-5 fw-semibold" th:text="${#numbers.formatDecimal({seuValor * 1.0}, 1, 2)}"></h3>
+                	</div>                        	
+                	<a th:href="@{prodEnterprise}"> <p class="py-1" th:text="${nome}"></p> </a>                        								
+                	<div class="d-flex flex-wrap justify-content-between">
+	                	<a th:href="@{prodEnterprise}" class="btn btn-primary py-1 mb-1"><i class="bi bi-pencil-square"></i> Acessar Produto</a>                            	
+    	        	</div>                        	
+     			</div>                 	
+            </div>							                                    
+        </div>        
+        <button onclick="slickNext1()" class="fa-lg bi bi-arrow-right-circle-fill btnPassSlider"></button>        
+    </div>
+
+        </section> <!-- End #home-section -->
+ 
     </main> <!-- End .container-fluid -->
 
 
@@ -131,14 +557,26 @@
 	</div>
 	<!-- - End #alertToast - -->
 
-	<!-- JS scripts -->
-	<script src="../static/js/systemAlerts.js" defer></script>
-	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-	  integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
+	<!-- JS scripts -->	
+    <script th:replace="~{fragments/scripts :: popper}">
+    </script>
+    
+    <script th:replace="~{fragments/scripts :: bootstrap}">
+    </script>    
+    
+    <script th:replace="~{fragments/scripts :: systemAlert}" defer></script>    
+    
+    <script th:replace="~{fragments/scripts :: jquerySlide}">		
 	</script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-	  integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous">
+    
+    <script th:replace="~{fragments/scripts :: jquerySlide1}">		
 	</script>
+    
+    <script th:replace="~{fragments/scripts :: slick-carousel}">		
+	</script>
+
+	<script th:replace="~{fragments/scripts :: slider}">
+    </script>
 </body>
 
 </html>

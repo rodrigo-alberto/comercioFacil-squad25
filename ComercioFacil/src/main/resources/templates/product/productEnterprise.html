@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head th:replace="~{fragments/head :: head('Empresário')}"></head>
+
+<body>
+	
+	<!-- - header - -->
+    <header th:replace="~{fragments/header :: navbar}" ></header> 
+	<!-- End #header -->
+
+	<div class="container mb-5">
+		<div class="d-flex justify-content-center w-100">
+			<div class="img-container-enterprise ">
+	        	<img src="../imgs/barraca.png" class="card-img-top img-enterprise" alt="Imagem do empreendimento">
+        	</div>        	        	
+        </div>
+        <div class="d-flex justify-content-around">
+        	<h1>Nome da empresa</h1><h6 class="mt-3">numero da barraca</h6>
+        </div>
+        <div class="d-flex justify-content-center mt-3">
+        	<p class="mb-5">
+				Descrição do empreendimento.
+        	</p>
+        </div>
+	</div>
+	
+	<section class="container">	
+	
+	
+		<div class="container d-flex justify-content-center mt-5">
+			<h1>Seu produto</h1>
+		</div>
+	 
+	
+	<!--Conteudo página-->	
+	<div class="d-flex justify-content-center bg-product-enterprise">	
+		
+		<div class="product-enterprise  mt-3 mb-3">	
+				
+			<div class="container-product-enterprise mb-3">
+	        	<img src="https://http2.mlstatic.com/D_NQ_NP_943394-MLU72748616907_112023-O.webp"
+            	class="img-product-enterprise mb-5" alt="Imagem do produto">            	
+        	</div>
+	        
+			<div class="">				
+				<div class="d-flex">
+					<span>R$</span><span class="" >900</span>
+					<!--th:text="${#numbers.formatDecimal({seuValor * 1.1}, 0, 2)}"-->
+				</div>	                    	  
+	            <div class="d-flex">                       	
+	        		<h3 class="fs-5 fw-semibold">R$</h3><h3 class="fs-5 fw-semibold">1000</h3>
+	        		<!--th:text="${#numbers.formatDecimal({seuValor * 1.0}, 1, 2)}"-->
+                 </div>
+				<p class="mb-5">Monitor Gamer Hero Full Hd 27'' G-sync 144hz Ips 1ms Aoc Cor Preto/Vermelho
+                        	110V/220V
+				</p>					
+				<div class="d-flex justify-content-around mt-5">
+					<h2>Status: </h2> <h3> Indisponivel</h3>
+				</div>								
+			</div>
+			
+		</div>
+	</div>
+	<div class="row mt-5">
+		
+                <div class="col-lg-6">
+                    <div class="notice-contact text-center rounded py-3 mb-3">
+                        <i class="bi bi-chat-dots icon"></i>
+
+                        <div class="section-title py-1">
+                            <h3 class="fs-5 fw-semibold">Gostou do produto?</h3>
+                            <h5 class="fs-6">Envie uma mensagem para o vendedor</h5>
+                        
+                            <p class="fs-6 mt-5">Aqui você pode mandar uma mensagem para seu vendedor e falar sobre o produto desejado.</p>
+                        </div>
+                    </div>                                        
+                </div>
+                
+				<div class="col-lg-6">
+                    <form class="p-3 rounded contact-product">                        
+                        <div class="mb-3">
+                            <label for="inputSubject" class="form-label">Assunto:</label>
+                            <input type="text" class="form-control" id="inputSubject">
+                        </div>
+
+                        <div class="mb-3">
+                            <textarea class="form-control py-3 px-3" placeholder="Escreva sua mensagem..." cols="2"
+                                rows="5"></textarea>
+                        </div>                        
+
+                        <div class="d-flex justify-content-center my-2">
+                            <button type="submit" class="btn btn-outline-primary">Enviar mensagem</button>
+                        </div>
+                    </form>
+                </div>
+	</div>
+		
+	
+		<div class="container d-flex justify-content-center mt-5 mb-5">
+			<h1 class="text-center">Outros produtos deste Empresário</h1>
+		</div>
+	        
+    <div class="d-flex justify-content-center container-products">
+        <button onclick="slickPrev()" class="btnPassSlider bi bi-arrow-left-circle-fill fa-2x"></button>   
+             
+        <div class="slider js-slider container">
+			<!-- ^ Aqui vem o each-->						           
+            <div class="card card-product mt-3 mb-3 ml-3">
+                <div class="img-container">
+                    <img src="https://http2.mlstatic.com/D_NQ_NP_943394-MLU72748616907_112023-O.webp"
+                        class="img-product img-fluid mt-2" alt="Imagem do produto">
+                </div>
+                <div class="card-body">
+
+                    <span class="">Nome Empreendimeto</span>
+                    <h3 class="fs-5 fw-semibold">Preco produto</h3>
+                    <p class="py-1">Monitor Gamer Hero Full Hd 27'' G-sync 144hz Ips 1ms Aoc Cor Preto/Vermelho
+                        110V/220V
+                    </p>
+                    <div class="d-flex flex-wrap justify-content-between">
+                        <a href="rota de detalhes" class="btn btn-primary py-1 mb-1"><i class="bi bi-pencil-square"></i>
+                            Acessar Produto</a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="card card-product mt-3 mb-3 ml-3">
+                <div class="img-container">
+                    <img src="https://http2.mlstatic.com/D_NQ_NP_943394-MLU72748616907_112023-O.webp"
+                        class="img-product img-fluid mt-2" alt="Imagem do produto">
+                </div>
+                <div class="card-body">
+
+                    <span class="">Nome Empreendimeto</span>
+                    <h3 class="fs-5 fw-semibold">Preco produto</h3>
+                    <p class="py-1">Monitor Gamer Hero Full Hd 27'' G-sync 144hz Ips 1ms Aoc Cor Preto/Vermelho
+                        110V/220V
+                    </p>
+                    <div class="d-flex flex-wrap justify-content-between">
+                        <a href="rota de detalhes" class="btn btn-primary py-1 mb-1"><i class="bi bi-pencil-square"></i>
+                            Acessar Produto</a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="card card-product mt-3 mb-3 ml-3">
+                <div class="img-container">
+                    <img src="https://http2.mlstatic.com/D_NQ_NP_943394-MLU72748616907_112023-O.webp"
+                        class="img-product img-fluid mt-2" alt="Imagem do produto">
+                </div>
+                <div class="card-body">
+
+                    <span class="">Nome Empreendimeto</span>
+                    <h3 class="fs-5 fw-semibold">Preco produto</h3>
+                    <p class="py-1">Monitor Gamer Hero Full Hd 27'' G-sync 144hz Ips 1ms Aoc Cor Preto/Vermelho
+                        110V/220V
+                    </p>
+                    <div class="d-flex flex-wrap justify-content-between">
+                        <a href="rota de detalhes" class="btn btn-primary py-1 mb-1"><i class="bi bi-pencil-square"></i>
+                            Acessar Produto</a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="card card-product mt-3 mb-3 ml-3">
+                <div class="img-container">
+                    <img src="https://http2.mlstatic.com/D_NQ_NP_943394-MLU72748616907_112023-O.webp"
+                        class="img-product img-fluid mt-2" alt="Imagem do produto">
+                </div>
+                <div class="card-body">
+
+                    <span class="">Nome Empreendimeto</span>
+                    <h3 class="fs-5 fw-semibold">Preco produto</h3>
+                    <p class="py-1">Monitor Gamer Hero Full Hd 27'' G-sync 144hz Ips 1ms Aoc Cor Preto/Vermelho
+                        110V/220V
+                    </p>
+                    <div class="d-flex flex-wrap justify-content-between">
+                        <a href="rota de detalhes" class="btn btn-primary py-1 mb-1"><i class="bi bi-pencil-square"></i>
+                            Acessar Produto</a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="card card-product mt-3 mb-3 ml-3">
+                <div class="img-container">
+                    <img src="https://http2.mlstatic.com/D_NQ_NP_943394-MLU72748616907_112023-O.webp"
+                        class="img-product img-fluid mt-2" alt="Imagem do produto">
+                </div>
+                <div class="card-body">
+
+                    <span class="">Nome Empreendimeto</span>
+                    <h3 class="fs-5 fw-semibold">Preco produto</h3>
+                    <p class="py-1">Monitor Gamer Hero Full Hd 27'' G-sync 144hz Ips 1ms Aoc Cor Preto/Vermelho
+                        110V/220V
+                    </p>
+                    <div class="d-flex flex-wrap justify-content-between">
+                        <a href="rota de detalhes" class="btn btn-primary py-1 mb-1"><i class="bi bi-pencil-square"></i>
+                            Acessar Produto</a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="card card-product mt-3 mb-3 ml-3">
+                <div class="img-container">
+                    <img src="https://http2.mlstatic.com/D_NQ_NP_943394-MLU72748616907_112023-O.webp"
+                        class="img-product img-fluid mt-2" alt="Imagem do produto">
+                </div>
+                <div class="card-body">
+
+                    <span class="">Nome Empreendimeto</span>
+                    <h3 class="fs-5 fw-semibold">Preco produto</h3>
+                    <p class="py-1">Monitor Gamer Hero Full Hd 27'' G-sync 144hz Ips 1ms Aoc Cor Preto/Vermelho
+                        110V/220V
+                    </p>
+                    <div class="d-flex flex-wrap justify-content-between">
+                        <a href="rota de detalhes" class="btn btn-primary py-1 mb-1"><i class="bi bi-pencil-square"></i>
+                            Acessar Produto</a>
+                    </div>
+
+                </div>
+            </div>
+             
+        </div>        
+        <button onclick="slickNext()" class="fa-lg bi bi-arrow-right-circle-fill btnPassSlider"></button>        
+    </div>	
+	</div>
+		
+	</section>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- - footer - -->
+    <footer th:replace="~{fragments/footer :: footer}"></footer> 
+    <!-- - End #footer - -->
+
+    <!-- JS scripts -->
+    	<script th:replace="~{fragments/scripts :: jquery}">		
+		</script>
+
+		<script th:replace="~{fragments/scripts :: popper}">
+	    </script>
+	    
+    	<script th:replace="~{fragments/scripts :: bootstrap}">
+    	</script>
+		
+		<script th:replace="~{fragments/scripts :: sideBar}">			
+		</script>
+    	
+    	<script th:replace="~{fragments/scripts :: roll}">
+			
+		</script>
+		
+		<script th:replace="~{fragments/scripts :: jquerySlide}">		
+		</script>
+    
+    	<script th:replace="~{fragments/scripts :: jquerySlide1}">		
+		</script>
+    
+    	<script th:replace="~{fragments/scripts :: slick-carousel}">		
+		</script>
+
+		<script th:replace="~{fragments/scripts :: slider}">
+    	</script> 
+    
+</body>
+
+</html>
