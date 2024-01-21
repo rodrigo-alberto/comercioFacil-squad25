@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragments/head :: head('Sobre Nós')}"></head>
+
+
+<body>
+	
+    <!-- - header - -->
+    <header th:replace="~{fragments/header :: navbar}" ></header> 
+	<!-- End #header -->
+
+	<div th:replace="~{fragments/header :: space}"></div>
+	
+    <!-- - main - -->
+	  <main class="container main">
+		  
+		 <div class="page-wrapper chiller-theme">
+			<div class="container d-flex justify-content-center mt-5">
+				<h1 class="text-center">Entre em nosso sistema</h1>
+			</div>
+		</div>
+		 
+	    <section class="">
+        <div class="container-fluid login ">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+			  
+            <div class="col-md-9 col-lg-6 col-xl-5 gif-cf">
+              <img src="imgs/mobile.gif"
+                class="gif-img" alt="Sample image">
+            </div>
+            
+            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1 form-login">				
+				
+				<div class="section-title py-4 text-form-login">
+                	<h2 class="fs-3 fw-bold">Faça seu login:</h2>
+                	<p class="fs-5 pb-2 fw-light">Preencha com 
+                    	<span class="fw-bold">seu nome completo e sua senha</span> e caso não tenha conta, clique
+                    	<span class="fw-bold" ><a th:href="@{cadClient}">aqui</a></span> ou em
+                    	<span class="fw-bold">cadastre-se</span>
+                	</p>
+            	</div>
+            	            		
+              <form>                      
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                  <input type="text" id="form3Example3" class="form-control form-control-lg"
+                    placeholder="Nome Completo" />
+                  <label class="form-label" for="">Seu Login</label>
+                </div>
+      			
+                <!-- Password input -->
+                <div class="form-outline mb-3">
+                  <input type="password" id="form3Example4" class="form-control form-control-lg"
+                    placeholder="Sua senha" />
+                  <label class="form-label" for="">Senha</label>
+                </div>                      
+      
+                <div class="text-center text-lg-start mt-4 pt-2">
+                  <button type="button" class="btn btn-primary btn-lg btn-submit-form">Entrar</button>
+                  <p class="small fw-bold mt-2 pt-1 mb-0">Não tem uma conta? <a th:href="@{cadClient}"
+                      class="link-danger">Cadastre-se</a></p>
+                </div>
+      
+              </form>
+            </div>
+          </div>
+        </div>        
+      </section>
+	
+	  </main> <!-- End .container -->
+    
+    <!-- - footer - -->
+    <footer th:replace="~{fragments/footer :: footer}"></footer> 
+    <!-- - End #footer - -->
+
+
+    <!-- JS scripts -->    
+    <script th:replace="~{fragments/scripts :: popper}">
+    </script>
+    <script th:replace="~{fragments/scripts :: bootstrap}">
+    </script>    
+    <script th:replace="~{fragments/scripts :: fontawesome}">
+    </script>
+    
+    
+</body>
+
+</html>

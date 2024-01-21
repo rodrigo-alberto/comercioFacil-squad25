@@ -14,25 +14,9 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item utilities-item ms-4 ps-4">
-                            <div class="utilities-div utilities-focus rounded-pill">
-                                <a th:href="@{testeSide}"  class="nav-link d-flex align-items-center text-decoration-none me-1">
-                                    <img src="../imgs/user-default.svg" id="userPefil" class="rounded-circle me-2"
-                                        alt="Nova sessão">
-                                    <span id="userName">Seção restrita</span>
-                                </a>
-                            </div>
-                        </li>
-
-                        <li class="nav-item utilities-item ms-0">
-                            <div class="utilities-div rounded-pill pe-3">
-                                <a href="/enterprise/listarAll" class="nav-link d-flex align-items-center text-decoration-none ms-1">
-                                    <img src="imgs/warning-default.svg" class="rounded-circle me-2" alt="Área restrita">
-                                    <span id="restrictedArea">Área do empreendedor</span>
-                                </a>
-                            </div>
-                        </li>
-
+						
+						
+						
                         <li class="nav-item">
                             <a class="nav-link fw-semibold" aria-current="page" href="/">Home</a>
                         </li>
@@ -57,16 +41,45 @@
                         <li class="nav-item">
                             <a class="nav-link fw-semibold" th:href="@{contact}">Contatos</a>
                         </li>
-                    </ul>
+                        
+                        <div class="nav-item d-flex buttons-admin">
+							
+                        	<li class="nav-item utilities-item ms-0  ps-4">
+                            	<div class="utilities-div utilities-focus rounded-pill">
+                                	<a th:href="@{adminSide}"  class="nav-link d-flex align-items-center text-decoration-none me-1">
+                                    	<img src="../imgs/user-default.svg" id="userPefil" class="rounded-circle me-2"
+                                        	alt="Nova sessão">
+                                    	<span id="userName">Seção restrita</span>
+                                	</a>
+                            	</div>
+                        	</li>
 
-                    <div class="nav-help ms-3 ps-2">
-                        <a class="nav-link fs-6 fw-semibold" href="https://www.bibliaonline.com.br/"
-                            target="_blank">Ajuda
+                        	<li class="nav-item utilities-item ms-0">
+	                            <div class="utilities-div rounded-pill pe-3">
+                                	<a th:href="@{employerAdmin}" class="nav-link d-flex align-items-center text-decoration-none ms-1">
+	                                    <img src="imgs/warning-default.svg" class="rounded-circle me-2" alt="Área restrita">
+                                    	<span id="restrictedArea">Área do empreendedor</span>
+                                	</a>
+                            	</div>
+                        	</li>
+						</div>
+                    </ul>
+						
+					<div class="nav-help ms-0 ps-2">
+                        <a class="nav-link fs-6 fw-semibold" th:href="@{loginClient}">Entre na sua conta
                             <button class="btn btn-outline-primary rounded-circle ms-2 fw-semibold"
-                                type="submit">?</button>
+							type="submit"><span class=" bi bi-person-circle mr-3"></span></button>
                         </a>
                     </div>
+                    
+                    
+                    
+                    
                 </div>
             </div>
         </nav>
     </header> 
+    
+    <div th:fragment="space" class="divSpace">
+		<h1>Espaço</h1>
+	</div>

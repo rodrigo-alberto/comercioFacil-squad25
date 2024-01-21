@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head th:replace="~{fragments/head :: head('Administrativo')}"></head>
+
+<body>
+
+	<!-- - header - -->
+    <header th:replace="~{fragments/header :: navbar}" ></header> 
+    <div th:replace="~{fragments/header :: space}"></div> 
+	<!-- End #header -->
+	
+	<!--Side Bar-->
+    <nav th:replace="~{fragments/asideAdmin :: asideAdmin}"> </nav>	
+	
+	
+
+	
+	<!--Conteudo página-->
+	<div class="page-wrapper chiller-theme">
+		<div class="container">
+			<h1>Admin</h1>
+		</div>
+	</div>
+	
+	
+
+    <!-- JS scripts -->
+    	<script th:replace="~{fragments/scripts :: jquery}">		
+		</script>
+
+		<script th:replace="~{fragments/scripts :: popper}">
+	    </script>
+	    
+    	<script th:replace="~{fragments/scripts :: bootstrap}">
+    	</script>
+		
+		<script th:replace="~{fragments/scripts :: sideBar}">			
+		</script>
+    
+    
+</body>
+
+</html>
