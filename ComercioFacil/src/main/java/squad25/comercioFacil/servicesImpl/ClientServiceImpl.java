@@ -3,6 +3,7 @@ package squad25.comercioFacil.servicesImpl;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import squad25.comercioFacil.enums.SystemAlert;
 import squad25.comercioFacil.models.Client;
@@ -24,25 +25,37 @@ public class ClientServiceImpl implements ClientService {
 			return this.clientRepo.save(mapper.map(object, Client.class));
 			
 		} catch (IllegalArgumentException e) {
-			SystemAlert.printRuntimeEx(SystemAlert.USER_REGISTRATION_ERROR);
+			return null;
+//			SystemAlert.printRuntimeEx(SystemAlert.USER_REGISTRATION_ERROR);
+		}
+	}
+
+	@Override
+	@Transactional(readOnly = true)
+	public Object getById(Long id) {
+		return this.clientRepo.findById(id).orElseThrow(() -> SystemAlert.printRuntimeEx(SystemAlert.NOT_FOUND_ERROR));
+	}
+
+	@Override
+	public Object update(Long id, Object updatedObject) {
+		Client existingClient = this.clientRepo.findById(id).orElse(null);
+		Client updatedClient = mapper.map(updatedObject, Client.class);
+		
+		if(existingClient != null) {
+			existingClient.setLogin(updatedClient.getLogin());
+			existingClient.setPassword(updatedClient.getPassword());
+			existingClient.setAccesLevel(updatedClient.getAccesLevel());
+			existingClient.setUserName(updatedClient.getUserName());
+			existingClient.setEmail(updatedClient.getEmail());			
+
+			return this.clientRepo.save(existingClient);
+		}else {
 			return null;
 		}
 	}
 
 	@Override
-	public Object getById(Long id) {
-		return null;
-	}
-
-	@Override
-	public Object update(Long id, Object updatedObject) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public void deleteById(Long id) {
-		// TODO Auto-generated method stub
-		
+		this.clientRepo.deleteById(id);
 	}
 }

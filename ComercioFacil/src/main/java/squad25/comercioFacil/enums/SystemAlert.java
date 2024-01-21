@@ -1,9 +1,10 @@
 package squad25.comercioFacil.enums;
 
 public enum SystemAlert {
-	USER_SECCESSFULLY_REGISTERED("Sucesso!", "Usuário cadastrado com sucesso."),
+	SUCCESSFUL_OPERATION("Sucesso!", "Operação bem-sucedida."),
 	
-	USER_REGISTRATION_ERROR("Erro!", "Falha no cadastro do usuário.");
+	OPERATION_ERROR("Erro!", "Falha na operação."),
+	NOT_FOUND_ERROR("Erro!", "registro não encontrado.");
 	
 	private final String title;
 	private final String message;
