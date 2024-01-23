@@ -21,13 +21,6 @@ public class ClientController {
 	@Autowired
 	private ClientService clientServ;
 	
-//	@GetMapping("/")
-//	public String home(Model model) {
-//		model.addAttribute("alert", SystemAlert.USER_SECCESSFULLY_REGISTERED);
-//		
-//		return "index";
-//	}
-	
 	@GetMapping("/isRegistered={isRegistered}")
 	public String showAlert(Model model, @PathVariable("isRegistered") String isRegistered) {			
 		model.addAttribute("alert", (Boolean.parseBoolean(isRegistered)) ? SystemAlert.SUCCESSFUL_OPERATION : SystemAlert.OPERATION_ERROR);

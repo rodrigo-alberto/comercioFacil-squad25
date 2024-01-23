@@ -26,7 +26,7 @@ public enum SystemAlert {
     	return new RuntimeException("## Alerta: "+ alert.title + " - " + alert.message + " ##\n");
     }
     
-//    public static void printSuccess(SystemAlert alert) {
-//    	System.out.println("\n\n # "+ alert.message + " #\n");
-//    }
+    public static void printSuccess(SystemAlert alert) {
+    	System.out.println("\n\n # "+ alert.message + " #\n");
+    }
 }

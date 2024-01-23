@@ -26,7 +26,6 @@ public class ClientServiceImpl implements ClientService {
 			
 		} catch (IllegalArgumentException e) {
 			return null;
-//			SystemAlert.printRuntimeEx(SystemAlert.USER_REGISTRATION_ERROR);
 		}
 	}
 
