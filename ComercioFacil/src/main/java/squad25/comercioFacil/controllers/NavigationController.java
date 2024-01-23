@@ -68,13 +68,4 @@ public class NavigationController { //Atualizado;
 	public String cadClient() {
 		return "client/register";				
 	}
-	
-	@GetMapping("/help")
-	public String help() {
-		return "pages/help";
-	}
 }
-
-
-
-

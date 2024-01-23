@@ -10,7 +10,6 @@
     <div th:replace="~{fragments/header :: space}"></div> 
 	<!-- End #header -->
 	
-	
     <!-- #hero-section -->
     <section id="hero-section" class="m-0 py-5">
         <div class="text-center py-4 px-1">
@@ -558,14 +557,14 @@
 	<!-- - End #alertToast - -->
 
 	<!-- JS scripts -->	
+    <script th:replace="~{fragments/scripts :: systemAlert}" defer></script>    
+
     <script th:replace="~{fragments/scripts :: popper}">
     </script>
     
     <script th:replace="~{fragments/scripts :: bootstrap}">
     </script>    
-    
-    <script th:replace="~{fragments/scripts :: systemAlert}" defer></script>    
-    
+        
     <script th:replace="~{fragments/scripts :: jquerySlide}">		
 	</script>
     
