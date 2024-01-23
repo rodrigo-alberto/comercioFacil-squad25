@@ -14,9 +14,7 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-						
-						
-						
+
                         <li class="nav-item">
                             <a class="nav-link fw-semibold" aria-current="page" href="/">Home</a>
                         </li>
@@ -24,26 +22,16 @@
                         <li class="nav-item">
                             <a class="nav-link fw-semibold" th:href="@{about}">Sobre nós</a>
                         </li>
-
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle fw-semibold" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Parceiros e clientes
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" th:href="@{partnersClients}">Conheça nossos parceiros</a>
-                                </li>
-                                <li><a class="dropdown-item" th:href="@{partnersClients}">Saiba mais sobre nossos
-                                        clientes</a></li>
-                            </ul>
-                        </li>
+						
+						<li class="nav-item">
+							<a class="nav-link fw-semibold" th:href="@{partnersClients}">Perceiros e Clientes</a>
+                        </li>                                                        
 
                         <li class="nav-item">
                             <a class="nav-link fw-semibold" th:href="@{contact}">Contatos</a>
                         </li>
                         
-                        <div class="nav-item d-flex buttons-admin">
-							
+							<div class="buttons-navbar">
                         	<li class="nav-item utilities-item ms-0  ps-4">
                             	<div class="utilities-div utilities-focus rounded-pill">
                                 	<a th:href="@{adminSide}"  class="nav-link d-flex align-items-center text-decoration-none me-1">
@@ -53,7 +41,9 @@
                                 	</a>
                             	</div>
                         	</li>
-
+							</div>
+							
+							<div class="buttons-navbar">
                         	<li class="nav-item utilities-item ms-0">
 	                            <div class="utilities-div rounded-pill pe-3">
                                 	<a th:href="@{employerAdmin}" class="nav-link d-flex align-items-center text-decoration-none ms-1">
@@ -62,14 +52,25 @@
                                 	</a>
                             	</div>
                         	</li>
-						</div>
-                    </ul>
-						
+							</div>
+							
+							<div class="buttons-navbar">
+                        	<li class="nav-item utilities-item ms-0  ps-4">
+                            	<div class="utilities-div utilities-focus rounded-pill">
+                                	<a th:href="@{loginClient}"  class="nav-link d-flex align-items-center text-decoration-none me-1">
+                                    	<img src="../imgs/user-default.svg" id="userPefil" class="rounded-circle me-2"
+                                        	alt="Nova sessão">
+                                    	<span id="userName">Login</span>
+                                	</a>
+                            	</div>
+                        	</li>
+							</div>
+                    </ul>					
+								
 					<div class="nav-help ms-0 ps-2">
-                        <a class="nav-link fs-6 fw-semibold" th:href="@{loginClient}">Entre na sua conta
-                            <button class="btn btn-outline-primary rounded-circle ms-2 fw-semibold"
-							type="submit"><span class=" bi bi-person-circle mr-3"></span></button>
-                        </a>
+            			<a class="nav-link fs-6 fw-semibold" th:href="@{help}" target="_blank">Ajuda
+        	        		<button class="btn btn-outline-primary rounded-circle ms-2 fw-semibold"type="submit">?</button>
+                   		</a>
                     </div>
                     
                     

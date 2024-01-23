@@ -5,143 +5,184 @@
 
 
 <body>
-	
-    <!-- - header - -->
-    <header th:replace="~{fragments/header :: navbar}" ></header> 
+
+	<!-- - header - -->
+	<header th:replace="~{fragments/header :: navbar}"></header>
 	<!-- End #header -->
 
 	<div th:replace="~{fragments/header :: space}"></div>
-	
-    <!-- - main - -->
-	  <main class="container main">
-	    <!--Começo section sobre-->
-	    <section id="sobre" class="sobre">
-	      <div class="container" data-aos="fade-up" data-aos-delay="100">
-	        <div class="row align-items-xl-center gy-5">
-	
-	          <div class="col-xl-5 conteudo">
-	            <h3>Sobre nós</h3>
-	            <h2>Somos o Squad 25</h2>
-	            <p>Somos 5 integrantes, e juntos criamos este projeto, que busca aumentar a participação e
-	              competitividade dos empresários de baixa renda na internet.</p>
-	            <a href="#" class="leia-mais"><span>Leia Mais</span> </a>
-	          </div>
-	
-	          <div class="col-xl-7">
-	            <div class="row gy-4 icon-boxes mb-3 ">
-	
-	              <div class="col-md-6 boxIcon" data-aos="fade-up" data-aos-delay="200">
-	                <div class="icon-box">
-	                  <i class="fa-solid fa-barcode"></i>
-	                  <h3>Propaganda</h3>
-	                  <p>Coloque seus produtos em nosso sitema e mostraremos ao seu cliente.</p>
-	                </div>
-	              </div>
-	              <!-- Fim Icon Box -->
-	
-	              <div class="col-md-6 boxIcon" data-aos="fade-up" data-aos-delay="300">
-	                <div class="icon-box">
-	                  <i class="fa-solid fa-trophy"></i>
-	                  <h3>Competitividade</h3>
-	                  <p>Aumente a disputa de vendas entre seus colegas de profissão.</p>
-	                </div>
-	              </div>
-	              <!-- Fim Icon Box -->
-	
-	              <div class="col-md-6 boxIcon" data-aos="fade-up" data-aos-delay="400">
-	                <div class="icon-box">
-	                  <i class="fa-solid fa-magnifying-glass"></i>
-	                  <h3>Mapeamento</h3>
-	                  <p>Mapeamos a rota de seu estabelecimento para que seu cliente lhe encontre com mais facilidade.</p>
-	                </div>
-	              </div>
-	              <!-- Fim Icon Box -->
-	
-	              <div class="col-md-6 boxIcon" data-aos="fade-up" data-aos-delay="500">
-	                <div class="icon-box">
-	                  <i class="fa-solid fa-magnet"></i>
-	                  <h3>Aumento de Vendas</h3>
-	                  <p>Com o nosso site, você pode obter um aumento significativo de suas vendas.</p>
-	                </div>
-	              </div>
-	              <!-- Fim Icon Box -->
-	
-	            </div>
-	          </div>
-	
-	        </div>
-	      </div>
-	
-	    </section>
-	    <!-- Fim Section sobre -->
-	
-	    <!--Inicio Section Imagens-->
-	    <section>
-	      <div class="container" data-aos="fade-up">
-	        <div class="row">
-	          <div class="col-lg-12 text-center mb-5">
-	            <h1 class="page-title mt-5">Sobre o Compra Fácil</h1>
-	          </div>
-	        </div>
-	
-	        <div class="row mb-5">
-	          <div class="d-md-flex card-entrada-2 half">
-	            <a href="" class="me-4 capa">
-	              <img src="../imgs/loja.jpg" alt="" class="img-fluid">
-	            </a>
-	            <div class="ps-md-5 mt-4 mt-md-0">
-	              <div class="card-meta mt-4">Compra Fácil</div>
-	              <h2 class="mb-4 display-4">Nosso Objetivo</h2>
-	              <p>A solução busca atingir, em primeira instância, micro e pequenos empreendedores de
-	                baixa renda, proprietários de negócios físicos dispostos em pequenos centros
-	                comerciais (feiras livres, barracões de comércio e aglomerados de lojas), interessados
-	                em impulsionar a divulgação de seus produtos. Visa também alcançar potenciais
-	                clientes consumidores com dificuldades para distinguir, dentro do comércio local,
-	                produtos que atendam especificamente às suas demandas e a maneira mais eficaz
-	                de adquiri-los.</p>
-	
-	            </div>
-	          </div>
-	
-	          <div class="d-md-flex card-entrada-2 half mt-5">
-	            <a href="#" class="me-4 capa order-2">
-	              <img src="../imgs/estudante.jpg" alt="" class="img-fluid">
-	            </a>
-	            <div class="pe-md-5 mt-4 mt-md-0">
-	              <div class="card-meta mt-4">Aonde Vamos?</div>
-	              <h2 class="mb-4 display-4">Resultados Esperados</h2>
-	              <p>Esperamos que o compra facil consiga ajudar empresários de baixa renda a compartilhar seus produtos e
-	                respectivos preços em um ambiente online, facilitando assim, sua comunicação com o cliente, logo,
-	                aumentanto suas possibilidades de vendas e propraganda de suas vendas.</p>
-	              <p>Quanto a clientela, a facilidade de pesquisa, comparação de preços e mapeamento do local é o
-	                diferencial da
-	                nossa aplicação, já que, o Compra Fácil busca facilitar e melhorar a experiência de compra do cliente,
-	                que muitas vezes, desiste de comprar de microempresários locais por falta de informação
-	              </p>
-	            </div>
-	          </div>
-	        </div>
-	
-	      </div>
-	    </section>
-	    <!--Fim Section Imagens-->
-	
-	  </main> <!-- End .container -->
-    
-    <!-- - footer - -->
-    <footer th:replace="~{fragments/footer :: footer}"></footer> 
-    <!-- - End #footer - -->
+
+	<!-- - main - -->
+	<main class="container main">
 
 
-    <!-- JS scripts -->    
-    <script th:replace="~{fragments/scripts :: popper}">
-    </script>
-    <script th:replace="~{fragments/scripts :: bootstrap}">
-    </script>    
-    <script th:replace="~{fragments/scripts :: fontawesome}">
-    </script>
-    
-    
+		<div class="col-lg-12 text-center mb-5">
+			<h1 class="page-title mt-5">Sobre o Compra Fácil</h1>
+		</div>
+		<!--Começo section sobre-->
+		<section id="sobre" class="sobre">
+
+			<div class="container bg-cards-about" data-aos="fade-up" data-aos-delay="100">
+				<div class="row align-items-xl-center gy-5">
+
+					<div class="col-xl-5 conteudo">
+						<h3>Sobre nós</h3>
+						<h2>Somos o Squad 25</h2>
+						<p>Somos 5 integrantes, e juntos criamos este projeto, que busca aumentar a participação e
+							competitividade dos empresários de baixa renda na internet.</p>
+						<a href="#" class="leia-mais"><span>Leia Mais</span> </a>
+					</div>
+
+					<div class="col-xl-7">
+						<div class="row gy-4 icon-boxes mb-3 ">
+
+							<div class="col-md-6 boxIcon" data-aos="fade-up" data-aos-delay="200">
+								<div class="icon-box">
+									<i class="fa-solid fa-barcode"></i>
+									<h3>Propaganda</h3>
+									<p>Coloque seus produtos em nosso sitema e mostraremos ao seu cliente.</p>
+								</div>
+							</div>
+							<!-- Fim Icon Box -->
+
+							<div class="col-md-6 boxIcon" data-aos="fade-up" data-aos-delay="300">
+								<div class="icon-box">
+									<i class="fa-solid fa-trophy"></i>
+									<h3>Competitividade</h3>
+									<p>Aumente a disputa de vendas entre seus colegas de profissão.</p>
+								</div>
+							</div>
+							<!-- Fim Icon Box -->
+
+							<div class="col-md-6 boxIcon" data-aos="fade-up" data-aos-delay="400">
+								<div class="icon-box">
+									<i class="fa-solid fa-magnifying-glass"></i>
+									<h3>Mapeamento</h3>
+									<p>Mapeamos a rota de seu estabelecimento para que seu cliente lhe encontre com mais
+										facilidade.</p>
+								</div>
+							</div>
+							<!-- Fim Icon Box -->
+
+							<div class="col-md-6 boxIcon" data-aos="fade-up" data-aos-delay="500">
+								<div class="icon-box">
+									<i class="fa-solid fa-magnet"></i>
+									<h3>Aumento de Vendas</h3>
+									<p>Com o nosso site, você pode obter um aumento significativo de suas vendas.</p>
+								</div>
+							</div>
+							<!-- Fim Icon Box -->
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+		</section>
+		<!-- Fim Section sobre -->
+
+		
+		<!-- Inicio Equipe Section -->
+		<section id="team" class="team mb-5">
+			
+
+			<div class="container">
+				<div class="row gy-5 justify-content-center">
+					<div
+						th:replace="fragments/card-team :: card-team('https://media.licdn.com/dms/image/D4D03AQG4rKMeNk0kvw/profile-displayphoto-shrink_800_800/0/1701791991275?e=1711584000&v=beta&t=qWP8Ix39YKEPvBN8Zre9BUtSqc-uIQ5bydCQysN_5VI','https://github.com/PedroGoya24', 'https://www.linkedin.com/in/pedro-da-cunha-goya-69b9941a0/', 'Pedro Goya', 'Líder', 'Responsavel pelo desenvolvimento da platarforma')">
+					</div>
+					<div
+						th:replace="fragments/card-team :: card-team('https://media.licdn.com/dms/image/D4D03AQHYmbQihn2lQg/profile-displayphoto-shrink_800_800/0/1701629196539?e=1711584000&v=beta&t=i8JnkHAGvT7oZlci7o1DRtrT2xI-xv5n41JmRM1qP5E', 'https://github.com/rodrigo-alberto', 'https://www.linkedin.com/in/rodrigo-alberto-/','Rodrigo Alberto', 'Vice-Líder', 'Responsavel pelo desenvolvimento da platarforma')">
+					</div>
+					<div
+						th:replace="fragments/card-team :: card-team('https://media.licdn.com/dms/image/D4D03AQHL47yTIX9eHA/profile-displayphoto-shrink_800_800/0/1694281131546?e=1711584000&v=beta&t=jTXslC3OG6h2HUfE38q78UajyUDOJ_nbn5yxjVVIHIE', 'https://github.com/RNJRTJ', 'https://www.linkedin.com/in/robson-junior-729600190?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app', 'Robson Junior', 'Deployer', 'Responsavel por subir a plataforma na internet')">
+					</div>
+					
+					<div
+						th:replace="fragments/card-team :: card-team('https://media.licdn.com/dms/image/D4E03AQGpcE3zeZvs9w/profile-displayphoto-shrink_800_800/0/1692926133065?e=1711584000&v=beta&t=QmRQejM1KKGqqhH4ecSbd4qfEaAtZqlguFNkJcaFWAc', 'https://github.com/rayzavirginia', 'https://www.linkedin.com/in/rayza-virginia-09514728a/', 'Rayza Virginea', 'Formatação', 'Responsavel por formatar e organizar redes sociais e documentos da equipe')">
+					</div>
+					
+					<div
+						th:replace="fragments/card-team :: card-team('https://media.licdn.com/dms/image/C4E03AQGXu-tYEw7yqg/profile-displayphoto-shrink_800_800/0/1626730049512?e=1711584000&v=beta&t=YsGIMUyOy_2Pdvm6GdOe4H_dGDs9V2vOCVhGBJt0AEQ', 'https://github.com/montesuma10', 'https://www.linkedin.com/in/ricardo-montesuma-b67b9a121/', 'Ricardo Montesuma', 'Formatação', 'Responsavel por formatar e organizar redes sociais e documentos da equipe')">
+					</div>
+					
+				</div>
+			</div>
+		</section>
+		<!-- Fim Equipe Section -->
+
+
+		<!--Inicio Section Imagens-->
+		<section>
+			<div class="container mt-5" data-aos="fade-up">
+				<div class="row">
+					<div class="col-lg-12 text-center mb-5">
+						<h1 class="page-title mt-5">Mais sobre nós</h1>
+					</div>
+				</div>
+
+				<div class="row mb-5">
+					<div class="d-lg-flex card-entrada-2 half">
+						<a href="" class="me-4 capa d-flex justify-content-center">
+							<img src="../imgs/loja.jpg" alt="" class="img-fluid">
+						</a>
+						<div class="pe-md-5 mt-4 mt-md-0 ">
+							<div class="card-meta mt-4">Compra Fácil</div>
+							<h2 class="mb-4 display-4">Nosso Objetivo</h2>
+							<p>A solução busca atingir, em primeira instância, micro e pequenos empreendedores de
+								baixa renda, proprietários de negócios físicos dispostos em pequenos centros
+								comerciais (feiras livres, barracões de comércio e aglomerados de lojas), interessados
+								em impulsionar a divulgação de seus produtos. Visa também alcançar potenciais
+								clientes consumidores com dificuldades para distinguir, dentro do comércio local,
+								produtos que atendam especificamente às suas demandas e a maneira mais eficaz
+								de adquiri-los.</p>
+
+						</div>
+					</div>
+
+					<div class="d-lg-flex card-entrada-2 half mt-5">
+						<a href="#" class="me-4 capa order-2">
+							<img src="../imgs/estudante.jpg" alt="" class="img-fluid">
+						</a>
+						<div class="pe-md-5 mt-4 mt-md-0">
+							<div class="card-meta mt-4">Aonde Vamos?</div>
+							<h2 class="mb-4 display-4">Resultados Esperados</h2>
+							<p>Esperamos que o compra facil consiga ajudar empresários de baixa renda a compartilhar
+								seus produtos e
+								respectivos preços em um ambiente online, facilitando assim, sua comunicação com o
+								cliente, logo,
+								aumentanto suas possibilidades de vendas e propraganda de suas vendas. Quanto a
+								clientela, a facilidade de pesquisa, comparação de preços e mapeamento do local é o
+								diferencial da
+								nossa aplicação, já que, o Compra Fácil busca facilitar e melhorar a experiência de
+								compra do cliente,
+								que muitas vezes, desiste de comprar de microempresários locais por falta de informação
+							</p>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</section>
+		<!--Fim Section Imagens-->
+
+	</main> <!-- End .container -->
+
+	<!-- - footer - -->
+	<footer th:replace="~{fragments/footer :: footer}"></footer>
+	<!-- - End #footer - -->
+
+
+	<!-- JS scripts -->
+	<script th:replace="~{fragments/scripts :: popper}">
+	</script>
+	<script th:replace="~{fragments/scripts :: bootstrap}">
+	</script>
+	<script th:replace="~{fragments/scripts :: fontawesome}">
+	</script>
+
+
 </body>
 
 </html>
