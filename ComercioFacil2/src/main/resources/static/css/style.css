@@ -63,11 +63,6 @@ p, select option {
     color: var(--bg-01-color);
 }
 
-
-
-
-
-
 /*--------------------------------------------------
  - Sections general -
 --------------------------------------------------*/
@@ -658,43 +653,56 @@ padding:0px 0px;
  #home-section
 --------------------------------------------------*/
 .map-filters{
-	background-color: var(--bg-03-color);
-	width: 100%;
-	border-radius: 10px;
+    background-color: var(--bg-03-color);
+    width: 100%;
+    border-radius: 10px;
 }
 
 
 .map-container {
-    max-width: 930px;
-    
+    width: 875px;
+    background-color: var(--bg-04-color);
     display: flex;
     justify-content: center;
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
 
+@media(max-width: 991px){
+    .map-container{
+        width: 92%;
+    }
+}
+@media(max-width: 770px){
+    .map-container{
+        width: 90%;
+    }
+}
 #map {
-    border: 3px solid var(--font-02-color);
+    border: 3px solid var(--font-08-color);
     max-width: 97%;
     max-height: auto;
 }
 
 .filters-container {
-    max-width: 930px;    
+    max-width: 930px;
+
 }
 
 .selects {
-	max-width: 47%;
-	border-radius: 10px;
-	height: vh;
+    max-width: 47%;
+    border-radius: 10px;
+    height: vh;
 }
 
 @media(max-width: 840){
-	.selects {
-		height: 8vh !important;
-	}
+    .selects {
+        height: 8vh !important;
+    }
 }
 
 .selects:focus{
-	box-shadow: none !important;
+    box-shadow: none !important;
     border: 1px solid var(--bg-05-color);
 }
 
@@ -702,11 +710,52 @@ padding:0px 0px;
 .filters-bg {
     background-color: var(--bg-01-color);
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    
+
 }
 
 .filters-bg button{
     width: 60%;
+}
+
+
+#svg-map{
+    cursor: pointer;
+}
+
+#svg-map path, #svg-map .circle{
+    text-decoration: dashed;
+    background-color: aqua;
+}
+
+#svg-map a{
+    text-decoration: none;
+}
+
+#svg-map a:hover path{
+    fill: var(--bg-09-color); 
+
+}
+
+#svg-map a:hover .popover-title-custom {
+    background-color: #3498db;
+    color: #670000;
+    font-size: 18px;
+    padding: 10px;
+    margin-bottom: 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.popover-custom {
+    background-color: var(--bg-02-color);
+    color: var(--font-03-color);
+    border: 1px solid black;
+    font-size: 15px !important;
+    font-weight: 600;
+}
+
+.popover-custom .popover-header {
+    background-color: var(--bg-08-color);
+    font-size: 20px !important;
 }
 
 /*--------------------------------------------------
