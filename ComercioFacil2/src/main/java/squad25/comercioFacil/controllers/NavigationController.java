@@ -6,12 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import squad25.comercioFacil.enums.SystemAlert;
 
 @Controller
-public class NavigationController { //Atualizado 25.01 14:09;
-	
-//	@GetMapping("/")
-//	public String home() {
-//		return "index";
-//	}
+public class NavigationController { //Atualizado 27.01 18:08;
 	
 	@GetMapping("/")
 	public String home(Model model) {
@@ -44,13 +39,15 @@ public class NavigationController { //Atualizado 25.01 14:09;
 	}
 	
 	@GetMapping("/employerAdmin")
-	public String empAdmin() {		
-		return "employer/enterprisesPage";
+	public String empAdmin() {
+//		"redirect:/isRegistered=" + false + "?showAlert=true" Trabalhando aqui, antes de colocar o model section;
+		
+		return "redirect:/employer/id=" + null + "/getAllEnterprises";
 	}
 	
 	@GetMapping("/notfications")
 	public String notifications() {
-		return "employer/notifications";
+		return "employer/notificationsPage";
 	}
 	
 	

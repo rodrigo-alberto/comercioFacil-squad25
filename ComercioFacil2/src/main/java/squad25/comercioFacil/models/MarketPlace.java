@@ -26,6 +26,9 @@ public class MarketPlace {
 	@Column(nullable = false, columnDefinition = "TEXT")
 	private String mapUrl;
 	
+	@Column(nullable = false, columnDefinition = "TEXT")
+	private String description;
+	
 	@OneToMany(mappedBy = "market", cascade = CascadeType.ALL)
 	private List<Enterprise> enterprises;
 	
@@ -58,6 +61,14 @@ public class MarketPlace {
 
 	public void setMapUrl(String mapUrl) {
 		this.mapUrl = mapUrl;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public List<Enterprise> getEnterprises() {

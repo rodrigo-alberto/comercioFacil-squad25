@@ -49,6 +49,7 @@ public class MarketPlaceServiceImpl implements MarketPlaceService {
 		
 		existingMarket.setNameMarket(updatedMarket.getNameMarket());
 		existingMarket.setMapUrl(updatedMarket.getMapUrl());
+		existingMarket.setDescription(updatedMarket.getDescription());
 		existingMarket.setAddress(updatedMarket.getAddress());
 		
 		List<Enterprise> listEnterprises = updatedMarket.getEnterprises();

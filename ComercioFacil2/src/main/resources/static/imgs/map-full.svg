@@ -24,7 +24,7 @@ d="M198 10598 c-2 -7 -2 -1002 0 -2210 l4 -2198 79 0 79 0 0 210 0 210
 
 
 <!-- 1º Loja Superior -->
-<a class="enterprise" fantasyName="Loja do João" idEnterprise="1" xlink:href="/cadClient">
+<a class="enterprise" fantasyName="Loja do João" idEnterprise="1" xlink:href="/enterprise/showByMap/3">
 <path fill="#995d61"
 d="M480 8660 l0 -1710 1585 0 1585 0 0 1710 0 1710 -1585 0 -1585 0 0
 -1710z"/>    
