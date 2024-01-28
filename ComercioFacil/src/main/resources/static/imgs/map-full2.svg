@@ -1,0 +1,143 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+ "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" id="svg-map" version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="100%" height="100%" viewBox="0 0 1920.000000 1080.000000"
+ preserveAspectRatio="xMidYMid meet">
+
+<g transform="translate(0.000000,1080.000000) scale(0.100000,-0.100000)"
+fill="#553436" stroke="none">
+
+<!-- borda superior esquerda -->
+<path 
+d="M140 8495 l0 -2185 75 0 75 0 0 2110 0 2110 3910 0 3910 0 0 75 0 75
+-3985 0 -3985 0 0 -2185z"/>
+
+<!-- bordar superior direita -->
+<path 
+d="M9170 10605 l0 -75 4565 0 4565 0 0 -2115 0 -2115 75 0 75 0 0 2190
+0 2190 -4640 0 -4640 0 0 -75z"/>
+
+<!-- 1º Loja superior -->
+<a class="enterprise" idEnterprise="9" xlink:href="/enterprise/showByMap/9">
+    <path fill="#995d61"
+    d="M480 8725 l0 -1665 965 0 965 0 0 1665 0 1665 -965 0 -965 0 0 -1665z"/>
+</a>
+
+<!-- 2º Loja superior -->
+<a class="enterprise" idEnterprise="10" xlink:href="/enterprise/showByMap/10">
+    <path fill="#995d61"
+    d="M2430 9105 l0 -1285 810 0 810 0 0 1285 0 1285 -810 0 -810 0 0 -1285z"/>
+</a>
+
+<!-- 3º Loja superior -->
+<a class="enterprise" idEnterprise="11" xlink:href="/enterprise/showByMap/11">
+    <path fill="#995d61"
+    d="M4060 9105 l0 -1285 815 0 815 0 0 1285 0 1285 -815 0 -815 0 0 -1285z"/>
+</a>
+
+<!-- 4º Loja superior -->
+<a class="enterprise" idEnterprise="12" xlink:href="/enterprise/showByMap/12">
+    <path fill="#995d61"
+    d="M5700 8725 l0 -1665 965 0 965 0 0 1665 0 1665 -965 0 -965 0 0 -1665z"/>
+</a>
+
+<!-- 5º Loja superior -->
+<a class="enterprise" idEnterprise="13" xlink:href="/enterprise/showByMap/13">
+    <path fill="#995d61"
+    d="M9600 9195 l0 -1195 970 0 970 0 0 1195 0 1195 -970 0 -970 0 0 -1195z"/>
+</a>
+
+<!-- 6º Loja superior -->
+<a class="enterprise" idEnterprise="14" xlink:href="/enterprise/showByMap/14">
+    <path fill="#995d61"
+    d="M11550 9330 l0 -1060 970 0 970 0 0 1060 0 1060 -970 0 -970 0 0 -1060z"/>
+</a>
+
+<!-- 7º Loja superior -->
+<a class="enterprise" idEnterprise="15" xlink:href="/enterprise/showByMap/15">
+    <path fill="#995d61"
+    d="M13500 9195 l0 -1195 968 2 967 3 3 1193 2 1192 -970 0 -970 0 0 -1195z"/>
+</a>
+
+<!-- 8º Loja superior -->
+<a class="enterprise" idEnterprise="16" xlink:href="/enterprise/showByMap/16">
+    <path fill="#995d61"
+    d="M15450 8965 l0 -1425 1333 2 1332 3 3 1423 2 1422 -1335 0 -1335 0 0 -1425z"/>
+</a>
+
+<!-- 2º quiosque -->
+<a class="enterprise" idEnterprise="17" xlink:href="/enterprise/showByMap/17">
+    <path fill="#995d61"
+    d="M10780 5400 l0 -760 760 0 760 0 0 760 0 760 -760 0 -760 0 0 -760z"/>
+</a>
+
+<!-- 1º quiósque -->
+<a class="enterprise" idEnterprise="18" xlink:href="/enterprise/showByMap/18">
+    <path fill="#995d61"
+    d="M3290 5390 l0 -760 760 0 760 0 0 760 0 760 -760 0 -760 0 0 -760z"/>
+</a>
+
+<!-- 3º quiosque -->
+<a class="enterprise" idEnterprise="19" xlink:href="/enterprise/showByMap/19">
+    <path fill="#995d61"
+    d="M14680 5390 l0 -760 760 0 760 0 -2 758 -3 757 -757 3 -758 2 0 -760z"/>
+</a>
+
+
+
+
+
+<!-- bordar inferior esquerda -->
+<path     
+d="M140 2290 l0 -2200 3985 0 3985 0 0 75 0 75 -3910 0 -3910 0 0 2125
+0 2125 -75 0 -75 0 0 -2200z"/>
+
+<!-- bordar inferior direita -->
+<path 
+d="M18300 2360 l0 -2120 -4565 0 -4565 0 0 -75 0 -75 4638 2 4637 3 3
+2193 2 2192 -75 0 -75 0 0 -2120z"/>
+
+<!-- 1º Loja inferior -->
+<a class="enterprise" idEnterprise="20">
+    <path fill="#995d61"
+    d="M470 2095 l0 -1665 965 0 965 0 0 1665 0 1665 -965 0 -965 0 0 -1665z"/>
+</a>
+
+<!-- 4º Loja inferior -->
+<a class="enterprise" idEnterprise="21">
+    <path fill="#995d61"
+    d="M5710 2005 l0 -1575 965 0 965 0 0 1575 0 1575 -965 0 -965 0 0 -1575z"/>
+</a>
+
+<!-- 5º Loja inferior -->
+<a class="enterprise" idEnterprise="22">
+    <path fill="#995d61"
+    d="M9600 2005 l0 -1575 3025 0 3025 0 0 1575 0 1575 -3025 0 -3025 0 0 -1575z"/>
+</a>
+
+<!-- 6º Loja inferior -->
+<a class="enterprise" idEnterprise="23">
+    <path fill="#995d61"
+    d="M15660 2005 l0 -1575 1230 0 1230 0 0 1575 0 1575 -1230 0 -1230 0 0 -1575z"/>
+</a>
+
+<!-- 2º Loja inferior -->
+<a class="enterprise" idEnterprise="24">
+    <path fill="#995d61"
+    d="M2420 1715 l0 -1285 810 0 810 0 0 1285 0 1285 -810 0 -810 0 0 -1285z"/>
+</a>
+
+<!-- 3º Loja inferior -->
+<a class="enterprise" idEnterprise="25">
+    <path fill="#995d61"
+    d="M4060 1715 l0 -1285 810 0 810 0 0 1285 0 1285 -810 0 -810 0 0 -1285z"/>
+</a>
+
+
+
+
+
+
+</g>
+</svg>
