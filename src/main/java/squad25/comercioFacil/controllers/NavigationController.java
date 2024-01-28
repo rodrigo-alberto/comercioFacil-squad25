@@ -98,7 +98,7 @@ public class NavigationController { // Atualizado 27.01 18:08;
 
 	@GetMapping("/adminSide")
 	public String testeSide() {
-		return "admin/marketsPage";
+		return "redirect:/admin/getAllMarkets";
 	}
 
 	@GetMapping("/employerAdmin")

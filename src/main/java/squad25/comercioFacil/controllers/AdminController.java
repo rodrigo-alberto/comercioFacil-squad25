@@ -1,5 +1,6 @@
 package squad25.comercioFacil.controllers;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import squad25.comercioFacil.models.Enterprise;
 import squad25.comercioFacil.models.MarketPlace;
 import squad25.comercioFacil.services.EnterpriseService;
@@ -109,10 +112,24 @@ public class AdminController {
 	}
 	
 	@PostMapping("/saveEnterprise")
-	public String saveEnterprise(@ModelAttribute("Enterprise") Enterprise enterprise) {
+	public String saveEnterprise(@ModelAttribute("Enterprise") Enterprise enterprise,  @RequestParam("image") MultipartFile fileImage) {
+		try {
+			enterprise.setImage(fileImage.getBytes());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
 		this.enterpriseSv.save(enterprise);
 		
 		return "redirect:/admin/getAllEnterprises";
+	}
+
+	@GetMapping("/imagem/{id}")
+	@ResponseBody
+	public byte[] exibirImagen(@PathVariable("id") Long id) {
+		Enterprise enterprise = (Enterprise) this.enterpriseSv.getById(id);
+
+		return enterprise.getImage();
 	}
 	
 	@DeleteMapping("/deleteEnterprise/{id}")

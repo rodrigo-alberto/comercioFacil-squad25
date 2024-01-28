@@ -31,7 +31,7 @@
 		
 		<!--Olha, eu acho que não é pra ter esse botão aqui, pq o certo é cadastrar a loja com o id do employer né-->
 		<!--mas não tirei não-->
-		<a class="btn btn-primary mb-2" th:href="@{/}">Adicionar loja</a>
+		<a class="btn btn-primary mb-2" th:href="@{/admin/saveEnterprise}">Adicionar loja</a>
 		
 		<table class="table">
 			<thead class="cabecalho-tabela">
@@ -59,11 +59,11 @@
 					
 					<td>
 						<a class="btn btn-info btn-sm"
-							th:href="@{/enterprise/editar/{id}(id=${enterprise.idEnterprise})}">Editar</a>
+							th:href="@{/admin/updateEnterprise/{id}(id=${enterprise.idEnterprise})}">Editar</a>
 						<a class="btn btn-success btn-sm"
 							th:href="@{/enterprise/deletar/{id}(id=${enterprise.idEnterprise})}">Ver Produtos</a>
 						<a class="btn btn-danger btn-sm"
-							th:href="@{/enterprise/deletar/{id}(id=${enterprise.idEnterprise})}">Excluir</a>							
+							th:href="@{/admin/deleteEnterprise/{id}(id=${enterprise.idEnterprise})}">Excluir</a>							
 					</td>										
 				</tr>
 			</tbody>

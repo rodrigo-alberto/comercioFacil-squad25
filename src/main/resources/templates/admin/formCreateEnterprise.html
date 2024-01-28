@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head th:replace="~{fragments/head :: head('CF | Administrativo')}"></head>
+
+<body>
+
+	<!-- - header - -->
+	<header th:replace="~{fragments/header :: navbar}"></header>
+	<div th:replace="~{fragments/header :: space}"></div>
+	<!-- End #header -->
+
+	<!--Side Bar-->
+	<nav th:replace="~{fragments/asideAdmin :: asideAdmin}"> </nav>
+
+
+
+
+	<!--Conteudo página-->
+	<div class="page-wrapper chiller-theme">
+		<div class="container d-flex justify-content-center mb-5 mt-5">
+			<h1>Cadastre a loja</h1>
+		</div>
+	</div>
+
+
+
+	<!--****************MUDAR AS ROTAS***************-->
+	<div class="container mt-3">
+		<h2>Cadastro da loja</h2>
+		<form th:action="@{/admin/saveEnterprise}" th:object="${enterprise}" enctype="multipart/form-data"
+			method="post">
+
+			<div class="form-group">
+				<label for="nome">Nome da Loja:</label>
+				<input type="text" id="nameMarket" class="form-control" th:field="*{fantasyName}" />
+			</div>
+
+			<div class="form-group">
+				<label for="nome">CNPJ da loja:</label>
+				<input type="text" id="nameMarket" class="form-control" th:field="*{cnpj}" />
+			</div>
+
+			<div class="form-group">
+				<label for="preco">Número da Loja:</label>
+				<input type="number" id="address" class="form-control" th:field="*{numStore}" />
+			</div>
+
+			<div class="form-group">
+				<label for="preco">Descrição da loja:</label>
+				<input type="number" id="address" class="form-control" th:field="*{description}" />
+			</div>
+
+
+			<div class="form-group">
+				<label for="imgUrl">Imagem:</label>
+				
+				<div id="divPhoto">
+					<label class="py-2 fs-6">Escolha uma imagem-tema:</label>
+					<label class="labelPhoto d-flex justify-content-center align-items-center rounded mt-2"
+						for="inputFile" tabindex="0">
+						<img src="../imgs/new-image-deafult.png" alt="Upload da imagem-tema" id="imgPhoto">
+					</label>
+				</div>
+
+				<input type="file" class="d-none" id="inputFile" name="image" accept="image/*" th:required="required">
+			</div>
+
+			<button type="submit" class="btn btn-primary">Salvar</button>
+		</form>
+	</div>
+
+	<!-- JS scripts -->
+	<script th:replace="~{fragments/scripts :: jquery}">
+	</script>
+
+	<script th:replace="~{fragments/scripts :: popper}">
+	</script>
+
+	<script th:replace="~{fragments/scripts :: bootstrap}">
+	</script>
+	
+	<script th:replace="~{fragments/scripts :: sideBar}">
+	</script>
+	
+	<script th:replace="~{fragments/scripts :: upImg}">
+	</script>
+
+</body>
+
+</html>
