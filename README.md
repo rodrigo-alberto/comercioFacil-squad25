@@ -83,10 +83,5 @@ $ git clone https://github.com/seu-usuario/seu-repositorio.git
 - [ ] Adicionar chat na plataforma entre o empreendedor e o cliente.
 
 
-
-## 📃 Licenças <a name="licencas"></a>
-
-[![NPM](https://img.shields.io/npm/l/react)](https://github.com/devsuperior/sds1-wmazoni/blob/master/LICENSE) 
-
 ## 📩 Contatos <a name="contatos"></a>
  ### [**SQUAD 25**](https://github.com/squad25-recodePro2023#-nossos-contatos)
