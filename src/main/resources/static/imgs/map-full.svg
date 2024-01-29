@@ -24,28 +24,28 @@ d="M198 10598 c-2 -7 -2 -1002 0 -2210 l4 -2198 79 0 79 0 0 210 0 210
 
 
 <!-- 1º Loja Superior -->
-<a class="enterprise" fantasyName="Loja do João" idEnterprise="1" xlink:href="/enterprise/showByMap/3">
+<a class="enterprise" fantasyName="Loja do João" idEnterprise="1" xlink:href="/enterprise/showByMap/1">
 <path fill="#995d61"
 d="M480 8660 l0 -1710 1585 0 1585 0 0 1710 0 1710 -1585 0 -1585 0 0
--1710z"/>    
+-1710z"/>
 </a>
 
 <!-- 2º Loja Superior -->
-<a  class="enterprise" fantasyName="Loja do Rodrigo" idEnterprise="2">
+<a  class="enterprise" fantasyName="Loja do Rodrigo" idEnterprise="2" xlink:href="/enterprise/showByMap/2">
 <path fill="#995d61"
 d="M3780 8660 l0 -1710 1590 0 1590 0 0 1710 0 1710 -1590 0 -1590 0 0
 -1710z"/>
 </a>
 
 <!-- 3º Loja Superior -->
-<a class="enterprise"  fantasyName="Loja do Pedro" idEnterprise="3">
+<a class="enterprise"  fantasyName="Loja do Pedro" idEnterprise="3" xlink:href="/enterprise/showByMap/3">
 <path fill="#995d61"
 d="M7090 8660 l0 -1710 1585 0 1585 0 0 1710 0 1710 -1585 0 -1585 0 0
 -1710z"/>
 </a>
 
 <!-- 4º Loja Superior -->
-<a class="enterprise" fantasyName="Loja do Ricardo" idEnterprise="4">
+<a class="enterprise" fantasyName="Loja do Ricardo" idEnterprise="4" xlink:href="/enterprise/showByMap/4">
 <path fill="#995d61"
 d="M10400 8660 l0 -1710 1585 0 1585 0 0 1710 0 1710 -1585 0 -1585 0 0
 -1710z"/>
@@ -71,28 +71,28 @@ m3250 0 l0 -80 -525 0 -525 0 0 80 0 80 525 0 525 0 0 -80z m3480 0 l0 -80
 1370 0 1370 0 0 -80z"/>
 
 <!-- 4º Loja Inferior -->
-<a class="enterprise" fantasyName="Loja da Rayza" idEnterprise="5">
+<a class="enterprise" fantasyName="Loja da Rayza" idEnterprise="5" xlink:href="/enterprise/showByMap/5">
 <path fill="#995d61"
 d="M10400 1980 l0 -1710 1585 0 1585 0 0 1710 0 1710 -1585 0 -1585 0 0
 -1710z"/>
 </a>
 
 <!-- 3º Loja Inferior -->
-<a class="enterprise" fantasyName="Loja do Robson" idEnterprise="6">
+<a class="enterprise" fantasyName="Loja do Robson" idEnterprise="6" xlink:href="/enterprise/showByMap/6">
 <path fill="#995d61"
 d="M7090 1970 l0 -1710 1585 0 1585 0 0 1710 0 1710 -1585 0 -1585 0 0
 -1710z"/>
 </a>
 
 <!-- 1º Loja Inferior -->
-<a class="enterprise" fantasyName="Loja do Jeferson" idEnterprise="7">
+<a class="enterprise" fantasyName="Loja do Jeferson" idEnterprise="7" xlink:href="/enterprise/showByMap/7">
 <path fill="#995d61"
 d="M480 1960 l0 -1710 1585 0 1585 0 0 1710 0 1710 -1585 0 -1585 0 0
 -1710z"/>
 </a>
 
 <!-- 2º Loja Inferior -->
-<a class="enterprise" fantasyName="=Loja do Igor" idEnterprise="8">
+<a class="enterprise" fantasyName="=Loja do Igor" idEnterprise="8" xlink:href="/enterprise/showByMap/8">
 <path fill="#995d61"
 d="M3787 3663 c-4 -3 -7 -773 -7 -1710 l0 -1703 1590 0 1590 0 -2 1707
 -3 1708 -1581 3 c-869 1 -1584 -1 -1587 -5z"/>

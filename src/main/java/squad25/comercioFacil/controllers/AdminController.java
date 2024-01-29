@@ -1,12 +1,10 @@
 package squad25.comercioFacil.controllers;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,7 +12,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.multipart.MultipartFile;
 import squad25.comercioFacil.models.Enterprise;
 import squad25.comercioFacil.models.MarketPlace;
 import squad25.comercioFacil.services.EnterpriseService;
@@ -75,7 +72,7 @@ public class AdminController {
 		return "redirect:/admin/getAllMarkets";
 	}
 	
-	@DeleteMapping("/deleteMarket/{id}")
+	@GetMapping("/deleteMarket/{id}")
 	public String deleteMarketById(@PathVariable("id") Long id) {
 		this.marketSv.deleteById(id);
 		
@@ -112,13 +109,7 @@ public class AdminController {
 	}
 	
 	@PostMapping("/saveEnterprise")
-	public String saveEnterprise(@ModelAttribute("Enterprise") Enterprise enterprise,  @RequestParam("image") MultipartFile fileImage) {
-		try {
-			enterprise.setImage(fileImage.getBytes());
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
+	public String saveEnterprise(@ModelAttribute("enterprise") Enterprise enterprise) {		
 		this.enterpriseSv.save(enterprise);
 		
 		return "redirect:/admin/getAllEnterprises";
@@ -132,7 +123,7 @@ public class AdminController {
 		return enterprise.getImage();
 	}
 	
-	@DeleteMapping("/deleteEnterprise/{id}")
+	@GetMapping("/deleteEnterprise/{id}")
 	public String deleteEnterpriseById(@PathVariable("id") Long id) {
 		this.enterpriseSv.deleteById(id);
 		

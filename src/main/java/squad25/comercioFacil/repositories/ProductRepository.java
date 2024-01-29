@@ -25,6 +25,4 @@ public interface ProductRepository extends JpaRepository<Product, Long>{
 	@Query(nativeQuery = true, value = "SELECT * FROM `product` WHERE fk_id_enterprise = :idEnterprise")
 	public List<Product> findAllByIdEnterprise(@Param("idEnterprise") Long idEnterprise);
 	
-//	@Query(nativeQuery = true, value = "SELECT * FROM `product` WHERE fk_id_enterprise = :idEnterprise AND category IN (:categories)")
-//	public List<Product> findAllByIdEnterpriseAndCategories(@Param("idEnterprise") Long idEnterprise, @Param("categories") List<Category> categories);
 }

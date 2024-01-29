@@ -3,48 +3,420 @@
       "idEnterprise": "1",
       "fantasyName": "Loja do João",
       "description": "Loja do João",
-      "numStore": "1"
+      "numStore": "1",
+      "mainCategory": "eletronicos"
     },
     {
       "idEnterprise": "2",
       "fantasyName": "Loja do Rodrigo",
       "description": "Loja do Rodrigo",
-      "numStore": "2"
+      "numStore": "2",
+      "mainCategory": "vestuario"
     },
     {
       "idEnterprise": "3",
       "fantasyName": "Loja do Pedro",
       "description": "Loja do Pedro",
-      "numStore": "3"
+      "numStore": "3",
+      "mainCategory": "eletronicos"
     },
     {
       "idEnterprise": "4",
       "fantasyName": "Loja do Ricardo",
       "description": "Loja do Ricardo",
-      "numStore": "4"
+      "numStore": "4",
+      "mainCategory": "beleza"
     },
     {
       "idEnterprise": "5",
       "fantasyName": "Loja da Rayza",
       "description": "Loja da Rayza",
-      "numStore": "5"
+      "numStore": "5",
+      "mainCategory": "brinquedos"
     },
     {
       "idEnterprise": "6",
       "fantasyName": "Loja do Robson",
       "description": "Loja do Robson",
-      "numStore": "6"
+      "numStore": "6",
+      "mainCategory": "casa"
     },
     {
       "idEnterprise": "7",
       "fantasyName": "Loja do Jeferson",
       "description": "Loja do Jeferson",
-      "numStore": "7"
+      "numStore": "7",
+      "mainCategory": "alimenticios"
     },
     {
       "idEnterprise": "8",
       "fantasyName": "Loja do Igor",
       "description": "Loja do Igor",
-      "numStore": "8"
+      "numStore": "8",
+      "mainCategory": "vestuario"
+    },
+    {
+      "idEnterprise": "9",
+      "fantasyName": "Loja da Isabela",
+      "description": "Loja da Isabela",
+      "numStore": "9",
+      "mainCategory": "eletronicos"
+    },
+    {
+      "idEnterprise": "10",
+      "fantasyName": "Loja da Vanessa",
+      "description": "Loja da Vanessa",
+      "numStore": "10",
+      "mainCategory": "vestuario"
+    },
+    {
+      "idEnterprise": "11",
+      "fantasyName": "Loja do Guilherme",
+      "description": "Loja do Guilherme",
+      "numStore": "11",
+      "mainCategory": "casa"
+    },
+    {
+      "idEnterprise": "12",
+      "fantasyName": "Loja da Gabriela",
+      "description": "Loja da Gabriela",
+      "numStore": "12",
+      "mainCategory": "alimenticios"
+    },
+    {
+      "idEnterprise": "13",
+      "fantasyName": "Loja do Marcelo",
+      "description": "Loja do Marcelo",
+      "numStore": "13",
+      "mainCategory": "brinquedos"
+    },
+    {
+      "idEnterprise": "14",
+      "fantasyName": "Loja da Thais",
+      "description": "Loja da Thais",
+      "numStore": "14",
+      "mainCategory": "eletronicos"
+    },
+    {
+      "idEnterprise": "15",
+      "fantasyName": "Loja do Felipe",
+      "description": "Loja do Felipe",
+      "numStore": "15",
+      "mainCategory": "vestuario"
+    },
+    {
+      "idEnterprise": "16",
+      "fantasyName": "Loja da Aline",
+      "description": "Loja da Aline",
+      "numStore": "16",
+      "mainCategory": "beleza"
+    },
+    {
+      "idEnterprise": "17",
+      "fantasyName": "Loja do Bruno",
+      "description": "Loja do Bruno",
+      "numStore": "17",
+      "mainCategory": "casa"
+    },
+    {
+      "idEnterprise": "18",
+      "fantasyName": "Loja da Camila",
+      "description": "Loja da Camila",
+      "numStore": "18",
+      "mainCategory": "alimenticios"
+    },
+    {
+      "idEnterprise": "19",
+      "fantasyName": "Loja do Rafael",
+      "description": "Loja do Rafael",
+      "numStore": "19",
+      "mainCategory": "brinquedos"
+    },
+    {
+      "idEnterprise": "20",
+      "fantasyName": "Loja da Larissa",
+      "description": "Loja da Larissa",
+      "numStore": "20",
+      "mainCategory": "eletronicos"
+    },
+    {
+      "idEnterprise": "21",
+      "fantasyName": "Loja do Thiago",
+      "description": "Loja do Thiago",
+      "numStore": "21",
+      "mainCategory": "vestuario"
+    },
+    {
+      "idEnterprise": "22",
+      "fantasyName": "Loja da Fernanda",
+      "description": "Loja da Fernanda",
+      "numStore": "22",
+      "mainCategory": "casa"
+    },
+    {
+      "idEnterprise": "23",
+      "fantasyName": "Loja do Lucas",
+      "description": "Loja do Lucas",
+      "numStore": "23",
+      "mainCategory": "alimenticios"
+    },
+    {
+      "idEnterprise": "24",
+      "fantasyName": "Loja da Mariana",
+      "description": "Loja da Mariana",
+      "numStore": "24",
+      "mainCategory": "brinquedos"
+    },
+    {
+      "idEnterprise": "25",
+      "fantasyName": "Loja do Carlos",
+      "description": "Loja do Carlos",
+      "numStore": "25",
+      "mainCategory": "eletronicos"
+    },
+    {
+      "idEnterprise": "26",
+      "fantasyName": "Loja da Alice",
+      "description": "Loja da Alice",
+      "numStore": "26",
+      "mainCategory": "vestuario"
+    },
+    {
+      "idEnterprise": "27",
+      "fantasyName": "Loja do Bernardo",
+      "description": "Loja do Bernardo",
+      "numStore": "27",
+      "mainCategory": "beleza"
+    },
+    {
+      "idEnterprise": "28",
+      "fantasyName": "Loja da Clara",
+      "description": "Loja da Clara",
+      "numStore": "28",
+      "mainCategory": "casa"
+    },
+    {
+      "idEnterprise": "29",
+      "fantasyName": "Loja do Daniel",
+      "description": "Loja do Daniel",
+      "numStore": "29",
+      "mainCategory": "alimenticios"
+    },
+    {
+      "idEnterprise": "30",
+      "fantasyName": "Loja da Erika",
+      "description": "Loja da Erika",
+      "numStore": "30",
+      "mainCategory": "brinquedos"
+    },
+    {
+      "idEnterprise": "31",
+      "fantasyName": "Loja do Fabio",
+      "description": "Loja do Fabio",
+      "numStore": "31",
+      "mainCategory": "eletronicos"
+    },
+    {
+      "idEnterprise": "32",
+      "fantasyName": "Loja da Gabrielle",
+      "description": "Loja da Gabrielle",
+      "numStore": "32",
+      "mainCategory": "vestuario"
+    },
+    {
+      "idEnterprise": "33",
+      "fantasyName": "Loja do Hugo",
+      "description": "Loja do Hugo",
+      "numStore": "33",
+      "mainCategory": "beleza"
+    },
+    {
+      "idEnterprise": "34",
+      "fantasyName": "Loja da Ingrid",
+      "description": "Loja da Ingrid",
+      "numStore": "34",
+      "mainCategory": "casa"
+    },
+    {
+      "idEnterprise": "35",
+      "fantasyName": "Loja do Jonas",
+      "description": "Loja do Jonas",
+      "numStore": "35",
+      "mainCategory": "alimenticios"
+    },
+    {
+      "idEnterprise": "36",
+      "fantasyName": "Loja do Karen",
+      "description": "Loja do Karen",
+      "numStore": "36",
+      "mainCategory": "brinquedos"
+    },
+    {
+      "idEnterprise": "37",
+      "fantasyName": "Loja do Leo",
+      "description": "Loja do Leo",
+      "numStore": "37",
+      "mainCategory": "eletronicos"
+    },
+    {
+      "idEnterprise": "38",
+      "fantasyName": "Loja da Marlon",
+      "description": "Loja da Marlon",
+      "numStore": "38",
+      "mainCategory": "vestuario"
+    },
+    {
+      "idEnterprise": "39",
+      "fantasyName": "Loja da Nadia",
+      "description": "Loja da Nadia",
+      "numStore": "39",
+      "mainCategory": "beleza"
+    },
+    {
+      "idEnterprise": "40",
+      "fantasyName": "Loja da Otavio",
+      "description": "Loja da Otavio",
+      "numStore": "40",
+      "mainCategory": "casa"
+    },
+    {
+      "idEnterprise": "41",
+      "fantasyName": "Loja do Paulo",
+      "description": "Loja do Paulo",
+      "numStore": "41",
+      "mainCategory": "alimenticios"
+    },
+    {
+      "idEnterprise": "42",
+      "fantasyName": "Loja do Novo João",
+      "description": "Loja do Novo João",
+      "numStore": "42",
+      "mainCategory": "brinquedos"
+    },
+    {
+      "idEnterprise": "43",
+      "fantasyName": "Loja do Novo Rodrigo",
+      "description": "Loja do Novo Rodrigo",
+      "numStore": "43",
+      "mainCategory": "eletronicos"
+    },
+    {
+      "idEnterprise": "44",
+      "fantasyName": "Loja do Novo Pedro",
+      "description": "Loja do Novo Pedro",
+      "numStore": "44",
+      "mainCategory": "vestuario"
+    },
+    {
+      "idEnterprise": "45",
+      "fantasyName": "Loja do Novo Ricardo",
+      "description": "Loja do Novo Ricardo",
+      "numStore": "45",
+      "mainCategory": "eletronicos"
+    },
+    {
+      "idEnterprise": "46",
+      "fantasyName": "Loja da Nova Rayza",
+      "description": "Loja da Nova Rayza",
+      "numStore": "46",
+      "mainCategory": "vestuario"
+    },
+    {
+      "idEnterprise": "47",
+      "fantasyName": "Loja do Novo Robson",
+      "description": "Loja do Novo Robson",
+      "numStore": "47",
+      "mainCategory": "eletronicos"
+    },
+    {
+      "idEnterprise": "48",
+      "fantasyName": "Loja do Novo Jeferson",
+      "description": "Loja do Novo Jeferson",
+      "numStore": "48",
+      "mainCategory": "beleza"
+    },
+    {
+      "idEnterprise": "49",
+      "fantasyName": "Loja do Novo Igor",
+      "description": "Loja do Novo Igor",
+      "numStore": "49",
+      "mainCategory": "brinquedos"
+    },
+    {
+      "idEnterprise": "50",
+      "fantasyName": "Loja da Nova Isabela",
+      "description": "Loja da Nova Isabela",
+      "numStore": "50",
+      "mainCategory": "casa"
+    },
+    {
+      "idEnterprise": "51",
+      "fantasyName": "Loja da Nova Vanessa",
+      "description": "Loja da Nova Vanessa",
+      "numStore": "51",
+      "mainCategory": "alimenticios"
+    },
+    {
+      "idEnterprise": "52",
+      "fantasyName": "Loja do Novo Guilherme",
+      "description": "Loja do Novo Guilherme",
+      "numStore": "52",
+      "mainCategory": "vestuario"
+    },
+    {
+      "idEnterprise": "53",
+      "fantasyName": "Loja da Nova Gabriela",
+      "description": "Loja da Nova Gabriela",
+      "numStore": "53",
+      "mainCategory": "eletronicos"
+    },
+    {
+      "idEnterprise": "54",
+      "fantasyName": "Loja do Novo Marcelo",
+      "description": "Loja do Novo Marcelo",
+      "numStore": "54",
+      "mainCategory": "vestuario"
+    },
+    {
+      "idEnterprise": "55",
+      "fantasyName": "Loja da Nova Thais",
+      "description": "Loja da Nova Thais",
+      "numStore": "55",
+      "mainCategory": "eletronicos"
+    },
+    {
+      "idEnterprise": "56",
+      "fantasyName": "Loja do Novo Felipe",
+      "description": "Loja do Novo Felipe",
+      "numStore": "56",
+      "mainCategory": "vestuario"
+    },
+    {
+      "idEnterprise": "57",
+      "fantasyName": "Loja da Nova Aline",
+      "description": "Loja da Nova Aline",
+      "numStore": "57",
+      "mainCategory": "eletronicos"
+    },
+    {
+      "idEnterprise": "58",
+      "fantasyName": "Loja do Novo Bruno",
+      "description": "Loja do Novo Bruno",
+      "numStore": "58",
+      "mainCategory": "vestuario"
+    },
+    {
+      "idEnterprise": "59",
+      "fantasyName": "Loja da Nova Camila",
+      "description": "Loja da Nova Camila",
+      "numStore": "59",
+      "mainCategory": "eletronicos"
+    },
+    {
+      "idEnterprise": "60",
+      "fantasyName": "Loja do Novo Rafael",
+      "description": "Loja do Novo Rafael",
+      "numStore": "60",
+      "mainCategory": "vestuario"
     }
-  ]
+]

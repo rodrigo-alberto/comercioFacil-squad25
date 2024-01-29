@@ -33,7 +33,7 @@ public class MarketPlace {
 	private List<Enterprise> enterprises;
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "fk_id_address", nullable = false)
+	@JoinColumn(name = "fk_id_address") // nullable = false;
 	private Address address;
 	
 	public MarketPlace() {

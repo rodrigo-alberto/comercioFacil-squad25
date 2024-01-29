@@ -10,13 +10,9 @@ public interface ProductService {
 	
 	Product getById(Long id);
 	
-//	List<Product> getAllByIdMarket(Long IdMarket);
-	
 	List<Product> getAllByIdMarketAndCategory(Long idMarket, Category category);
 	
 	List<Product> getAllByIdEnterprise(Long idEnterprise);
-	
-//	List<Product> getAllByIdEnterpriseAndCategories(Long idEnterprise, List<Category> categories);
 	
 	Product update(Long id, Product updatedProduct);
 	

@@ -2,7 +2,6 @@ package squad25.comercioFacil.enums;
 
 public enum SystemAlert {
 	SUCCESSFUL_OPERATION("Sucesso!", "Operação bem-sucedida."),
-	
 	OPERATION_ERROR("Erro!", "Falha na operação."),
 	NOT_FOUND_ERROR("Erro!", "registro não encontrado.");
 	

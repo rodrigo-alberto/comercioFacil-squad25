@@ -44,25 +44,27 @@
 								</div>
 							</div>
 
-							<form action="" class="px-3">
+							<form action="" class="px-3 w-100">
 								<div class="row mb-3 px-0 d-flex justify-content-between ">
-									<select id="estados" class="col form-select form-select-lg mb-3 selects"
-										aria-label="Large select example" onchange="redirecionarFeira()">
-										<option hidden>Estados</option>
-										<option th:each="states : ${T(squad25.comercioFacil.enums.State).values()}"
-											th:value="${states}" th:text="${states}">One</option>
+
+									<select class="col form-select form-select-lg selects " id="select1"
+										onchange="updateSelect()">
+										<option disabled selected hidden> Estados</option>
+										<option value="opcao1">São Paulo</option>
+										<option value="opcao2">Bahia</option>
+										<option value="opcao3">Rio de Janeiro</option>
+										<option value="opcao4">Salvador</option>
 									</select>
 
-									<select id="feiras" class="col form-select form-select-lg mb-3 selects"
-										aria-label="Large select example" onchange="redirecionarRota()">
-										<option hidden>Feira</option>
-										<option th:each="market : ${markets}" th:value="${market.idMarket}"
-											th:text="${market.nameMarket}">One</option>
+									<select class="col form-select form-select-lg selects" id="select2"
+										onchange="updateImage()">
+										<option disabled selected hidden></option>
 									</select>
 
 								</div>
 
 								<div class="row filters-bg rounded p-3">
+
 
 									<div class="d-flex justify-content-center">
 										<h4 class="fs-6 fw-semibold py-2">Categorias:</h4>
@@ -70,54 +72,52 @@
 
 									<div class="row">
 										<div class="form-check col mb-3">
-											<input class="form-check-input" type="checkbox" value="" id="check-clothes">
-											<label class="form-check-label" for="check-clothes">Casa</label>
+											<input class="form-check-input" type="radio" id="casa" name="categoria"
+												value="casa">
+											<label class="form-check-label" for="casa">Casa</label>
 										</div>
 
 										<div class="form-check col mb-3">
-											<input class="form-check-input" type="checkbox" value="" id="check-clothes">
-											<label class="form-check-label" for="check-clothes">Vestuário</label>
+											<input class="form-check-input" type="radio" id="vestuario" name="categoria"
+												value="vestuario">
+											<label class="form-check-label" for="vestuario">Vestuário</label>
 										</div>
 
 										<div class="form-check col mb-3">
-											<input class="form-check-input" type="checkbox" value="" id="check-clothes">
-											<label class="form-check-label" for="check-clothes">Brinquedos</label>
+											<input class="form-check-input" type="radio" id="brinquedos"
+												name="categoria" value="brinquedos">
+											<label class="form-check-label" for="brinquedos">Brinquedos</label>
 										</div>
 
 										<div class="form-check col mb-3">
-											<input class="form-check-input" type="checkbox" value=""
-												id="check-electronics">
-											<label class="form-check-label" for="check-electronics">Eletrônicos</label>
+											<input class="form-check-input" type="radio" id="eletronicos"
+												name="categoria" value="eletronicos">
+											<label class="form-check-label" for="eletronicos">Eletrônicos</label>
 										</div>
 
 										<div class="form-check col mb-3">
-											<input class="form-check-input" type="checkbox" value=""
-												id="check-utilities">
-											<label class="form-check-label" for="check-utilities">Alimentícios</label>
+											<input class="form-check-input" type="radio" id="alimenticios"
+												name="categoria" value="alimenticios">
+											<label class="form-check-label" for="alimenticios">Alimentícios</label>
 										</div>
 
 										<div class="form-check col mb-3">
-											<input class="form-check-input" type="checkbox" value=""
-												id="check-vegetables">
-											<label class="form-check-label" for="check-vegetables">Beleza</label>
+											<input class="form-check-input" type="radio" id="beleza" name="categoria"
+												value="beleza">
+											<label class="form-check-label" for="beleza">Beleza</label>
 										</div>
 
 
 									</div>
-									<div class="d-flex justify-content-center">
-										<button type="submit"
-											class="btn btn-primary mb-3 mt-4 py-2 px-3 fw-light">Aplicar
-											filtros</button>
-									</div>
+
 								</div>
 							</form>
 						</div> <!-- End .filters-container -->
 					</div>
 
 					<div class="d-flex justify-content-center">
-						<div class="map-container p-3">
-							<img id="map" class="p-2 rounded" src="imgs/map-full.svg" alt="Mapa"
-								onload="fetchEnterprises(this)">
+						<div class="map-container p-3" id="imageContainer">
+							<img src="imgs/map-full.svg" onload="fetchEnterprises(this)" />
 						</div>
 					</div>
 
@@ -126,10 +126,410 @@
 		</section> <!-- End #home-section -->
 
 		<section class="section-products">
+			
 			<div class="page-wrapper chiller-theme">
-				<h2 class="text-center mt-5">Roupas</h4>
-					<p class=" text-center fs-5 pb-2 fw-light">Todas as <span class="fw-bold">Vestuário</span> que é
-						vendido nas lojas
+				<h2 class="text-center mt-5">Casa</h4>
+					<p class=" text-center fs-5 pb-2 fw-light">Todo os <span class="fw-bold">Itens</span> que você
+						precisa em sua casa
+					</p>
+			</div>
+
+
+			<div class="d-flex justify-content-center container-products">
+				<button onclick="slickPrev()" class="btnPassSlider bi bi-arrow-left-circle-fill fa-2x"></button>
+
+				<div class="slider js-slider container">
+
+					<div class="card col card-product mt-3 mb-3 ml-3">
+						<div class="img-container">
+							<img src="https://raw.githubusercontent.com/PedroGoya24/product-images-cf/main/torneira.webp"
+								class="img-product img-fluid mt-2" alt="Imagem do produto">
+						</div>
+						<div class="card-product-body">
+							<div class="d-flex">
+								<span>R$</span><span class="">200</span>
+							</div>
+							<div class="d-flex">
+								<h3 class="fs-5 fw-semibold">R$</h3>
+								<h3 class="fs-5 fw-semibold">190</h3>
+							</div>
+							<a>
+								<p class="py-1">Torneira de cozinha monocomando Torneira Store 4167 preto</p>
+							</a>
+							<div class="d-flex flex-wrap justify-content-between">
+								<a class="btn btn-primary py-1 mb-1"><i class="bi bi-pencil-square"></i> Acessar
+									Produto</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="card col card-product mt-3 mb-3 ml-3">
+						<div class="img-container">
+							<img src="https://raw.githubusercontent.com/PedroGoya24/product-images-cf/main/pipoqueira.webp"
+								class="img-product img-fluid mt-2" alt="Imagem do produto">
+						</div>
+						<div class="card-product-body">
+							<div class="d-flex">
+								<span>R$</span><span class="">210</span>
+							</div>
+							<div class="d-flex">
+								<h3 class="fs-5 fw-semibold">R$</h3>
+								<h3 class="fs-5 fw-semibold">200
+								</h3>
+							</div>
+							<a>
+								<p class="py-1" >Pipoqueira Elétrica C/ Bico Direcionador 1200w Vermelha 110v / 220v</p>
+							</a>
+							<div class="d-flex flex-wrap justify-content-between">
+								<a class="btn btn-primary py-1 mb-1"><i
+										class="bi bi-pencil-square"></i> Acessar Produto</a>
+							</div>
+						</div>
+					</div>
+					<div class="card col card-product mt-3 mb-3 ml-3">
+						<div class="img-container">
+							<img src="https://raw.githubusercontent.com/PedroGoya24/product-images-cf/main/amolador.webp"
+								class="img-product img-fluid mt-2" alt="Imagem do produto">
+						</div>
+						<div class="card-product-body">
+							<div class="d-flex">
+								<span>R$</span><span class="">50</span>
+							</div>
+							<div class="d-flex">
+								<h3 class="fs-5 fw-semibold mb-3">R$</h3>
+								<h3 class="fs-5 fw-semibold">45</h3>
+							</div>
+							<a >
+								<p >Afiador e Amolador Profissional 4 Fases Para Facas E Tesouras de alta performance</p>
+							</a>
+							<div class="d-flex flex-wrap justify-content-between">
+								<a th:href="@{prodEnterprise}" class="btn btn-primary py-1 mb-1"><i
+										class="bi bi-pencil-square"></i> Acessar Produto</a>
+							</div>
+						</div>
+					</div>
+					<div class="card col card-product mt-3 mb-3 ml-3">
+						<div class="img-container">
+							<img src="https://raw.githubusercontent.com/PedroGoya24/product-images-cf/main/cortina.webp"
+								class="img-product img-fluid mt-2" alt="Imagem do produto">
+						</div>
+						<div class="card-product-body">
+							<div class="d-flex">
+								<span>R$</span><span class="">180</span>
+							</div>
+							<div class="d-flex">
+								<h3 class="fs-5 fw-semibold">R$</h3>
+								<h3 class="fs-5 fw-semibold mb-3">
+									140
+								</h3>
+							</div>
+							<a>
+								<p>Cortina Blackout Liso 4 Metros X2,80m Blecaute Bloqueia 100% das luzes exteriores</p>
+							</a>
+							<div class="d-flex flex-wrap justify-content-between">
+								<a th:href="@{prodEnterprise}" class="btn btn-primary py-1 mb-1"><i
+										class="bi bi-pencil-square"></i> Acessar Produto</a>
+							</div>
+						</div>
+					</div>
+					<div class="card col card-product mt-3 mb-3 ml-3">
+						<div class="img-container">
+							<img src="https://raw.githubusercontent.com/PedroGoya24/product-images-cf/main/cuba.webp"
+								class="img-product img-fluid mt-2" alt="Imagem do produto">
+						</div>
+						<div class="card-product-body">
+							<div class="d-flex">
+								<span>R$</span><span class="">1.400</span>
+							</div>
+							<div class="d-flex">
+								<h3 class="fs-5 fw-semibold">R$</h3>
+								<h3 class="fs-5 fw-semibold">
+									1.260
+								</h3>
+							</div>
+							<a>
+								<p class="py-1">Cuba Cascata Gourmet Premium Torneira Lavador Copos Completa Cor Prateado</p>
+							</a>
+							<div class="d-flex flex-wrap justify-content-between">
+								<a class="btn btn-primary py-1 mb-1"><i
+										class="bi bi-pencil-square"></i> Acessar Produto</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<button onclick="slickNext()" class="fa-lg bi bi-arrow-right-circle-fill btnPassSlider"></button>
+			</div>
+
+			<div class="page-wrapper chiller-theme">
+				<h2 class="text-center mt-5">Vestuário</h4>
+					<p class=" text-center fs-5 pb-2 fw-light">Todas as <span class="fw-bold">Roupas</span> que são
+						vendidas nas lojas
+					</p>
+			</div>
+			<div class="d-flex justify-content-center container-products">
+				<button onclick="slickPrev()" class="btnPassSlider bi bi-arrow-left-circle-fill fa-2x"></button>
+				<!-- ^ Aqui vem o each-->
+				<div class="slider js-slider container">
+
+					<div class="card col card-product mt-3 mb-3 ml-3">
+						<div class="img-container">
+							<img src="https://raw.githubusercontent.com/PedroGoya24/product-images-cf/main/vestido.webp"
+								class="img-product img-fluid mt-2" alt="Imagem do produto">
+						</div>
+						<div class="card-product-body">
+							<div class="d-flex">
+								<span>R$</span><span class="">100</span>
+							</div>
+							<div class="d-flex">
+								<h3 class="fs-5 fw-semibold">R$</h3>
+								<h3 class="fs-5 fw-semibold">95
+								</h3>
+							</div>
+							<a>
+								<p class="py-1">Vestido Infantil Da Branca De Neve Linda Fantasia Para Festa De Carnaval Ou Comemorativa</p>
+							</a>
+							<div class="d-flex flex-wrap justify-content-between">
+								<a class="btn btn-primary py-1 mb-1"><i
+										class="bi bi-pencil-square"></i> Acessar Produto</a>
+							</div>
+						</div>
+					</div>
+					<div class="card col card-product mt-3 mb-3 ml-3">
+						<div class="img-container">
+							<img src="https://raw.githubusercontent.com/PedroGoya24/product-images-cf/main/bermuda.webp"
+								class="img-product img-fluid mt-2" alt="Imagem do produto">
+						</div>
+						<div class="card-product-body">
+							<div class="d-flex">
+								<span>R$</span><span class="">80</span>
+							</div>
+							<div class="d-flex">
+								<h3 class="fs-5 fw-semibold">R$</h3>
+								<h3 class="fs-5 fw-semibold">60
+								</h3>
+							</div>
+							<a >
+								<p class="py-1">Short Praia Masculino Bermuda Verão Academia Treino De Corrida E Academia</p>
+							</a>
+							<div class="d-flex flex-wrap justify-content-between">
+								<a class="btn btn-primary py-1 mb-1"><i
+										class="bi bi-pencil-square"></i> Acessar Produto</a>
+							</div>
+						</div>
+					</div>
+					<div class="card col card-product mt-3 mb-3 ml-3">
+						<div class="img-container">
+							<img src="https://raw.githubusercontent.com/PedroGoya24/product-images-cf/main/shorts.webp"
+								class="img-product img-fluid mt-2" alt="Imagem do produto">
+						</div>
+						<div class="card-product-body">
+							<div class="d-flex">
+								<span>R$</span><span class="">100</span>
+							</div>
+							<div class="d-flex">
+								<h3 class="fs-5 fw-semibold">R$</h3>
+								<h3 class="fs-5 fw-semibold">70
+								</h3>
+							</div>
+							<a >
+								<p class="py-1" >Bermuda Jeans Cintura Alta Feminino Ate O Joelho, Elástica E Confortável</p>
+							</a>
+							<div class="d-flex flex-wrap justify-content-between">
+								<a class="btn btn-primary py-1 mb-1"><i
+										class="bi bi-pencil-square"></i> Acessar Produto</a>
+							</div>
+						</div>
+					</div>
+					<div class="card col card-product mt-3 mb-3 ml-3">
+						<div class="img-container">
+							<img src="https://raw.githubusercontent.com/PedroGoya24/product-images-cf/main/cal%C3%A7a.webp"
+								class="img-product img-fluid mt-2" alt="Imagem do produto">
+						</div>
+						<div class="card-product-body">
+							<div class="d-flex">
+								<span>R$</span><span class="">130</span>
+							</div>
+							<div class="d-flex">
+								<h3 class="fs-5 fw-semibold">R$</h3>
+								<h3 class="fs-5 fw-semibold">100
+								</h3>
+							</div>
+							<a>
+								<p class="py-1" >Calça Skinny Preta Masculina Jeans Com Elastano Lycra 2023 Puro Suco Do Estilo</p>
+							</a>
+							<div class="d-flex flex-wrap justify-content-between">
+								<a  class="btn btn-primary py-1 mb-1"><i
+										class="bi bi-pencil-square"></i> Acessar Produto</a>
+							</div>
+						</div>
+					</div>
+					<div class="card col card-product mt-3 mb-3 ml-3">
+						<div class="img-container">
+							<img src="https://raw.githubusercontent.com/PedroGoya24/product-images-cf/main/cropped.webp"
+								class="img-product img-fluid mt-2" alt="Imagem do produto">
+						</div>
+						<div class="card-product-body">
+							<div class="d-flex">
+								<span>R$</span><span class="">60</span>
+							</div>
+							<div class="d-flex">
+								<h3 class="fs-5 fw-semibold">R$</h3>
+								<h3 class="fs-5 fw-semibold">50
+								</h3>
+							</div>
+							<a >
+								<p class="py-1">Cropped Feminino Canelado Regata Preto, Perfeito Para Aquele Look Da Noitada </p>
+							</a>
+							<div class="d-flex flex-wrap justify-content-between">
+								<a  class="btn btn-primary py-1 mb-1"><i
+										class="bi bi-pencil-square"></i> Acessar Produto</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<button onclick="slickNext()" class="fa-lg bi bi-arrow-right-circle-fill btnPassSlider"></button>
+			</div>
+
+
+			<div class="page-wrapper chiller-theme">
+				<h2 class="text-center mt-5">Alimentícios</h4>
+					<p class=" text-center fs-5 pb-2 fw-light">Lista de todos os <span
+							class="fw-bold">Comestíveiss</span>
+						vendidos pelos comerciantes
+					</p>
+			</div>
+
+			<div class="d-flex justify-content-center container-products">
+				<button onclick="slickPrev1()" class="btnPassSlider bi bi-arrow-left-circle-fill fa-2x"></button>
+				
+				<div class="slider js-slider1 container">
+					<div class="card col card-product mt-3 mb-3 ml-3">
+
+						<div class="img-container">
+							<img src="https://raw.githubusercontent.com/PedroGoya24/product-images-cf/main/batata_inglesa.webp"
+								class="img-product img-fluid mt-2" alt="Imagem do produto">
+						</div>
+						<div class="card-product-body">
+							<div class="d-flex">
+								<span>R$</span><span class="">10</span>
+							</div>
+							<div class="d-flex">
+								<h3 class="fs-5 fw-semibold">R$</h3>
+								<h3 class="fs-5 fw-semibold">8
+								</h3>
+							</div>
+							<a>
+								<p class="py-1" >Quilo De Batata-Inglesa Perfeito Para Aquele Almoço De Domingo Com Sua Familia</p>
+							</a>
+							<div class="d-flex flex-wrap justify-content-between">
+								<a class="btn btn-primary py-1 mb-1"><i
+										class="bi bi-pencil-square"></i> Acessar Produto</a>
+							</div>
+						</div>
+					</div>
+					<div class="card col card-product mt-3 mb-3 ml-3">
+						<div class="img-container">
+							<img src="https://raw.githubusercontent.com/PedroGoya24/product-images-cf/main/enlatado.webp"
+								class="img-product img-fluid mt-2" alt="Imagem do produto">
+						</div>
+						<div class="card-product-body">
+							<div class="d-flex">
+								<span>R$</span><span class="">10</span>
+							</div>
+							<div class="d-flex">
+								<h3 class="fs-5 fw-semibold">R$</h3>
+								<h3 class="fs-5 fw-semibold">7
+								</h3>
+							</div>
+							<a >
+								<p class="py-1" >Sardinha Enlatada Perfeita Para Fazer Tortas Ou Saladas Afrodisiacas, Você Escolhe</p>
+							</a>
+							<div class="d-flex flex-wrap justify-content-between">
+								<a class="btn btn-primary py-1 mb-1"><i
+										class="bi bi-pencil-square"></i> Acessar Produto</a>
+							</div>
+						</div>
+					</div>
+					<div class="card col card-product mt-3 mb-3 ml-3">
+						<div class="img-container">
+							<img src="https://github.com/PedroGoya24/product-images-cf/blob/main/fileSrigado.png?raw=true"
+								class="img-product img-fluid mt-2" alt="Imagem do produto">
+						</div>
+						<div class="card-product-body">
+							<div class="d-flex">
+								<span>R$</span><span class="">25</span>
+							</div>
+							<div class="d-flex">
+								<h3 class="fs-5 fw-semibold">R$</h3>
+								<h3 class="fs-5 fw-semibold">20
+								</h3>
+							</div>
+							<a >
+								<p class="py-1" >O Melhor File De Sirigado Da Região, Apriveite Nossa Oferta de Frutos do Mar</p>
+							</a>
+							<div class="d-flex flex-wrap justify-content-between">
+								<a class="btn btn-primary py-1 mb-1"><i
+										class="bi bi-pencil-square"></i> Acessar Produto</a>
+							</div>
+						</div>
+					</div>
+					<div class="card col card-product mt-3 mb-3 ml-3">
+						<div class="img-container">
+							<img src="https://raw.githubusercontent.com/PedroGoya24/product-images-cf/main/leite.webp"
+								class="img-product img-fluid mt-2" alt="Imagem do produto">
+						</div>
+						<div class="card-product-body">
+							<div class="d-flex">
+								<span>R$</span><span class="">15</span>
+							</div>
+							<div class="d-flex">
+								<h3 class="fs-5 fw-semibold">R$</h3>
+								<h3 class="fs-5 fw-semibold">8
+								</h3>
+							</div>
+							<a >
+								<p class="py-1">Compre A Melhor Qualidade de Leite Condensado Para Fazer Seus Doces</p>
+							</a>
+							<div class="d-flex flex-wrap justify-content-between">
+								<a class="btn btn-primary py-1 mb-1"><i
+										class="bi bi-pencil-square"></i> Acessar Produto</a>
+							</div>
+						</div>
+					</div>
+					<div class="card col card-product mt-3 mb-3 ml-3">
+						<div class="img-container">
+							<img src="https://github.com/PedroGoya24/product-images-cf/blob/main/pescada.png?raw=true"
+								class="img-product img-fluid mt-2" alt="Imagem do produto">
+						</div>
+						<div class="card-product-body">
+							<div class="d-flex">
+								<span>R$</span><span class="">30</span>
+							</div>
+							<div class="d-flex">
+								<h3 class="fs-5 fw-semibold">R$</h3>
+								<h3 class="fs-5 fw-semibold">23
+								</h3>
+							</div>
+							<a >
+								<p class="py-1">A Melhor Pescada Branca da Região, Sem Espinhas, Perfeita Para O Almoço Com A Familia</p>
+							</a>
+							<div class="d-flex flex-wrap justify-content-between">
+								<a class="btn btn-primary py-1 mb-1"><i
+										class="bi bi-pencil-square"></i> Acessar Produto</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<button onclick="slickNext1()" class="fa-lg bi bi-arrow-right-circle-fill btnPassSlider"></button>
+			</div>
+
+
+
+
+			<div class="page-wrapper chiller-theme">
+				<h2 class="text-center mt-5">Brinquedos</h4>
+					<p class=" text-center fs-5 pb-2 fw-light">Os <span class="fw-bold">Brinquedos</span> mais
+						divertidos estão aqui
 					</p>
 			</div>
 
@@ -140,150 +540,117 @@
 
 					<div class="card col card-product mt-3 mb-3 ml-3">
 						<div class="img-container">
-							<img src="https://http2.mlstatic.com/D_NQ_NP_943394-MLU72748616907_112023-O.webp"
+							<img src="https://raw.githubusercontent.com/PedroGoya24/product-images-cf/main/carrinho.webp"
 								class="img-product img-fluid mt-2" alt="Imagem do produto">
 						</div>
 						<div class="card-product-body">
 							<div class="d-flex">
-								<span>R$</span><span class=""
-									th:text="${#numbers.formatDecimal({seuValor * 1.1}, 0, 2)}"></span>
+								<span>R$</span><span class="">130</span>
 							</div>
 							<div class="d-flex">
 								<h3 class="fs-5 fw-semibold">R$</h3>
-								<h3 class="fs-5 fw-semibold"
-									th:text="${#numbers.formatDecimal({seuValor * 1.0}, 1, 2)}">
+								<h3 class="fs-5 fw-semibold">
+									120
 								</h3>
 							</div>
-							<a th:href="@{prodEnterprise}">
-								<p class="py-1" th:text="${nome}"></p>
+							<a >
+								<p class="py-1" >Carrinho Controle Remoto Brinquedo Pickup 4x4 Giro 360 Graus Cor Amarelo</p>
 							</a>
 							<div class="d-flex flex-wrap justify-content-between">
-								<a th:href="@{prodEnterprise}" class="btn btn-primary py-1 mb-1"><i
+								<a class="btn btn-primary py-1 mb-1"><i
 										class="bi bi-pencil-square"></i> Acessar Produto</a>
 							</div>
 						</div>
 					</div>
 					<div class="card col card-product mt-3 mb-3 ml-3">
 						<div class="img-container">
-							<img src="https://http2.mlstatic.com/D_NQ_NP_628713-MLB72464373717_102023-O.webp"
+							<img src="https://raw.githubusercontent.com/PedroGoya24/product-images-cf/main/cozinhaRosa.webp"
 								class="img-product img-fluid mt-2" alt="Imagem do produto">
 						</div>
 						<div class="card-product-body">
 							<div class="d-flex">
-								<span>R$</span><span class=""
-									th:text="${#numbers.formatDecimal({seuValor * 1.1}, 0, 2)}"></span>
+								<span>R$</span><span class="">80</span>
 							</div>
 							<div class="d-flex">
 								<h3 class="fs-5 fw-semibold">R$</h3>
-								<h3 class="fs-5 fw-semibold"
-									th:text="${#numbers.formatDecimal({seuValor * 1.0}, 1, 2)}">
+								<h3 class="fs-5 fw-semibold">
+									70
 								</h3>
 							</div>
-							<a th:href="@{prodEnterprise}">
-								<p class="py-1" th:text="${nome}"></p>
+							<a >
+								<p class="py-1" >Kit Cozinha De Brinquedo Infantil Completa Solta Água E Som Cor Rosa</p>
 							</a>
 							<div class="d-flex flex-wrap justify-content-between">
-								<a th:href="@{prodEnterprise}" class="btn btn-primary py-1 mb-1"><i
+								<a  class="btn btn-primary py-1 mb-1"><i
 										class="bi bi-pencil-square"></i> Acessar Produto</a>
 							</div>
 						</div>
 					</div>
 					<div class="card col card-product mt-3 mb-3 ml-3">
 						<div class="img-container">
-							<img src="https://http2.mlstatic.com/D_NQ_NP_987624-MLB50694327214_072022-O.webp"
+							<img src="https://raw.githubusercontent.com/PedroGoya24/product-images-cf/main/pulapula.webp"
 								class="img-product img-fluid mt-2" alt="Imagem do produto">
 						</div>
 						<div class="card-product-body">
 							<div class="d-flex">
-								<span>R$</span><span class=""
-									th:text="${#numbers.formatDecimal({seuValor * 1.1}, 0, 2)}"></span>
+								<span>R$</span><span class="">1.000</span>
 							</div>
 							<div class="d-flex">
 								<h3 class="fs-5 fw-semibold">R$</h3>
-								<h3 class="fs-5 fw-semibold"
-									th:text="${#numbers.formatDecimal({seuValor * 1.0}, 1, 2)}">
+								<h3 class="fs-5 fw-semibold">900
 								</h3>
 							</div>
-							<a th:href="@{prodEnterprise}">
-								<p class="py-1" th:text="${nome}"></p>
+							<a >
+								<p class="py-1">Pula Pula P/ Playground Infantil 1,83 Cor Preto Cor da lona de salto Preto</p>
 							</a>
 							<div class="d-flex flex-wrap justify-content-between">
-								<a th:href="@{prodEnterprise}" class="btn btn-primary py-1 mb-1"><i
+								<a class="btn btn-primary py-1 mb-1"><i class="bi bi-pencil-square"></i> Acessar Produto</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="card col card-product mt-3 mb-3 ml-3">
+						<div class="img-container">
+							<img src="https://raw.githubusercontent.com/PedroGoya24/product-images-cf/main/carrinhoVermelho.webp"
+								class="img-product img-fluid mt-2" alt="Imagem do produto">
+						</div>
+						<div class="card-product-body">
+							<div class="d-flex">
+								<span>R$</span><span class="">50</span>
+							</div>
+							<div class="d-flex">
+								<h3 class="fs-5 fw-semibold">R$</h3>
+								<h3 class="fs-5 fw-semibold">40
+								</h3>
+							</div>
+							<a >
+								<p class="py-1" >Carrinho De Controle Remoto Recarregável Neon Race Polibrinq Cor Azul</p>
+							</a>
+							<div class="d-flex flex-wrap justify-content-between">
+								<a class="btn btn-primary py-1 mb-1"><i
 										class="bi bi-pencil-square"></i> Acessar Produto</a>
 							</div>
 						</div>
 					</div>
 					<div class="card col card-product mt-3 mb-3 ml-3">
 						<div class="img-container">
-							<img src="https://http2.mlstatic.com/D_NQ_NP_943394-MLU72748616907_112023-O.webp"
+							<img src="https://raw.githubusercontent.com/PedroGoya24/product-images-cf/main/trem.webp"
 								class="img-product img-fluid mt-2" alt="Imagem do produto">
 						</div>
 						<div class="card-product-body">
 							<div class="d-flex">
-								<span>R$</span><span class=""
-									th:text="${#numbers.formatDecimal({seuValor * 1.1}, 0, 2)}"></span>
+								<span>R$</span><span class="">80</span>
 							</div>
 							<div class="d-flex">
 								<h3 class="fs-5 fw-semibold">R$</h3>
-								<h3 class="fs-5 fw-semibold"
-									th:text="${#numbers.formatDecimal({seuValor * 1.0}, 1, 2)}">
+								<h3 class="fs-5 fw-semibold">75
 								</h3>
 							</div>
-							<a th:href="@{prodEnterprise}">
-								<p class="py-1" th:text="${nome}"></p>
+							<a>
+								<p class="py-1">Trenzinho Ferrorama Locomotiva Completo Fácil De Montar Cor Preto Para Criança</p>
 							</a>
 							<div class="d-flex flex-wrap justify-content-between">
-								<a th:href="@{prodEnterprise}" class="btn btn-primary py-1 mb-1"><i
-										class="bi bi-pencil-square"></i> Acessar Produto</a>
-							</div>
-						</div>
-					</div>
-					<div class="card col card-product mt-3 mb-3 ml-3">
-						<div class="img-container">
-							<img src="https://http2.mlstatic.com/D_NQ_NP_943394-MLU72748616907_112023-O.webp"
-								class="img-product img-fluid mt-2" alt="Imagem do produto">
-						</div>
-						<div class="card-product-body">
-							<div class="d-flex">
-								<span>R$</span><span class=""
-									th:text="${#numbers.formatDecimal({seuValor * 1.1}, 0, 2)}"></span>
-							</div>
-							<div class="d-flex">
-								<h3 class="fs-5 fw-semibold">R$</h3>
-								<h3 class="fs-5 fw-semibold"
-									th:text="${#numbers.formatDecimal({seuValor * 1.0}, 1, 2)}">
-								</h3>
-							</div>
-							<a th:href="@{prodEnterprise}">
-								<p class="py-1" th:text="${nome}"></p>
-							</a>
-							<div class="d-flex flex-wrap justify-content-between">
-								<a th:href="@{prodEnterprise}" class="btn btn-primary py-1 mb-1"><i
-										class="bi bi-pencil-square"></i> Acessar Produto</a>
-							</div>
-						</div>
-					</div>
-					<div class="card col card-product mt-3 mb-3 ml-3">
-						<div class="img-container">
-							<img src="https://http2.mlstatic.com/D_NQ_NP_943394-MLU72748616907_112023-O.webp"
-								class="img-product img-fluid mt-2" alt="Imagem do produto">
-						</div>
-						<div class="card-product-body">
-							<div class="d-flex">
-								<span>R$</span><span class=""
-									th:text="${#numbers.formatDecimal({seuValor * 1.1}, 0, 2)}"></span>
-							</div>
-							<div class="d-flex">
-								<h3 class="fs-5 fw-semibold">R$</h3>
-								<h3 class="fs-5 fw-semibold"
-									th:text="${#numbers.formatDecimal({seuValor * 1.0}, 1, 2)}">
-								</h3>
-							</div>
-							<a th:href="@{prodEnterprise}">
-								<p class="py-1" th:text="${nome}"></p>
-							</a>
-							<div class="d-flex flex-wrap justify-content-between">
-								<a th:href="@{prodEnterprise}" class="btn btn-primary py-1 mb-1"><i
+								<a class="btn btn-primary py-1 mb-1"><i
 										class="bi bi-pencil-square"></i> Acessar Produto</a>
 							</div>
 						</div>
@@ -292,147 +659,6 @@
 				<button onclick="slickNext()" class="fa-lg bi bi-arrow-right-circle-fill btnPassSlider"></button>
 			</div>
 
-			<div class="page-wrapper chiller-theme">
-				<h2 class="text-center mt-5">Comidas</h4>
-					<p class=" text-center fs-5 pb-2 fw-light">Lista de todos os <span
-							class="fw-bold">Comestíveiss</span>
-						vendidos pelos comerciantes
-					</p>
-			</div>
-
-			<div class="d-flex justify-content-center container-products">
-				<button onclick="slickPrev1()" class="btnPassSlider bi bi-arrow-left-circle-fill fa-2x"></button>
-				<!-- ^ Aqui vem o each-->
-				<div class="slider js-slider1 container">
-					<div class="card col card-product mt-3 mb-3 ml-3">
-
-						<div class="img-container">
-							<img src="https://http2.mlstatic.com/D_NQ_NP_943394-MLU72748616907_112023-O.webp"
-								class="img-product img-fluid mt-2" alt="Imagem do produto">
-						</div>
-						<div class="card-product-body">
-							<div class="d-flex">
-								<span>R$</span><span class=""
-									th:text="${#numbers.formatDecimal({seuValor * 1.1}, 0, 2)}"></span>
-							</div>
-							<div class="d-flex">
-								<h3 class="fs-5 fw-semibold">R$</h3>
-								<h3 class="fs-5 fw-semibold"
-									th:text="${#numbers.formatDecimal({seuValor * 1.0}, 1, 2)}">
-								</h3>
-							</div>
-							<a th:href="@{prodEnterprise}">
-								<p class="py-1" th:text="${nome}"></p>
-							</a>
-							<div class="d-flex flex-wrap justify-content-between">
-								<a th:href="@{prodEnterprise}" class="btn btn-primary py-1 mb-1"><i
-										class="bi bi-pencil-square"></i> Acessar Produto</a>
-							</div>
-						</div>
-					</div>
-					<div class="card col card-product mt-3 mb-3 ml-3">
-						<div class="img-container">
-							<img src="https://http2.mlstatic.com/D_NQ_NP_943394-MLU72748616907_112023-O.webp"
-								class="img-product img-fluid mt-2" alt="Imagem do produto">
-						</div>
-						<div class="card-product-body">
-							<div class="d-flex">
-								<span>R$</span><span class=""
-									th:text="${#numbers.formatDecimal({seuValor * 1.1}, 0, 2)}"></span>
-							</div>
-							<div class="d-flex">
-								<h3 class="fs-5 fw-semibold">R$</h3>
-								<h3 class="fs-5 fw-semibold"
-									th:text="${#numbers.formatDecimal({seuValor * 1.0}, 1, 2)}">
-								</h3>
-							</div>
-							<a th:href="@{prodEnterprise}">
-								<p class="py-1" th:text="${nome}"></p>
-							</a>
-							<div class="d-flex flex-wrap justify-content-between">
-								<a th:href="@{prodEnterprise}" class="btn btn-primary py-1 mb-1"><i
-										class="bi bi-pencil-square"></i> Acessar Produto</a>
-							</div>
-						</div>
-					</div>
-					<div class="card col card-product mt-3 mb-3 ml-3">
-						<div class="img-container">
-							<img src="https://http2.mlstatic.com/D_NQ_NP_943394-MLU72748616907_112023-O.webp"
-								class="img-product img-fluid mt-2" alt="Imagem do produto">
-						</div>
-						<div class="card-product-body">
-							<div class="d-flex">
-								<span>R$</span><span class=""
-									th:text="${#numbers.formatDecimal({seuValor * 1.1}, 0, 2)}"></span>
-							</div>
-							<div class="d-flex">
-								<h3 class="fs-5 fw-semibold">R$</h3>
-								<h3 class="fs-5 fw-semibold"
-									th:text="${#numbers.formatDecimal({seuValor * 1.0}, 1, 2)}">
-								</h3>
-							</div>
-							<a th:href="@{prodEnterprise}">
-								<p class="py-1" th:text="${nome}"></p>
-							</a>
-							<div class="d-flex flex-wrap justify-content-between">
-								<a th:href="@{prodEnterprise}" class="btn btn-primary py-1 mb-1"><i
-										class="bi bi-pencil-square"></i> Acessar Produto</a>
-							</div>
-						</div>
-					</div>
-					<div class="card col card-product mt-3 mb-3 ml-3">
-						<div class="img-container">
-							<img src="https://http2.mlstatic.com/D_NQ_NP_943394-MLU72748616907_112023-O.webp"
-								class="img-product img-fluid mt-2" alt="Imagem do produto">
-						</div>
-						<div class="card-product-body">
-							<div class="d-flex">
-								<span>R$</span><span class=""
-									th:text="${#numbers.formatDecimal({seuValor * 1.1}, 0, 2)}"></span>
-							</div>
-							<div class="d-flex">
-								<h3 class="fs-5 fw-semibold">R$</h3>
-								<h3 class="fs-5 fw-semibold"
-									th:text="${#numbers.formatDecimal({seuValor * 1.0}, 1, 2)}">
-								</h3>
-							</div>
-							<a th:href="@{prodEnterprise}">
-								<p class="py-1" th:text="${nome}"></p>
-							</a>
-							<div class="d-flex flex-wrap justify-content-between">
-								<a th:href="@{prodEnterprise}" class="btn btn-primary py-1 mb-1"><i
-										class="bi bi-pencil-square"></i> Acessar Produto</a>
-							</div>
-						</div>
-					</div>
-					<div class="card col card-product mt-3 mb-3 ml-3">
-						<div class="img-container">
-							<img src="https://http2.mlstatic.com/D_NQ_NP_943394-MLU72748616907_112023-O.webp"
-								class="img-product img-fluid mt-2" alt="Imagem do produto">
-						</div>
-						<div class="card-product-body">
-							<div class="d-flex">
-								<span>R$</span><span class=""
-									th:text="${#numbers.formatDecimal({seuValor * 1.1}, 0, 2)}"></span>
-							</div>
-							<div class="d-flex">
-								<h3 class="fs-5 fw-semibold">R$</h3>
-								<h3 class="fs-5 fw-semibold"
-									th:text="${#numbers.formatDecimal({seuValor * 1.0}, 1, 2)}">
-								</h3>
-							</div>
-							<a th:href="@{prodEnterprise}">
-								<p class="py-1" th:text="${nome}"></p>
-							</a>
-							<div class="d-flex flex-wrap justify-content-between">
-								<a th:href="@{prodEnterprise}" class="btn btn-primary py-1 mb-1"><i
-										class="bi bi-pencil-square"></i> Acessar Produto</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<button onclick="slickNext1()" class="fa-lg bi bi-arrow-right-circle-fill btnPassSlider"></button>
-			</div>
 
 			<div class="page-wrapper chiller-theme">
 				<h2 class="text-center mt-5">Eletrônicos</h4>
@@ -444,29 +670,96 @@
 
 			<div class="d-flex justify-content-center container-products">
 				<button onclick="slickPrev()" class="btnPassSlider bi bi-arrow-left-circle-fill fa-2x"></button>
-				<!-- ^ Aqui vem o each-->
+	
 				<div class="slider js-slider container">
 					<div class="card col card-product mt-3 mb-3 ml-3">
 						<div class="img-container">
-							<img src="https://http2.mlstatic.com/D_NQ_NP_943394-MLU72748616907_112023-O.webp"
+							<img src="https://raw.githubusercontent.com/PedroGoya24/product-images-cf/main/carregador.webp"
 								class="img-product img-fluid mt-2" alt="Imagem do produto">
 						</div>
 						<div class="card-product-body">
 							<div class="d-flex">
-								<span>R$</span><span class=""
-									th:text="${#numbers.formatDecimal({seuValor * 1.1}, 0, 2)}"></span>
+								<span>R$</span><span class="">50</span>
 							</div>
 							<div class="d-flex">
 								<h3 class="fs-5 fw-semibold">R$</h3>
-								<h3 class="fs-5 fw-semibold"
-									th:text="${#numbers.formatDecimal({seuValor * 1.0}, 1, 2)}">
+								<h3 class="fs-5 fw-semibold">45
 								</h3>
 							</div>
-							<a th:href="@{prodEnterprise}">
-								<p class="py-1" th:text="${nome}"></p>
+							<a >
+								<p class="py-1">Carregador Sem Fio Indução P/iPhone 8 X Samsung Ultrarápido e Poderoso</p>
 							</a>
 							<div class="d-flex flex-wrap justify-content-between">
-								<a th:href="@{prodEnterprise}" class="btn btn-primary py-1 mb-1"><i
+								<a class="btn btn-primary py-1 mb-1"><i
+										class="bi bi-pencil-square"></i> Acessar Produto</a>
+							</div>
+						</div>
+					</div>
+					<div class="card col card-product mt-3 mb-3 ml-3">
+						<div class="img-container">
+							<img src="https://raw.githubusercontent.com/PedroGoya24/product-images-cf/main/mouseGamer.webp"
+								class="img-product img-fluid mt-2" alt="Imagem do produto">
+						</div>
+						<div class="card-product-body">
+							<div class="d-flex">
+								<span>R$</span><span class="">100</span>
+							</div>
+							<div class="d-flex">
+								<h3 class="fs-5 fw-semibold">R$</h3>
+								<h3 class="fs-5 fw-semibold">80
+								</h3>
+							</div>
+							<a>
+								<p class="py-1">Mouse Gamer Para Jogo 3.200 Dpi Óptico Com Led Rgb Usb 7 Perfeito Para Seus Video Jogos</p>
+							</a>
+							<div class="d-flex flex-wrap justify-content-between">
+								<a class="btn btn-primary py-1 mb-1"><i
+										class="bi bi-pencil-square"></i> Acessar Produto</a>
+							</div>
+						</div>
+					</div>
+					<div class="card col card-product mt-3 mb-3 ml-3">
+						<div class="img-container">
+							<img src="https://raw.githubusercontent.com/PedroGoya24/product-images-cf/main/teclado.webp"
+								class="img-product img-fluid mt-2" alt="Imagem do produto">
+						</div>
+						<div class="card-product-body">
+							<div class="d-flex">
+								<span>R$</span><span class="">150</span>
+							</div>
+							<div class="d-flex">
+								<h3 class="fs-5 fw-semibold">R$</h3>
+								<h3 class="fs-5 fw-semibold">130
+								</h3>
+							</div>
+							<a >
+								<p class="py-1" >Teclado gamer Adamantiun Mini Shuriken AK01 QWERTY Blue português Brasil cor cinza com luz</p>
+							</a>
+							<div class="d-flex flex-wrap justify-content-between">
+								<a class="btn btn-primary py-1 mb-1"><i
+										class="bi bi-pencil-square"></i> Acessar Produto</a>
+							</div>
+						</div>
+					</div>
+					<div class="card col card-product mt-3 mb-3 ml-3">
+						<div class="img-container">
+							<img src="https://raw.githubusercontent.com/PedroGoya24/product-images-cf/main/fone.webp"
+								class="img-product img-fluid mt-2" alt="Imagem do produto">
+						</div>
+						<div class="card-product-body">
+							<div class="d-flex">
+								<span>R$</span><span class="">80</span>
+							</div>
+							<div class="d-flex">
+								<h3 class="fs-5 fw-semibold">R$</h3>
+								<h3 class="fs-5 fw-semibold">70
+								</h3>
+							</div>
+							<a>
+								<p class="py-1">Fone De Ouvido Bluetooth Pro Tws 3 Air Premium Sem Fio Cor Branco Tipo Iphone</p>
+							</a>
+							<div class="d-flex flex-wrap justify-content-between">
+								<a class="btn btn-primary py-1 mb-1"><i
 										class="bi bi-pencil-square"></i> Acessar Produto</a>
 							</div>
 						</div>
@@ -478,95 +771,19 @@
 						</div>
 						<div class="card-product-body">
 							<div class="d-flex">
-								<span>R$</span><span class=""
-									th:text="${#numbers.formatDecimal({seuValor * 1.1}, 0, 2)}"></span>
+								<span>R$</span><span>1000</span>
 							</div>
 							<div class="d-flex">
 								<h3 class="fs-5 fw-semibold">R$</h3>
 								<h3 class="fs-5 fw-semibold"
-									th:text="${#numbers.formatDecimal({seuValor * 1.0}, 1, 2)}">
+									>990
 								</h3>
 							</div>
-							<a th:href="@{prodEnterprise}">
-								<p class="py-1" th:text="${nome}"></p>
+							<a >
+								<p class="py-1">Monitor Gamer HERO 23,8'' 144Hz IPS FreeSync 24G2/BK Cor Preto/Vermelho AOC 100V/240V</p>
 							</a>
 							<div class="d-flex flex-wrap justify-content-between">
-								<a th:href="@{prodEnterprise}" class="btn btn-primary py-1 mb-1"><i
-										class="bi bi-pencil-square"></i> Acessar Produto</a>
-							</div>
-						</div>
-					</div>
-					<div class="card col card-product mt-3 mb-3 ml-3">
-						<div class="img-container">
-							<img src="https://http2.mlstatic.com/D_NQ_NP_943394-MLU72748616907_112023-O.webp"
-								class="img-product img-fluid mt-2" alt="Imagem do produto">
-						</div>
-						<div class="card-product-body">
-							<div class="d-flex">
-								<span>R$</span><span class=""
-									th:text="${#numbers.formatDecimal({seuValor * 1.1}, 0, 2)}"></span>
-							</div>
-							<div class="d-flex">
-								<h3 class="fs-5 fw-semibold">R$</h3>
-								<h3 class="fs-5 fw-semibold"
-									th:text="${#numbers.formatDecimal({seuValor * 1.0}, 1, 2)}">
-								</h3>
-							</div>
-							<a th:href="@{prodEnterprise}">
-								<p class="py-1" th:text="${nome}"></p>
-							</a>
-							<div class="d-flex flex-wrap justify-content-between">
-								<a th:href="@{prodEnterprise}" class="btn btn-primary py-1 mb-1"><i
-										class="bi bi-pencil-square"></i> Acessar Produto</a>
-							</div>
-						</div>
-					</div>
-					<div class="card col card-product mt-3 mb-3 ml-3">
-						<div class="img-container">
-							<img src="https://http2.mlstatic.com/D_NQ_NP_943394-MLU72748616907_112023-O.webp"
-								class="img-product img-fluid mt-2" alt="Imagem do produto">
-						</div>
-						<div class="card-product-body">
-							<div class="d-flex">
-								<span>R$</span><span class=""
-									th:text="${#numbers.formatDecimal({seuValor * 1.1}, 0, 2)}"></span>
-							</div>
-							<div class="d-flex">
-								<h3 class="fs-5 fw-semibold">R$</h3>
-								<h3 class="fs-5 fw-semibold"
-									th:text="${#numbers.formatDecimal({seuValor * 1.0}, 1, 2)}">
-								</h3>
-							</div>
-							<a th:href="@{prodEnterprise}">
-								<p class="py-1" th:text="${nome}"></p>
-							</a>
-							<div class="d-flex flex-wrap justify-content-between">
-								<a th:href="@{prodEnterprise}" class="btn btn-primary py-1 mb-1"><i
-										class="bi bi-pencil-square"></i> Acessar Produto</a>
-							</div>
-						</div>
-					</div>
-					<div class="card col card-product mt-3 mb-3 ml-3">
-						<div class="img-container">
-							<img src="https://http2.mlstatic.com/D_NQ_NP_943394-MLU72748616907_112023-O.webp"
-								class="img-product img-fluid mt-2" alt="Imagem do produto">
-						</div>
-						<div class="card-product-body">
-							<div class="d-flex">
-								<span>R$</span><span class=""
-									th:text="${#numbers.formatDecimal({seuValor * 1.1}, 0, 2)}"></span>
-							</div>
-							<div class="d-flex">
-								<h3 class="fs-5 fw-semibold">R$</h3>
-								<h3 class="fs-5 fw-semibold"
-									th:text="${#numbers.formatDecimal({seuValor * 1.0}, 1, 2)}">
-								</h3>
-							</div>
-							<a th:href="@{prodEnterprise}">
-								<p class="py-1" th:text="${nome}"></p>
-							</a>
-							<div class="d-flex flex-wrap justify-content-between">
-								<a th:href="@{prodEnterprise}" class="btn btn-primary py-1 mb-1"><i
+								<a class="btn btn-primary py-1 mb-1"><i
 										class="bi bi-pencil-square"></i> Acessar Produto</a>
 							</div>
 						</div>
@@ -576,12 +793,13 @@
 			</div>
 
 			<div class="page-wrapper chiller-theme">
-				<h2 class="text-center mt-5">Cosméticos</h4>
+				<h2 class="text-center mt-5">Beleza</h4>
 					<p class=" text-center fs-5 pb-2 fw-light">Não existem pessoas feias, existem pessoas que não
 						conhecem os <span class="fw-bold">Cosméticos</span>
 						a baixo
 					</p>
 			</div>
+
 
 			<div class="d-flex justify-content-center container-products">
 				<button onclick="slickPrev1()" class="btnPassSlider bi bi-arrow-left-circle-fill fa-2x"></button>
@@ -589,125 +807,116 @@
 				<div class="slider js-slider1 container">
 					<div class="card col card-product mt-3 mb-3 ml-3">
 						<div class="img-container">
-							<img src="https://http2.mlstatic.com/D_NQ_NP_943394-MLU72748616907_112023-O.webp"
+							<img src="https://raw.githubusercontent.com/PedroGoya24/product-images-cf/main/base_liquida.webp"
 								class="img-product img-fluid mt-2" alt="Imagem do produto">
 						</div>
 						<div class="card-product-body">
 							<div class="d-flex">
-								<span>R$</span><span class=""
-									th:text="${#numbers.formatDecimal({seuValor * 1.1}, 0, 2)}"></span>
+								<span>R$</span><span class="">80</span>
 							</div>
 							<div class="d-flex">
 								<h3 class="fs-5 fw-semibold">R$</h3>
-								<h3 class="fs-5 fw-semibold"
-									th:text="${#numbers.formatDecimal({seuValor * 1.0}, 1, 2)}">
+								<h3 class="fs-5 fw-semibold">65
 								</h3>
 							</div>
-							<a th:href="@{prodEnterprise}">
-								<p class="py-1" th:text="${nome}"></p>
+							<a >
+								<p class="py-1">Base Liquida Oceane Edition Da Melhor Qualidade Cobre Todas Imperfeições</p>
 							</a>
 							<div class="d-flex flex-wrap justify-content-between">
-								<a th:href="@{prodEnterprise}" class="btn btn-primary py-1 mb-1"><i
+								<a class="btn btn-primary py-1 mb-1"><i
+										class="bi bi-pencil-square"></i> Acessar Produto</a>
+							</div>
+						</div>
+					</div>
+					
+					<div class="card col card-product mt-3 mb-3 ml-3">
+						<div class="img-container">
+							<img src="https://raw.githubusercontent.com/PedroGoya24/product-images-cf/main/base_mate.webp"
+								class="img-product img-fluid mt-2" alt="Imagem do produto">
+						</div>
+						<div class="card-product-body">
+							<div class="d-flex">
+								<span>R$</span><span class="">100</span>
+							</div>
+							<div class="d-flex">
+								<h3 class="fs-5 fw-semibold">R$</h3>
+								<h3 class="fs-5 fw-semibold">80
+								</h3>
+							</div>
+							<a >
+								<p class="py-1">Base Mate Boca Rosa, A Melhor Base Da Atualidade, Cobre Tudo, Perfeita</p>
+							</a>
+							<div class="d-flex flex-wrap justify-content-between">
+								<a class="btn btn-primary py-1 mb-1"><i
 										class="bi bi-pencil-square"></i> Acessar Produto</a>
 							</div>
 						</div>
 					</div>
 					<div class="card col card-product mt-3 mb-3 ml-3">
 						<div class="img-container">
-							<img src="https://http2.mlstatic.com/D_NQ_NP_943394-MLU72748616907_112023-O.webp"
+							<img src="https://raw.githubusercontent.com/PedroGoya24/product-images-cf/main/hidratante.webp"
 								class="img-product img-fluid mt-2" alt="Imagem do produto">
 						</div>
 						<div class="card-product-body">
 							<div class="d-flex">
-								<span>R$</span><span class=""
-									th:text="${#numbers.formatDecimal({seuValor * 1.1}, 0, 2)}"></span>
+								<span>R$</span><span class="">50</span>
 							</div>
 							<div class="d-flex">
 								<h3 class="fs-5 fw-semibold">R$</h3>
-								<h3 class="fs-5 fw-semibold"
-									th:text="${#numbers.formatDecimal({seuValor * 1.0}, 1, 2)}">
+								<h3 class="fs-5 fw-semibold">40
 								</h3>
 							</div>
-							<a th:href="@{prodEnterprise}">
-								<p class="py-1" th:text="${nome}"></p>
+							<a >
+								<p class="py-1" >Hidratante Nivea Melhor Para Cuidar Da Pele Ressecada Do Verão, Macio, Cremoso E Cheiroso</p>
 							</a>
 							<div class="d-flex flex-wrap justify-content-between">
-								<a th:href="@{prodEnterprise}" class="btn btn-primary py-1 mb-1"><i
+								<a class="btn btn-primary py-1 mb-1"><i
 										class="bi bi-pencil-square"></i> Acessar Produto</a>
 							</div>
 						</div>
 					</div>
 					<div class="card col card-product mt-3 mb-3 ml-3">
 						<div class="img-container">
-							<img src="https://http2.mlstatic.com/D_NQ_NP_943394-MLU72748616907_112023-O.webp"
+							<img src="https://raw.githubusercontent.com/PedroGoya24/product-images-cf/main/maquiagem.webp"
 								class="img-product img-fluid mt-2" alt="Imagem do produto">
 						</div>
 						<div class="card-product-body">
 							<div class="d-flex">
-								<span>R$</span><span class=""
-									th:text="${#numbers.formatDecimal({seuValor * 1.1}, 0, 2)}"></span>
+								<span>R$</span><span class="">120</span>
 							</div>
 							<div class="d-flex">
 								<h3 class="fs-5 fw-semibold">R$</h3>
-								<h3 class="fs-5 fw-semibold"
-									th:text="${#numbers.formatDecimal({seuValor * 1.0}, 1, 2)}">
+								<h3 class="fs-5 fw-semibold">100
 								</h3>
 							</div>
-							<a th:href="@{prodEnterprise}">
-								<p class="py-1" th:text="${nome}"></p>
+							<a >
+								<p class="py-1">Kit Maquiagem Perfeito Para Pessoas Que Gostam De Brilho, Saia Linda(o) De Casa </p>
 							</a>
 							<div class="d-flex flex-wrap justify-content-between">
-								<a th:href="@{prodEnterprise}" class="btn btn-primary py-1 mb-1"><i
+								<a class="btn btn-primary py-1 mb-1"><i
 										class="bi bi-pencil-square"></i> Acessar Produto</a>
 							</div>
 						</div>
 					</div>
 					<div class="card col card-product mt-3 mb-3 ml-3">
 						<div class="img-container">
-							<img src="https://http2.mlstatic.com/D_NQ_NP_943394-MLU72748616907_112023-O.webp"
+							<img src="https://raw.githubusercontent.com/PedroGoya24/product-images-cf/main/mascara_de_cilios.webp"
 								class="img-product img-fluid mt-2" alt="Imagem do produto">
 						</div>
 						<div class="card-product-body">
 							<div class="d-flex">
-								<span>R$</span><span class=""
-									th:text="${#numbers.formatDecimal({seuValor * 1.1}, 0, 2)}"></span>
+								<span>R$</span><span class="">80</span>
 							</div>
 							<div class="d-flex">
 								<h3 class="fs-5 fw-semibold">R$</h3>
-								<h3 class="fs-5 fw-semibold"
-									th:text="${#numbers.formatDecimal({seuValor * 1.0}, 1, 2)}">
+								<h3 class="fs-5 fw-semibold">70
 								</h3>
 							</div>
-							<a th:href="@{prodEnterprise}">
-								<p class="py-1" th:text="${nome}"></p>
+							<a>
+								<p class="py-1">Máscara De Cílios Maybeline New York, Para Você Arrasar No Role E Na Noitada</p>
 							</a>
 							<div class="d-flex flex-wrap justify-content-between">
-								<a th:href="@{prodEnterprise}" class="btn btn-primary py-1 mb-1"><i
-										class="bi bi-pencil-square"></i> Acessar Produto</a>
-							</div>
-						</div>
-					</div>
-					<div class="card col card-product mt-3 mb-3 ml-3">
-						<div class="img-container">
-							<img src="https://http2.mlstatic.com/D_NQ_NP_943394-MLU72748616907_112023-O.webp"
-								class="img-product img-fluid mt-2" alt="Imagem do produto">
-						</div>
-						<div class="card-product-body">
-							<div class="d-flex">
-								<span>R$</span><span class=""
-									th:text="${#numbers.formatDecimal({seuValor * 1.1}, 0, 2)}"></span>
-							</div>
-							<div class="d-flex">
-								<h3 class="fs-5 fw-semibold">R$</h3>
-								<h3 class="fs-5 fw-semibold"
-									th:text="${#numbers.formatDecimal({seuValor * 1.0}, 1, 2)}">
-								</h3>
-							</div>
-							<a th:href="@{prodEnterprise}">
-								<p class="py-1" th:text="${nome}"></p>
-							</a>
-							<div class="d-flex flex-wrap justify-content-between">
-								<a th:href="@{prodEnterprise}" class="btn btn-primary py-1 mb-1"><i
+								<a class="btn btn-primary py-1 mb-1"><i
 										class="bi bi-pencil-square"></i> Acessar Produto</a>
 							</div>
 						</div>
@@ -716,8 +925,10 @@
 				<button onclick="slickNext1()" class="fa-lg bi bi-arrow-right-circle-fill btnPassSlider"></button>
 			</div>
 
+
 		</section>
 	</main> <!-- End .container-fluid -->
+
 
 	<!-- - footer - -->
 	<footer th:replace="~{fragments/footer :: footer}"></footer>
@@ -738,22 +949,6 @@
 	<!-- - End #alertToast - -->
 
 	<!-- JS scripts -->
-	<!--	<script>-->
-	<!--		function redirecionarFeira() {-->
-	<!--			var opcaoSelecionada = document.getElementById("estados").value;-->
-	<!--			var rota = "/st=" + opcaoSelecionada;-->
-
-	<!--			window.location.href = rota;-->
-	<!--		}-->
-
-	<!--		function redirecionarRota() {-->
-	<!--			var opcaoSelecionada = document.getElementById("feiras").value;-->
-	<!--			var rota = "/mk=" + opcaoSelecionada;-->
-
-	<!--			window.location.href = rota;-->
-	<!--		}-->
-	<!--	</script>-->
-
 	<script th:replace="~{fragments/scripts :: popper}">
 	</script>
 

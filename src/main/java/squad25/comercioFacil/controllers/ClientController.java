@@ -9,13 +9,14 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import squad25.comercioFacil.enums.SystemAlert;
 import squad25.comercioFacil.models.Client;
 import squad25.comercioFacil.services.ClientService;
 
 @Controller
-//@RequestMapping("/client")
+@RequestMapping("/client")
 public class ClientController {
 
 	@Autowired
@@ -39,11 +40,9 @@ public class ClientController {
 	public String save(@ModelAttribute("client") Client client) {
 		
 		if(this.clientServ.save(client) != null) {
-//			return "redirect:/client/isRegistered=" + true + "?showAlert=true";
-			return "redirect:/isRegistered=" + true + "?showAlert=true";
+			return "redirect:/client/isRegistered=" + true + "?showAlert=true";
 		}else {
-//			return "redirect:/client/isRegistered=" + false + "?showAlert=true";
-			return "redirect:/isRegistered=" + false + "?showAlert=true";
+			return "redirect:/client/isRegistered=" + false + "?showAlert=true";
 		}
 	}
 	
@@ -57,11 +56,9 @@ public class ClientController {
 	public String update(@PathVariable("id") Long id, @ModelAttribute("client") Client client) {
 		
 		if(this.clientServ.update(id, client) != null) {
-//			return "redirect:/client/isRegistered=" + true + "?showAlert=true";
-			return "redirect:/isRegistered=" + true + "?showAlert=true";
+			return "redirect:/client/isRegistered=" + true + "?showAlert=true";
 		}else {
-//			return "redirect:/client/isRegistered=" + false + "?showAlert=true";
-			return "redirect:/isRegistered=" + false + "?showAlert=true";
+			return "redirect:/client/isRegistered=" + false + "?showAlert=true";
 		}
 	}
 	
@@ -69,6 +66,6 @@ public class ClientController {
 	public String delete(@PathVariable("id") Long id) {
 		this.clientServ.deleteById(id);
 		
-		return "redirect:/isRegistered=" + true + "?showAlert=true";
+		return "redirect:/client/isRegistered=" + true + "?showAlert=true";
 	}
 }

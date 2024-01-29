@@ -4,7 +4,6 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import squad25.comercioFacil.enums.SystemAlert;
 import squad25.comercioFacil.models.Client;
 import squad25.comercioFacil.repositories.ClientRepository;
 import squad25.comercioFacil.services.ClientService;

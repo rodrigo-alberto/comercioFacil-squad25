@@ -82,5 +82,5 @@ public class Address {
 
 	public void setMarketPlace(MarketPlace marketPlace) {
 		this.marketPlace = marketPlace;
-	}	
+	}
 }

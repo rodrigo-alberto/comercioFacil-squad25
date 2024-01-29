@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head th:replace="~{fragments/head :: head('CF | Administrativo')}"></head>
 
@@ -13,22 +13,15 @@
 	<!--Side Bar-->
     <nav th:replace="~{fragments/asideAdmin :: asideAdmin}"> </nav>	
 	
-	
-
-	
-	<!--Conteudo página-->
 	<div class="page-wrapper chiller-theme">
 		<div class="container d-flex justify-content-center mb-5 mt-5">
 			<h1>Seção administrativa</h1>
 		</div>
 	</div>
 	
-	
-	
-	<!--****************MUDAR AS ROTAS***************-->
 	<div class="container mt-3">
 		<h2>Cadastro da feira</h2>
-		<form th:action="@{/}" th:object="${market}" method="post">
+		<form th:action="@{/admin/saveMarket}" th:object="${market}" method="post">
 			
 			<div class="form-group">
 				<label for="nome">Nome da feira:</label>
@@ -41,23 +34,18 @@
 			</div>
 			
 			<div class="form-group">
-				<label for="preco">Endereço:</label>
-				<input type="text" id="address" class="form-control" th:field="*{address}" />
+				<label for="description">descrição</label>
+				<input type="text" id="description" class="form-control" th:field="*{description}" />
 			</div>
 			
 			<div class="form-group">
-				<div class="container d-flex justify-content-center mb-5 mt-5">
-					<h1>Para cadastrar as lojas desta feira, cadastre-a primeiro. Após, na listagem de feiras clique em "ver lojas". </h1>
-				</div>
-			</div>
-			
-			<div class="form-group">
-				<label> Empresas:</label>
+				<label>Empresas:</label>
 				<div th:each="enterprise : ${enterprises}">
 					<div class="form-check">
 						 <input class="form-check-input" type="checkbox" id="enterprise-${enterprise.idEnterprise}"
                             name="enterprises" th:value="${enterprise.idEnterprise}"
-                            th:checked="${produto.categorias.contains(categoria)}" />
+                            />
+<!--                            th:checked="${market.enterprises.contains(enterprise)}" -->
                         <label class="form-check-label" th:for="'enterprise-' + ${enterprise.idEnterprise}"
                             th:text="${enterprise.fantasyName}"></label>
 					</div>					
@@ -81,7 +69,7 @@
 		<script th:replace="~{fragments/scripts :: sideBar}">			
 		</script>
     
-    
+  
 </body>
 
 </html>

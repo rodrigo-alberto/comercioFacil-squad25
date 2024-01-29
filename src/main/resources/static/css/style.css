@@ -901,6 +901,10 @@ select {
     font-size: 20px !important;
 }
 
+.enterprise.highlighted path{
+    fill: rgba(85, 52, 54);
+}
+
 /*--------------------------------------------------
  #about-section
 --------------------------------------------------*/
@@ -1952,4 +1956,14 @@ select {
   background-color: var(--bg-06-color) !important;
   color: var(--font-01-color);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.filters-container {
+    width: 930px;
+}
+
+.selects {
+    max-width: 47%;
+    border-radius: 10px;
+    height: 8vh;
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 
 <head th:replace="~{fragments/head :: head('CF | Administrativo')}"></head>
 
@@ -46,22 +46,19 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr th:each="enterprise : ${enterprise}">
+				<tr th:each="enterprise : ${enterprises}">
 					<td th:text="${enterprise.idEnterprise}"></td>
 					<td th:text="${enterprise.fantasyName}"></td>
 					<td th:text="${enterprise.cnpj}"></td>		
 					<td th:text="${enterprise.numStore}"></td>	
 					<td th:text="${enterprise.description}"></td>																	
-					<td><img th:src="${enterprise.image}" alt="Imagem do Produto" style="max-width: 100px; max-height: 100px;" /></td>
+					<td><img th:src="${enterprise.image}" alt="Imagem da loja" style="max-width: 100px; max-height: 100px;" /></td>
 					
-					<!--aqui eu não sei se esta certo tlgd, tem que ver na rota. A inteção era mostrar o logista da loja, mas se for mt trampo, nem precisa.-->
-					<td th:text="${enterprise.employer}"></td>
+					<td th:text="${enterprise.employer.userName}"></td>
 					
 					<td>
 						<a class="btn btn-info btn-sm"
-							th:href="@{/admin/updateEnterprise/{id}(id=${enterprise.idEnterprise})}">Editar</a>
-						<a class="btn btn-success btn-sm"
-							th:href="@{/enterprise/deletar/{id}(id=${enterprise.idEnterprise})}">Ver Produtos</a>
+							th:href="@{/admin/updateEnterprise/{id}(id=${enterprise.idEnterprise})}">Editar</a>				
 						<a class="btn btn-danger btn-sm"
 							th:href="@{/admin/deleteEnterprise/{id}(id=${enterprise.idEnterprise})}">Excluir</a>							
 					</td>										
@@ -82,7 +79,6 @@
 		
 		<script th:replace="~{fragments/scripts :: sideBar}">			
 		</script>
-    
     
 </body>
 

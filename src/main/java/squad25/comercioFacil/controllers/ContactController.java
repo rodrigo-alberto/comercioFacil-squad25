@@ -31,7 +31,6 @@ public class ContactController {
 		
 		this.contactSv.save(contact);
 		
-//		return "redirect:/isRegistered=" + true + "?showAlert=true";
 		return "redirect:/";
 	}
 	
@@ -41,5 +40,4 @@ public class ContactController {
 		
 		return "redirect:/isRegistered=" + true + "?showAlert=true";
 	}
-	
 }

@@ -28,7 +28,7 @@
 	<!--****************MUDAR AS ROTAS***************-->
 		<div class="container mt-3">
 		<h2>Atualizar loja</h2>
-		<form th:action="@{/enterprise/editar/{id}(id=${enterprise.idEnterprise})}" th:object="${enterprise}" method="post">
+		<form th:action="@{/admin/updateEnterprise/{id}(id=${enterprise.idEnterprise})}" th:object="${enterprise}" method="post">
 			
 			<div class="form-group">
 				<label for="id">ID:</label>
@@ -55,12 +55,15 @@
 				<input type="text" id="description" class="form-control" th:field="*{description}" />
 			</div>
 			
-			
-			<!--aqui é a lógica da imagem também-->
 			<div class="form-group">
-				<label for="imgUrl">Imagem:</label>
-				<input type="image" id="image" class="form-control" th:field="*{image}" />
-			</div>									
+				<label for="employer">Id empreendedor</label>
+				<input type="text" id="employer" class="form-control" th:field="*{employer}" />
+			</div>
+			
+			<div class="form-group">
+				<label for="market">Id feira</label>
+				<input type="text" id="market" class="form-control" th:field="*{market}" />
+			</div>								
 
 			<button type="submit" class="btn btn-primary">Salvar</button>
 		</form>

@@ -31,34 +31,4 @@ public class EmployerController {
 	public String showFormEnablePreEnterprise() {
 		return "/employer/formEnablePreEnterprise";
 	}
-	
-//	@PostMapping("/atualizarPreRegistro")
-//	public ModelAndView atualizarRegistroEnterprise(@ModelAttribute("enterprise") Enterprise enterprise, @RequestParam("image") MultipartFile fileImage){	
-//		ModelAndView modelAndview = new ModelAndView("redirect:/enterprise/listarProducts");	
-//		this.selectedEnterprise.setDescription(enterprise.getDescription());
-//		
-//		try {
-//			this.selectedEnterprise.setImagem(fileImage.getBytes());
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
-//
-//		this.enterpriseRepository.save(this.selectedEnterprise);
-//		
-//		return modelAndview;
-//	}
-	
-//	@GetMapping("/updateEnterprise/{id}")
-//	public String showFormUpdateEnterprise(@PathVariable("id") Long id, Model model) {
-//		model.addAttribute("enterprise", this.enterpriseSv.getById(id));
-//		
-//		return "/employer/formUpdateEnterprise";
-//	}
-//	
-//	@PostMapping("/updateEnterprise/{id}")
-//	public String updateEnterprise(@PathVariable("id") Long id, @ModelAttribute("enterprise") Enterprise enterprise) {
-//		this.enterpriseSv.update(id, enterprise);
-//		
-//		return "redirect:/admin/getAllEnterprises";
-//	}
 }
