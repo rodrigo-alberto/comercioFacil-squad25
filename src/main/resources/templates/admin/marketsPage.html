@@ -30,23 +30,23 @@
 					<th>ID</th>
 					<th>Nome</th>					
 					<th>Mapa</th>
-					<th>Endereços</th>
+					<th>Endereço</th>
 					<th>Ações</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr th:each="marketplace : ${marketplace}">
-					<td th:text="${marketplace.idMarket}"></td>
-					<td th:text="${marketplace.nameMarket}"></td>										
-					<td><img th:src="${marketplace.mapUrl}" alt="Imagem" style="max-width: 100px; max-height: 100px;" /></td>
-					<td th:text="${marketplace.address.city}"></td>					
+				<tr th:each="market : ${markets}">
+					<td th:text="${market.idMarket}"></td>
+					<td th:text="${market.nameMarket}"></td>										
+					<td><img th:src="${market.mapUrl}" alt="Imagem" style="max-width: 100px; max-height: 100px;" /></td>
+					<td th:text="${market.address.street + ', ' + market.address.city + ' - ' + market.address.state} "></td>					
 					<td>
 						<a class="btn btn-info btn-sm"
-							th:href="@{/marketplace/editar/{id}(id=${marketplace.idMarket})}">Editar</a>
+							th:href="@{/admin/updateMarket/{id}(id=${market.idMarket})}">Editar</a>
 						<a class="btn btn-success btn-sm"
-							th:href="@{/marketplace/deletar/{id}(id=${marketplace.idMarket})}">Ver Lojas</a>
+							th:href="@{/admin/getEnterprisesByMarket/{id}(id=${market.idMarket})}">Ver empreendimentos</a>
 						<a class="btn btn-danger btn-sm"
-							th:href="@{/marketplace/deletar/{id}(id=${marketplace.idMarket})}">Excluir</a>							
+							th:href="@{/admin/deleteMarket/{id}(id=${market.idMarket})}">Excluir</a>							
 					</td>
 				</tr>
 			</tbody>
@@ -65,7 +65,6 @@
 		
 		<script th:replace="~{fragments/scripts :: sideBar}">			
 		</script>
-    
     
 </body>
 

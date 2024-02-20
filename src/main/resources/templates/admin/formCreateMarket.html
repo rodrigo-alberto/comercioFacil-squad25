@@ -1,75 +1,87 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 
 <head th:replace="~{fragments/head :: head('CF | Administrativo')}"></head>
 
 <body>
 
 	<!-- - header - -->
-    <header th:replace="~{fragments/header :: navbar}" ></header> 
-    <div th:replace="~{fragments/header :: space}"></div> 
+	<header th:replace="~{fragments/header :: navbar}"></header>
+	<div th:replace="~{fragments/header :: space}"></div>
 	<!-- End #header -->
-	
+
 	<!--Side Bar-->
-    <nav th:replace="~{fragments/asideAdmin :: asideAdmin}"> </nav>	
-	
+	<nav th:replace="~{fragments/asideAdmin :: asideAdmin}"> </nav>
+
 	<div class="page-wrapper chiller-theme">
 		<div class="container d-flex justify-content-center mb-5 mt-5">
 			<h1>Seção administrativa</h1>
 		</div>
 	</div>
-	
+
 	<div class="container mt-3">
 		<h2>Cadastro da feira</h2>
-		<form th:action="@{/admin/saveMarket}" th:object="${market}" method="post">
-			
-			<div class="form-group">
-				<label for="nome">Nome da feira:</label>
-				<input type="text" id="nameMarket" class="form-control" th:field="*{nameMarket}" />
-			</div>												
-			
-			<div class="form-group">
-				<label for="imgUrl">Url do Mapa:</label>
-				<input type="text" id="mapUrl" class="form-control" th:field="*{mapUrl}" />
-			</div>
-			
-			<div class="form-group">
-				<label for="description">descrição</label>
-				<input type="text" id="description" class="form-control" th:field="*{description}" />
-			</div>
-			
-			<div class="form-group">
-				<label>Empresas:</label>
-				<div th:each="enterprise : ${enterprises}">
-					<div class="form-check">
-						 <input class="form-check-input" type="checkbox" id="enterprise-${enterprise.idEnterprise}"
-                            name="enterprises" th:value="${enterprise.idEnterprise}"
-                            />
-<!--                            th:checked="${market.enterprises.contains(enterprise)}" -->
-                        <label class="form-check-label" th:for="'enterprise-' + ${enterprise.idEnterprise}"
-                            th:text="${enterprise.fantasyName}"></label>
-					</div>					
+		<form th:action="@{/admin/saveMarket}" method="post">
+
+			<div th:object="${market}">
+				<div class="form-group">
+					<label for="nome">Nome da feira:</label>
+					<input type="text" id="nameMarket" class="form-control" th:field="*{nameMarket}" />
+				</div>
+
+				<div class="form-group">
+					<label for="imgUrl">Url do Mapa:</label>
+					<input type="text" id="mapUrl" class="form-control" th:field="*{mapUrl}" />
+				</div>
+
+				<div class="form-group">
+					<label for="description">descrição</label>
+					<input type="text" id="description" class="form-control" th:field="*{description}" />
 				</div>
 			</div>
-									
+
+			<div th:object="${address}">
+				<h3>Endereço:</h3>
+
+				<select class="form-select form-select-lg" th:field="*{state}">
+					<option th:each="state : ${states}" th:value="${state}" th:text="${state}"
+						th:selected="${state == address.state}"></option>
+				</select>
+
+				<div class="form-group">
+					<label for="city">Cidade:</label>
+					<input type="text" id="city" class="form-control" th:field="*{city}" />
+				</div>
+
+				<div class="form-group">
+					<label for="neighborhood">Bairro:</label>
+					<input type="text" id="neighborhood" class="form-control" th:field="*{neighborhood}" />
+				</div>
+
+				<div class="form-group">
+					<label for="street">Rua:</label>
+					<input type="text" id="street" class="form-control" th:field="*{street}" />
+				</div>
+			</div>
+
 			<button type="submit" class="btn btn-primary">Salvar</button>
 		</form>
 	</div>
 
-    <!-- JS scripts -->
-    	<script th:replace="~{fragments/scripts :: jquery}">		
-		</script>
+	<!-- JS scripts -->
+	<script th:replace="~{fragments/scripts :: jquery}">
+	</script>
 
-		<script th:replace="~{fragments/scripts :: popper}">
-	    </script>
-	    
-    	<script th:replace="~{fragments/scripts :: bootstrap}">
-    	</script>
-		
-		<script th:replace="~{fragments/scripts :: sideBar}">			
-		</script>
-    
-  
+	<script th:replace="~{fragments/scripts :: popper}">
+	</script>
+
+	<script th:replace="~{fragments/scripts :: bootstrap}">
+	</script>
+
+	<script th:replace="~{fragments/scripts :: sideBar}">
+	</script>
+
+
 </body>
 
 </html>

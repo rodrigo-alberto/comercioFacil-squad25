@@ -69,6 +69,8 @@ public class EnterpriseServiceImpl implements EnterpriseService {
 		existingEnterprise.setCnpj(updatedEnterprise.getCnpj());
 		existingEnterprise.setNumStore(updatedEnterprise.getNumStore());
 		existingEnterprise.setDescription(updatedEnterprise.getDescription());
+		existingEnterprise.setEmployer(updatedEnterprise.getEmployer());
+		existingEnterprise.setMarket(updatedEnterprise.getMarket());
 		existingEnterprise.setImage(updatedEnterprise.getImage());
 		
 		return this.enterpriseRepo.save(existingEnterprise);

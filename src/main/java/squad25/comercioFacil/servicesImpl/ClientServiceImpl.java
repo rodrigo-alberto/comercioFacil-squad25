@@ -40,7 +40,6 @@ public class ClientServiceImpl implements ClientService {
 		Client updatedClient = mapper.map(updatedObject, Client.class);
 		
 		if(existingClient != null) {
-			existingClient.setLogin(updatedClient.getLogin());
 			existingClient.setPassword(updatedClient.getPassword());
 			existingClient.setAccesLevel(updatedClient.getAccesLevel());
 			existingClient.setUserName(updatedClient.getUserName());

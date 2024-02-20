@@ -11,7 +11,7 @@
 	<!-- End #header -->
 
 	<!--Side Bar-->
-	<nav th:replace="~{fragments/asideAdmin :: asideAdmin}"> </nav>
+	<!--	<nav th:replace="~{fragments/asideAdmin :: asideAdmin}"> </nav>-->
 
 
 
@@ -19,16 +19,14 @@
 	<!--Conteudo página-->
 	<div class="page-wrapper chiller-theme">
 		<div class="container d-flex justify-content-center mb-5 mt-5">
-			<h1>Cadastre a loja</h1>
+			<h1>Cadastro do empreendimento</h1>
+			<p>Registre o empreendimento</p>
 		</div>
 	</div>
 
-
-
-	<!--****************MUDAR AS ROTAS***************-->
 	<div class="container mt-3">
-		<h2>Cadastro da loja</h2>
-		
+		<h2>Dados do empreendimento</h2>
+
 		<form th:action="@{/admin/saveEnterprise}" th:object="${enterprise}" enctype="multipart/form-data"
 			method="post">
 
@@ -51,35 +49,53 @@
 				<label for="description">Descrição da loja:</label>
 				<input type="text" id="description" class="form-control" th:field="*{description}" />
 			</div>
-			
+
 			<div class="form-group">
-				<label for="employer">Id empreendedor</label>
-				<input type="text" id="employer" class="form-control" th:field="*{employer}" />
+				<div id="divPhoto">
+					<label class="py-2 fs-6">Escolha uma imagem-tema:</label>
+					<label class="labelPhoto d-flex justify-content-center align-items-center rounded mt-2"
+						for="inputFile" tabindex="0">
+						<img src="/imgs/new-image-deafult.png" alt="Upload da imagem-tema" id="imgPhoto">
+					</label>
+				</div>
+
+				<input type="file" class="d-none" id="inputFile" name="fileImage" accept="image/*">
 			</div>
-			
-			<div class="form-group">
-				<label for="market">Id feira</label>
-				<input type="text" id="market" class="form-control" th:field="*{market}" />
+
+			<div class="my-3" th:object="${employer}">
+				<h3>Empreendedor associado:</h3>
+
+				<div class="form-group">
+					<label for="inputIdUser">ID:</label>
+					<input type="text" id="inputIdUser" class="form-control" name="idEmployer"
+						th:value="${employer.idUser}" th:field="*{idUser}" readonly />
+				</div>
+
+				<div class="form-group">
+					<label for="inputUserName">Empreendedor:</label>
+					<input type="text" id="inputUserName" class="form-control" th:value="${employer.userName}"
+						th:field="*{userName}" readonly />
+				</div>
 			</div>
 
+			<div class="my-3">
+				<h3>Feira associada:</h3>
 
-<!--			<div class="form-group">-->
-<!--				<label for="imgUrl">Imagem:</label>-->
-				
-<!--				<div id="divPhoto">-->
-<!--					<label class="py-2 fs-6">Escolha uma imagem-tema:</label>-->
-<!--					<label class="labelPhoto d-flex justify-content-center align-items-center rounded mt-2"-->
-<!--						for="inputFile" tabindex="0">-->
-<!--						<img src="../imgs/new-image-deafult.png" alt="Upload da imagem-tema" id="imgPhoto">-->
-<!--					</label>-->
-<!--				</div>-->
-
-<!--				<input type="file" class="d-none" id="inputFile" name="image" accept="image/*" th:required="required">-->
-<!--			</div>-->
+				<div class="form-group">
+					<div th:each="market : ${markets}">
+						<div class="form-check">
+							<input class="form-check-input" type="radio" th:id="'market-' + ${market.idMarket}"
+								name="marketplaces" th:value="${market.idMarket}" th:field="*{market}" />
+							<label class="form-check-label" th:for="'market-' + ${market.idMarket}"
+								th:text="${market.nameMarket}"></label>
+						</div>
+					</div>
+				</div>
+			</div>
 
 			<button type="submit" class="btn btn-primary">Salvar</button>
 		</form>
-		
+
 	</div>
 
 	<!-- JS scripts -->
@@ -91,10 +107,10 @@
 
 	<script th:replace="~{fragments/scripts :: bootstrap}">
 	</script>
-	
+
 	<script th:replace="~{fragments/scripts :: sideBar}">
 	</script>
-	
+
 	<script th:replace="~{fragments/scripts :: upImg}">
 	</script>
 

@@ -6,4 +6,6 @@ public interface EmployerService extends GenericCrudService {
 	
 	Employer getByIdEnterprise(Long idEnterprise);
 	
+	Employer getByEmail(String email);
+	
 }

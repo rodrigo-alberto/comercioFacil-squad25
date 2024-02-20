@@ -32,7 +32,6 @@ public class EmployerServiceImpl implements EmployerService {
 		Employer existingEmployer = this.employerRepo.findById(id).orElseThrow(() -> SystemAlert.printRuntimeEx(SystemAlert.NOT_FOUND_ERROR));
 		Employer updatedEmployer = mapper.map(updatedObject, Employer.class);
 		
-		existingEmployer.setLogin(updatedEmployer.getLogin());
 		existingEmployer.setPassword(updatedEmployer.getPassword());
 		existingEmployer.setAccesLevel(updatedEmployer.getAccesLevel());
 		existingEmployer.setUserName(updatedEmployer.getUserName());
@@ -51,5 +50,10 @@ public class EmployerServiceImpl implements EmployerService {
 	@Override
 	public Employer getByIdEnterprise(Long idEnterprise) {
 		return this.employerRepo.findByIdEnterprise(idEnterprise);
+	}
+	
+	@Override
+	public Employer getByEmail(String email) {
+		return this.employerRepo.findByEmail(email);
 	}
 }

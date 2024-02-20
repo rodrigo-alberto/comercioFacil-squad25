@@ -8,6 +8,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 
@@ -24,24 +25,25 @@ public class Enterprise {
 	@Column(nullable = false)
 	private String cnpj;
 	
-	@Column(nullable = false)
+	@Column(nullable = false, unique = true)
 	private int numStore;
 	
 	@Column(nullable = false, columnDefinition = "TEXT")
 	private String description;
 	
+	@Lob
     @Column(columnDefinition = "longblob")
 	private byte[] image;
 	
     @ManyToOne
-    @JoinColumn(name = "fk_id_user", nullable = false)
+    @JoinColumn(nullable = false, name = "fk_id_user")
     private Employer employer;
 
     @OneToMany(mappedBy = "enterprise", cascade = CascadeType.ALL)
 	private List<Product> products;
 	
 	@ManyToOne
-	@JoinColumn(name = "fk_id_market", nullable = false)
+	@JoinColumn(nullable = false, name = "fk_id_market")
 	private MarketPlace market;
 	
 	public Enterprise() {	 

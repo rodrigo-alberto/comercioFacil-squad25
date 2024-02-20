@@ -23,22 +23,19 @@ public abstract class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idUser;
-	
-	@Column(nullable = false, columnDefinition = "TEXT")
-	private String login;
 		
+	@Column(nullable = false, length = 85, unique = true)
+	private String email;
+	
 	@Column(nullable = false, length = 25)
 	private String password;
 
-	@Enumerated(EnumType.STRING)
-	@Column(nullable = false)
-	private AccesLevel accesLevel;
-	
 	@Column(nullable = false)
 	private String userName;
 	
-	@Column(nullable = false, length = 85, unique = true)
-	private String email;
+	@Enumerated(EnumType.STRING)
+	@Column(nullable = false)
+	private AccesLevel accesLevel;
 	
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL/*, orphanRemoval = true*/)
 	private List<Contact> contatos;
@@ -55,14 +52,6 @@ public abstract class User {
 
 	public void setIdUser(Long idUser) {
 		this.idUser = idUser;
-	}
-
-	public String getLogin() {
-		return login;
-	}
-
-	public void setLogin(String login) {
-		this.login = login;
 	}
 
 	public String getPassword() {

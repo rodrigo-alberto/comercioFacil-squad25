@@ -19,19 +19,15 @@
 	<!--Conteudo página-->
 	<div class="page-wrapper chiller-theme">
 		<div class="container d-flex justify-content-center mb-5 mt-5">
-			<h1>Lista de enterprises:</h1>
+			<h1>Listagem dos empreendimentos:</h1>
 		</div>
 	</div>
 	
-	
-	
-	<!--****************MUDAR AS ROTAS***************-->
+
 	<div class="container mt-3">
-		<h2>Lista de lojas</h2>
-		
-		<!--Olha, eu acho que não é pra ter esse botão aqui, pq o certo é cadastrar a loja com o id do employer né-->
-		<!--mas não tirei não-->
-		<a class="btn btn-primary mb-2" th:href="@{/admin/saveEnterprise}">Adicionar loja</a>
+		<h2>Lista dos empreendimentos</h2>
+
+		<a class="btn btn-primary mb-2" th:href="@{/admin/checkRegistration}">Adicionar empreendimento</a>
 		
 		<table class="table">
 			<thead class="cabecalho-tabela">
@@ -52,8 +48,7 @@
 					<td th:text="${enterprise.cnpj}"></td>		
 					<td th:text="${enterprise.numStore}"></td>	
 					<td th:text="${enterprise.description}"></td>																	
-					<td><img th:src="${enterprise.image}" alt="Imagem da loja" style="max-width: 100px; max-height: 100px;" /></td>
-					
+					<td><img th:src="|/admin/getImage/${enterprise.idEnterprise}|" alt="Imagem da loja" style="max-width: 100px; max-height: 100px;" /></td>			
 					<td th:text="${enterprise.employer.userName}"></td>
 					
 					<td>

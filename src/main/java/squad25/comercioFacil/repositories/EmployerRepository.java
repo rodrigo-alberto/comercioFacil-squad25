@@ -20,4 +20,8 @@ public interface EmployerRepository extends JpaRepository<Employer, Long> {
 	 		+ "INNER JOIN enterprise AS en ON u.id_user = en.fk_id_user "
 	 		+ "WHERE en.id_enterprise = :idEnterprise")
      Employer findByIdEnterprise(@Param("idEnterprise") Long idEnterprise);
+	 
+	 @Query
+	 (nativeQuery = true, value = "SELECT * FROM `user` WHERE email LIKE :email")
+     Employer findByEmail(@Param("email") String email);
 }

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragments/head :: head('CF | Administrativo')}"></head>
+
+<body>
+
+	<!-- - header - -->
+	<header th:replace="~{fragments/header :: navbar}"></header>
+	<div th:replace="~{fragments/header :: space}"></div>
+	<!-- End #header -->
+
+	<!--Side Bar-->
+	<nav th:replace="~{fragments/asideAdmin :: asideAdmin}"> </nav>
+
+	<div class="page-wrapper chiller-theme">
+		<div class="container d-flex justify-content-center mb-5 mt-5">
+			<h1>Seção administrativa</h1>
+			<p>Consulte o pré-registro do empreendedor</p>
+		</div>
+	</div>
+
+	<!-- - main - -->
+	<main class="container">
+		<div class="row">
+			<div class="col-lg-6 mb-4">
+				<form th:action="@{/admin/getEmployerResgistration}">
+					<div class="mb-3">
+						<label for="inputEmail" class="form-label">E-mail do empreendedor:</label>
+						<input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp"
+							name="email">
+						<div id="emailHelp" class="form-text">Informe um e-mail válido</div>
+					</div>
+
+					<div class="d-flex justify-content-between">
+						<button type="submit" class="btn btn-primary">Buscar</button>
+						<a href="#" class="btn btn-outline-primary">Criar novo</a>
+					</div>
+				</form>
+			</div>
+
+			<div class="col-lg-6" th:if="${employer != null}">
+				<form th:action="@{/admin/saveEnterprise}" th:object="${employer}" method="get">
+					<div class="form-group mb-2">
+						<label for="inputIdEmployer">ID:</label>
+						<input type="text" id="inputIdEmployer" class="form-control" th:field="*{idUser}" />
+					</div>
+
+					<div class="form-group mb-2">
+						<label for="inputUserName">Nome de usuário:</label>
+						<input type="text" id="inputUserName" class="form-control" th:field="*{userName}" />
+					</div>
+
+					<div class="form-group mb-2">
+						<label for="inputEmail" class="form-label">E-mail:</label>
+						<input type="email" class="form-control" id="inputEmail" th:field="*{email}">
+					</div>
+
+					<button type="submit" class="btn btn-primary">Avançar</button>
+				</form>
+			</div>
+		</div>
+	</main> <!-- End .container -->
+
+	<!-- JS scripts -->
+	<script th:replace="~{fragments/scripts :: jquery}">
+	</script>
+
+	<script th:replace="~{fragments/scripts :: popper}">
+	</script>
+
+	<script th:replace="~{fragments/scripts :: bootstrap}">
+	</script>
+
+	<script th:replace="~{fragments/scripts :: sideBar}">
+	</script>
+
+</body>
+
+</html>

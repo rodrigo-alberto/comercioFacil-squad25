@@ -7,7 +7,8 @@ document.addEventListener("DOMContentLoaded", function() {
         loginPane.style.display = 'block';
         loginConfirmed.style.display = 'none';
     } else {
-        loginPane.style.display = 'none';
-        loginConfirmed.style.display = 'block';
+//        loginPane.style.display = 'none';
+//        loginConfirmed.style.display = 'block';
+		window.location.href = '/';
     }
 });
